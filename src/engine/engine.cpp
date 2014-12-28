@@ -9,6 +9,7 @@
 #include <cstdlib>
 
 #include "engine.h"
+#include "../scene/VoxelScene.h"
 
 Engine* Engine::instance = NULL;
 
@@ -18,6 +19,9 @@ Engine::Engine()
     windowHeight = 480;
     if (!glfwInit())
         exit(EXIT_FAILURE);
+    GLFWmonitor *monitor = NULL;
+    window = glfwCreateWindow(windowWidth, windowHeight, "Voxel Engine", monitor, NULL);
+    scene = new VoxelScene(window);
 }
 
 Engine* Engine::getInstance()
@@ -30,8 +34,8 @@ Engine* Engine::getInstance()
 int Engine::run()
 {
     //window open
-    GLFWmonitor *monitor = NULL;
-    window = glfwCreateWindow(windowWidth, windowHeight, "Voxel Engine", monitor, NULL);
+    //GLFWmonitor *monitor = NULL;
+    //window = glfwCreateWindow(windowWidth, windowHeight, "Voxel Engine", monitor, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -44,9 +48,13 @@ int Engine::run()
     {
         float ratio;
         int width, height;
+        
         glfwGetFramebufferSize(window, &width, &height);
         ratio = width / (float) height;
-        glViewport(0, 0, width, height);
+        
+        scene->render();
+        
+        /*glViewport(0, 0, width, height);
         glClear(GL_COLOR_BUFFER_BIT);
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
@@ -61,7 +69,7 @@ int Engine::run()
         glVertex3f(0.6f, -0.4f, 0.f);
         glColor3f(0.f, 0.f, 1.f);
         glVertex3f(0.f, 0.6f, 0.f);
-        glEnd();
+        glEnd();*/
 
         glfwSwapBuffers(window);
         glfwPollEvents();

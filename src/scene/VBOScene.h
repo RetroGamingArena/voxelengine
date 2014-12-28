@@ -1,0 +1,23 @@
+//
+//  VBOScene.h
+//  Voxelengine
+//
+//  Created by Julien CAILLABET on 28/12/2014.
+//  Copyright (c) 2014 RGA. All rights reserved.
+//
+
+#ifndef __Voxelengine__VBOScene__
+#define __Voxelengine__VBOScene__
+
+#include <stdio.h>
+
+#include "Scene.h"
+
+class VBOScene : public Scene
+{
+    public:
+        VBOScene(GLFWwindow* window) : Scene(window){}
+        void render();
+};
+
+#endif /* defined(__Voxelengine__VBOScene__) */

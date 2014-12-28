@@ -12,11 +12,15 @@
 #include <stdio.h>
 #include <GLFW/glfw3.h>
 
+#include "Scene.h"
+
 class Engine
 {
     int windowWidth;
     int windowHeight;
     GLFWwindow* window;
+    
+    Scene* scene;
     
     static Engine *instance;
     Engine();

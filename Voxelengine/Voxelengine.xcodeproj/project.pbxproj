@@ -11,6 +11,10 @@
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
 		64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */; };
 		64E85D551A4F701D0042EE5A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D541A4F701D0042EE5A /* OpenGL.framework */; };
+		64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D5A1A4F77C00042EE5A /* Scene.cpp */; };
+		64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D5D1A4F785C0042EE5A /* VoxelScene.cpp */; };
+		64E85D631A4F79710042EE5A /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D611A4F79710042EE5A /* World.cpp */; };
+		64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D641A508DC00042EE5A /* VBOScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +36,14 @@
 		64E85D4F1A4F65FF0042EE5A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.0.dylib; path = ../../../../../usr/local/Cellar/glfw3/3.0.4/lib/libglfw3.3.0.dylib; sourceTree = "<group>"; };
 		64E85D541A4F701D0042EE5A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		64E85D5A1A4F77C00042EE5A /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = scene/Scene.cpp; sourceTree = "<group>"; };
+		64E85D5B1A4F77C00042EE5A /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Scene.h; path = scene/Scene.h; sourceTree = "<group>"; };
+		64E85D5D1A4F785C0042EE5A /* VoxelScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VoxelScene.cpp; path = scene/VoxelScene.cpp; sourceTree = "<group>"; };
+		64E85D5E1A4F785C0042EE5A /* VoxelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoxelScene.h; path = scene/VoxelScene.h; sourceTree = "<group>"; };
+		64E85D611A4F79710042EE5A /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = World.cpp; path = world/World.cpp; sourceTree = "<group>"; };
+		64E85D621A4F79710042EE5A /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = world/World.h; sourceTree = "<group>"; };
+		64E85D641A508DC00042EE5A /* VBOScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VBOScene.cpp; path = scene/VBOScene.cpp; sourceTree = "<group>"; };
+		64E85D651A508DC00042EE5A /* VBOScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBOScene.h; path = scene/VBOScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,8 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				64E85D601A4F78630042EE5A /* world */,
+				64E85D591A4F77B40042EE5A /* scene */,
 				64E85D4C1A4F65FF0042EE5A /* engine */,
 				64E85D4F1A4F65FF0042EE5A /* main.cpp */,
 			);
@@ -82,6 +96,28 @@
 				64E85D4E1A4F65FF0042EE5A /* engine.h */,
 			);
 			path = engine;
+			sourceTree = "<group>";
+		};
+		64E85D591A4F77B40042EE5A /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				64E85D5A1A4F77C00042EE5A /* Scene.cpp */,
+				64E85D5B1A4F77C00042EE5A /* Scene.h */,
+				64E85D5D1A4F785C0042EE5A /* VoxelScene.cpp */,
+				64E85D5E1A4F785C0042EE5A /* VoxelScene.h */,
+				64E85D641A508DC00042EE5A /* VBOScene.cpp */,
+				64E85D651A508DC00042EE5A /* VBOScene.h */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		64E85D601A4F78630042EE5A /* world */ = {
+			isa = PBXGroup;
+			children = (
+				64E85D611A4F79710042EE5A /* World.cpp */,
+				64E85D621A4F79710042EE5A /* World.h */,
+			);
+			name = world;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
+				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
+				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
+				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
