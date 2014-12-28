@@ -10,6 +10,7 @@
 #define __voxelengine__engine__
 
 #include <stdio.h>
+#include <glew.h>
 #include <GLFW/glfw3.h>
 
 #include "Scene.h"

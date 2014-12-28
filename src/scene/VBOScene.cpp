@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 RGA. All rights reserved.
 //
 
-#include <GLFW/glfw3.h>
-
 #include "VBOScene.h"
 
 void VBOScene::render()

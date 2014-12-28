@@ -10,6 +10,7 @@
 #define __Voxelengine__Scene__
 
 #include <stdio.h>
+#include <glew.h>
 #include <GLFW/glfw3.h>
 
 class Scene

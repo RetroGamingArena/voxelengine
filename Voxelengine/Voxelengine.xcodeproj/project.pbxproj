@@ -15,6 +15,7 @@
 		64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D5D1A4F785C0042EE5A /* VoxelScene.cpp */; };
 		64E85D631A4F79710042EE5A /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D611A4F79710042EE5A /* World.cpp */; };
 		64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D641A508DC00042EE5A /* VBOScene.cpp */; };
+		64E85D6A1A50AA9E0042EE5A /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D691A50AA9E0042EE5A /* libGLEW.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		64E85D621A4F79710042EE5A /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = World.h; path = world/World.h; sourceTree = "<group>"; };
 		64E85D641A508DC00042EE5A /* VBOScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VBOScene.cpp; path = scene/VBOScene.cpp; sourceTree = "<group>"; };
 		64E85D651A508DC00042EE5A /* VBOScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBOScene.h; path = scene/VBOScene.h; sourceTree = "<group>"; };
+		64E85D691A50AA9E0042EE5A /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/lib/libGLEW.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			files = (
 				64E85D551A4F701D0042EE5A /* OpenGL.framework in Frameworks */,
 				64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */,
+				64E85D6A1A50AA9E0042EE5A /* libGLEW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
+				64E85D691A50AA9E0042EE5A /* libGLEW.a */,
 				64E85D541A4F701D0042EE5A /* OpenGL.framework */,
 				64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */,
 				64E85D4B1A4F65FF0042EE5A /* src */,
@@ -221,6 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -256,6 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /usr/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -269,10 +275,12 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					/usr/local/include,
+					/usr/include/GL,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw3/3.0.4/lib,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -285,10 +293,12 @@
 					"$(inherited)",
 					"/Applications/Xcode-Beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					/usr/local/include,
+					/usr/include/GL,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw3/3.0.4/lib,
+					/usr/local/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
