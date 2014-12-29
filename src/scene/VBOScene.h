@@ -22,6 +22,7 @@ class VBOScene : public Scene
     protected:
         GLuint VertexArrayID;
         GLuint programID;
+        GLuint matrixID;
         GLuint vertexbufferID;
         Buffer* vertexBuffer;
         GLfloat* colorBuffer;
@@ -36,6 +37,8 @@ class VBOScene : public Scene
             glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
             
             programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
+            
+            matrixID = glGetUniformLocation(programID, "MVP");
         }
         Buffer* getVertexbuffer(){return vertexBuffer;}
         void bindBuffer();

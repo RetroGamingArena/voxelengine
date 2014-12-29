@@ -10,7 +10,7 @@
 
 int VoxelScene::getVertexCount()
 {
-    return 3;
+    return 6;
 }
 
 void VoxelScene::init()

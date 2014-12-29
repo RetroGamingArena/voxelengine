@@ -22,6 +22,8 @@ class Cube
     float Y2;
     float z2;
 
+    static void bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int y2, int z2);
+    
     public:
         Cube()
         {

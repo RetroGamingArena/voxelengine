@@ -14,6 +14,8 @@ void VBOScene::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(programID);
 
+    glUniformMatrix4fv(matrixID, 1, GL_FALSE, &MVP[0][0]);
+    
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
     glVertexAttribPointer(
@@ -25,7 +27,7 @@ void VBOScene::render()
                           (void*)0            // décalage du tableau de tampon
                           );
     
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, getVertexCount()*3);
     
     glDisableVertexAttribArray(0);
 }
@@ -38,5 +40,6 @@ void VBOScene::bindBuffer()
 
 void VBOScene::init()
 {
-    vertexBuffer = new VertexBuffer(getVertexCount());
+    VertexBuffer* _buffer = new VertexBuffer(getVertexCount());
+    this->vertexBuffer = _buffer;
 }
