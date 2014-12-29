@@ -39,7 +39,6 @@ void VBOScene::render()
                           (void*)0            // décalage du tableau de tampon
                           );
     
-    int test = getVertexCount();
     glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
     
     glDisableVertexAttribArray(0);
@@ -48,9 +47,6 @@ void VBOScene::render()
 
 void VBOScene::bindBuffer()
 {
-    int test = vertexBuffer->getSize();
-    int test2 = colorBuffer->getSize();
-    
     glGenBuffers(1, &vertexbufferID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getSize(), vertexBuffer->getData(), GL_STATIC_DRAW);

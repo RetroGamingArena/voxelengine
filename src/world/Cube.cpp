@@ -8,18 +8,18 @@
 
 #include "Cube.h"
 
-void Cube::bufferize(VBOScene* scene)
+float Cube::size = 1.0;
+
+void Cube::bufferize(VBOScene* scene, float x, float y, float z)
 {
-    //int cursor = scene->getVertexbuffer()->getCursor();
-
-    bufferizeSquare(scene, -1.0, -1.0,  -1.0, -1.0, 1.0,  1.0);
-    bufferizeSquare(scene,  1.0, -1.0, -1.0,  1.0, 1.0, 1.0);
+    bufferizeSquare(scene, this->x+x,      this->y+y, this->z+z, this->x+x,      this->y+y+size, this->z+z+size);
+    bufferizeSquare(scene, this->x+x+size, this->y+y, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size);
     
-    bufferizeSquare(scene, -1.0, -1.0,  -1.0, 1.0, -1.0,  1.0);
-    bufferizeSquare(scene, -1.0, 1.0,  -1.0, 1.0, 1.0,  1.0);
+    bufferizeSquare(scene, this->x+x, this->y+y,      this->z+z, this->x+x+size, this->y+y,      this->z+z+size);
+    bufferizeSquare(scene, this->x+x, this->y+y+size, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size);
     
-    bufferizeSquare(scene, -1.0, -1.0, -1.0, 1.0, 1.0, -1.0);
-    bufferizeSquare(scene, -1.0, -1.0,  1.0, 1.0, 1.0,  1.0);
+    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z);
+    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size);
     
     bufferizeSquareColor(scene, 0.0, 0.0,  1.0);
     bufferizeSquareColor(scene, 0.0, 0.0,  1.0);
@@ -62,8 +62,6 @@ void Cube::bufferize(VBOScene* scene)
     bufferizeSquareColor(scene, 0.0, 0.0,  1.0);
     bufferizeSquareColor(scene, 0.0, 0.0,  1.0);
     bufferizeSquareColor(scene, 0.0, 0.0,  1.0);
-
-    //scene->getVertexbuffer()->setCursor(cursor);
 }
 
 void Cube::bufferizeSquareColor(VBOScene* scene, int r, int g, int b)

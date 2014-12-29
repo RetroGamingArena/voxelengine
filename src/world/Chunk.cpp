@@ -12,6 +12,6 @@ void Chunk::bufferize(VBOScene* scene)
 {
     for(int i=0; i < cubes.size() ; i++)
     {
-        cubes[i]->bufferize(scene);
+        cubes[i]->bufferize(scene, this->x, this->y, this->z);
     }
 }

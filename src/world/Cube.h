@@ -14,29 +14,23 @@
 
 class Cube
 {
-    float x1;
-    float y1;
-    float z1;
-
-    float x2;
-    float Y2;
-    float z2;
+    static float size;
+    
+    float x;
+    float y;
+    float z;
 
     static void bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int y2, int z2);
     static void bufferizeSquareColor(VBOScene* scene, int r, int g, int b);
     
     public:
-        Cube()
+        Cube(float x, float y, float z)
         {
-            x1 = -1.0;
-            y1 = -1.0;
-            z1 = -1.0;
-            
-            x2 = 1.0;
-            Y2 = 1.0;
-            z2 = 1.0;
+            this->x = 0.0;
+            this->y = 0.0;
+            this->z = 0.0;
         }
-        void bufferize(VBOScene* scene);
+        void bufferize(VBOScene* scene, float x, float y, float z);
 };
 
 #endif /* defined(__Voxelengine__Cube__) */

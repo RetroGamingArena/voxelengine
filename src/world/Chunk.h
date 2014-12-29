@@ -19,12 +19,20 @@ using namespace std;
 
 class Chunk
 {
+    float x;
+    float y;
+    float z;
+    
     vector<Cube*> cubes;
     
     public:
         Chunk()
         {
-            cubes.push_back(new Cube());
+            x=0;
+            y=0;
+            z=0;
+
+            cubes.push_back(new Cube(0, 0, 0));
         }
         vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);    
