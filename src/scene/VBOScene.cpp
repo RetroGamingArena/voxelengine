@@ -7,6 +7,7 @@
 //
 
 #include "VBOScene.h"
+#include "../openGL/VertexBuffer.h"
 
 void VBOScene::render()
 {
@@ -14,7 +15,7 @@ void VBOScene::render()
     glUseProgram(programID);
 
     glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
     glVertexAttribPointer(
                           0,                  // attribut 0. Aucune raison particulière pour 0, mais cela doit correspondre au « layout » dans le shader
                           3,                  // taille
@@ -31,10 +32,11 @@ void VBOScene::render()
 
 void VBOScene::bindBuffer()
 {
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*getVertexCount(), vertexBuffer, GL_STATIC_DRAW);
+    //int test = getVertexCount();
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getSize(), vertexBuffer->getData(), GL_STATIC_DRAW);
 }
 
 void VBOScene::init()
 {
-    vertexBuffer = new GLfloat[getVertexCount()];
+    vertexBuffer = new VertexBuffer(getVertexCount());
 }

@@ -13,6 +13,7 @@
 #include <vector>
 
 #include "Cube.h"
+#include "../scene/VBOScene.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ class Chunk
         {
             cubes.push_back(new Cube());
         }
+        void bufferize(VBOScene* scene);    
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

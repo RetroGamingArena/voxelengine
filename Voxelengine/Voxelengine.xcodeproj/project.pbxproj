@@ -22,6 +22,7 @@
 		64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D791A516C790042EE5A /* Chunk.cpp */; };
 		64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7C1A516EAA0042EE5A /* Cube.cpp */; };
 		64E85D811A518B130042EE5A /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7F1A518B130042EE5A /* Buffer.cpp */; };
+		64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D821A51908D0042EE5A /* VertexBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,8 @@
 		64E85D7D1A516EAA0042EE5A /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = world/Cube.h; sourceTree = "<group>"; };
 		64E85D7F1A518B130042EE5A /* Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Buffer.cpp; path = openGL/Buffer.cpp; sourceTree = "<group>"; };
 		64E85D801A518B130042EE5A /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Buffer.h; path = openGL/Buffer.h; sourceTree = "<group>"; };
+		64E85D821A51908D0042EE5A /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBuffer.cpp; path = openGL/VertexBuffer.cpp; sourceTree = "<group>"; };
+		64E85D831A51908D0042EE5A /* VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexBuffer.h; path = openGL/VertexBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				64E85D701A50D8C50042EE5A /* ShaderLoader.h */,
 				64E85D7F1A518B130042EE5A /* Buffer.cpp */,
 				64E85D801A518B130042EE5A /* Buffer.h */,
+				64E85D821A51908D0042EE5A /* VertexBuffer.cpp */,
+				64E85D831A51908D0042EE5A /* VertexBuffer.h */,
 			);
 			name = openGL;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
+				64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,

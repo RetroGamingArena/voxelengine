@@ -10,10 +10,12 @@
 #define __Voxelengine__Cube__
 
 #include <stdio.h>
+#include "../scene/VBOScene.h"
 
 class Cube
 {
-
+    public:
+        void bufferize(VBOScene* scene);
 };
 
 #endif /* defined(__Voxelengine__Cube__) */

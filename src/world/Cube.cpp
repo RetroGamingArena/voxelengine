@@ -7,3 +7,16 @@
 //
 
 #include "Cube.h"
+
+void Cube::bufferize(VBOScene* scene)
+{
+    scene->getVertexbuffer()->getData()[0] = -1.0f;
+    scene->getVertexbuffer()->getData()[1] = -1.0f;
+    scene->getVertexbuffer()->getData()[2] = 0.0f;
+    scene->getVertexbuffer()->getData()[3] = 1.0f;
+    scene->getVertexbuffer()->getData()[4] = -1.0f;
+    scene->getVertexbuffer()->getData()[5] = 0.0f;
+    scene->getVertexbuffer()->getData()[6] = 0.0f;
+    scene->getVertexbuffer()->getData()[7] = 1.0f;
+    scene->getVertexbuffer()->getData()[8] = 0.0f;
+}

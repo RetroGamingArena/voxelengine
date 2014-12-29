@@ -21,7 +21,7 @@ class VoxelScene : public VBOScene
     public:
         VoxelScene(GLFWwindow* window) : VBOScene(window)
         {
-           
+            world = new World();
         }
         int getVertexCount();
         void init();

@@ -7,3 +7,11 @@
 //
 
 #include "Chunk.h"
+
+void Chunk::bufferize(VBOScene* scene)
+{
+    for(int i=0; i < cubes.size() ; i++)
+    {
+        cubes[i]->bufferize(scene);
+    }
+}

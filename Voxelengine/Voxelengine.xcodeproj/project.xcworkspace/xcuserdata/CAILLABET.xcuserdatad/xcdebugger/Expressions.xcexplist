@@ -6,6 +6,9 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "getVertexCount()">
+            </PersistentString>
+            <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString

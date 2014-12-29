@@ -7,3 +7,11 @@
 //
 
 #include "World.h"
+
+void World::bufferize(VBOScene* scene)
+{
+    for(int i=0; i < chunks.size() ; i++)
+    {
+        chunks[i]->bufferize(scene);
+    }
+}

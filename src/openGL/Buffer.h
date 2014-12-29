@@ -15,7 +15,21 @@
 
 class Buffer
 {
-    GLfloat* datas;
+    protected:
+        GLfloat* data;
+        int vertexCount;
+        int itemSize;
+        int cursor;
+
+    public:
+        Buffer(int vertexCount)
+        {
+            this->vertexCount = vertexCount;
+            this->cursor = 0;
+        }
+        GLfloat* getData(){return data;};
+        int getSize(){return itemSize * vertexCount;};
+        void init();
 };
 
 #endif /* defined(__Voxelengine__Buffer__) */

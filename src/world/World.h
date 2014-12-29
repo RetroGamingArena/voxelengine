@@ -11,7 +11,9 @@
 
 #include <stdio.h>
 #include <vector>
+
 #include "Chunk.h"
+#include "../scene/VBOScene.h"
 
 using namespace std;
 
@@ -25,6 +27,7 @@ class World
             chunks.push_back(new Chunk());
         }
         vector<Chunk*> getChunks(){return chunks;}
+        void bufferize(VBOScene* scene);
 };
 
 #endif /* defined(__Voxelengine__World__) */

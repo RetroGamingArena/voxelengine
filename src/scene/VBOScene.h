@@ -15,14 +15,15 @@
 
 #include "Scene.h"
 #include "../openGL/ShaderLoader.h"
+#include "../openGL/Buffer.h"
 
 class VBOScene : public Scene
 {
     protected:
         GLuint VertexArrayID;
         GLuint programID;
-        GLuint vertexbuffer;
-        GLfloat* vertexBuffer;
+        GLuint vertexbufferID;
+        Buffer* vertexBuffer;
         GLfloat* colorBuffer;
 
     public:
@@ -31,11 +32,12 @@ class VBOScene : public Scene
             glGenVertexArrays(1, &VertexArrayID);
             glBindVertexArray(VertexArrayID);
             
-            glGenBuffers(1, &vertexbuffer);
-            glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+            glGenBuffers(1, &vertexbufferID);
+            glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
             
             programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
         }
+        Buffer* getVertexbuffer(){return vertexBuffer;}
         void bindBuffer();
         void render();
         void init();
