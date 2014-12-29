@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "VBOScene::bindBuffer():VBOScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "sizeof(GLfloat)*9">
+            </PersistentString>
+            <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

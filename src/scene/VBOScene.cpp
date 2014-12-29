@@ -10,26 +10,26 @@
 
 void VBOScene::render()
 {
-    float ratio;
-    int width, height;
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glUseProgram(programID);
+
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glVertexAttribPointer(
+                          0,                  // attribut 0. Aucune raison particulière pour 0, mais cela doit correspondre au « layout » dans le shader
+                          3,                  // taille
+                          GL_FLOAT,           // type
+                          GL_FALSE,           // normalisé ?
+                          0,                  // nombre d'octets séparant deux sommets dans le tampon
+                          (void*)0            // décalage du tableau de tampon
+                          );
     
-    glfwGetFramebufferSize(window, &width, &height);
-    ratio = width / (float) height;
+    glDrawArrays(GL_TRIANGLES, 0, 3);
     
-    glViewport(0, 0, width, height);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glRotatef((float) glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
-    glBegin(GL_TRIANGLES);
-    glColor3f(1.f, 0.f, 0.f);
-    glVertex3f(-0.6f, -0.4f, 0.f);
-    glColor3f(0.f, 1.f, 0.f);
-    glVertex3f(0.6f, -0.4f, 0.f);
-    glColor3f(0.f, 0.f, 1.f);
-    glVertex3f(0.f, 0.6f, 0.f);
-    glEnd();
+    glDisableVertexAttribArray(0);
+}
+
+void VBOScene::bindBuffer()
+{
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*9, buffer, GL_STATIC_DRAW);
 }

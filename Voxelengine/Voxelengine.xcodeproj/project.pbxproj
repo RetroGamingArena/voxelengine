@@ -16,17 +16,22 @@
 		64E85D631A4F79710042EE5A /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D611A4F79710042EE5A /* World.cpp */; };
 		64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D641A508DC00042EE5A /* VBOScene.cpp */; };
 		64E85D6A1A50AA9E0042EE5A /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D691A50AA9E0042EE5A /* libGLEW.a */; };
+		64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */; };
+		64E85D771A5168C80042EE5A /* fragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E85D751A5168B00042EE5A /* fragmentShader.glsl */; };
+		64E85D781A5168C80042EE5A /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E85D761A5168B00042EE5A /* vertexShader.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		64E85D3F1A4F65C30042EE5A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = shaders;
+			dstSubfolderSpec = 1;
 			files = (
+				64E85D771A5168C80042EE5A /* fragmentShader.glsl in CopyFiles */,
+				64E85D781A5168C80042EE5A /* vertexShader.glsl in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -46,6 +51,10 @@
 		64E85D641A508DC00042EE5A /* VBOScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VBOScene.cpp; path = scene/VBOScene.cpp; sourceTree = "<group>"; };
 		64E85D651A508DC00042EE5A /* VBOScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VBOScene.h; path = scene/VBOScene.h; sourceTree = "<group>"; };
 		64E85D691A50AA9E0042EE5A /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/lib/libGLEW.a; sourceTree = "<group>"; };
+		64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderLoader.cpp; path = openGL/ShaderLoader.cpp; sourceTree = "<group>"; };
+		64E85D701A50D8C50042EE5A /* ShaderLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderLoader.h; path = openGL/ShaderLoader.h; sourceTree = "<group>"; };
+		64E85D751A5168B00042EE5A /* fragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = fragmentShader.glsl; path = ../shaders/fragmentShader.glsl; sourceTree = "<group>"; };
+		64E85D761A5168B00042EE5A /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = vertexShader.glsl; path = ../shaders/vertexShader.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,7 @@
 				64E85D691A50AA9E0042EE5A /* libGLEW.a */,
 				64E85D541A4F701D0042EE5A /* OpenGL.framework */,
 				64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */,
+				64E85D721A5168070042EE5A /* shaders */,
 				64E85D4B1A4F65FF0042EE5A /* src */,
 				64E85D421A4F65C30042EE5A /* Products */,
 			);
@@ -84,6 +94,7 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				64E85D6E1A50D6660042EE5A /* openGL */,
 				64E85D601A4F78630042EE5A /* world */,
 				64E85D591A4F77B40042EE5A /* scene */,
 				64E85D4C1A4F65FF0042EE5A /* engine */,
@@ -122,6 +133,24 @@
 				64E85D621A4F79710042EE5A /* World.h */,
 			);
 			name = world;
+			sourceTree = "<group>";
+		};
+		64E85D6E1A50D6660042EE5A /* openGL */ = {
+			isa = PBXGroup;
+			children = (
+				64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */,
+				64E85D701A50D8C50042EE5A /* ShaderLoader.h */,
+			);
+			name = openGL;
+			sourceTree = "<group>";
+		};
+		64E85D721A5168070042EE5A /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				64E85D751A5168B00042EE5A /* fragmentShader.glsl */,
+				64E85D761A5168B00042EE5A /* vertexShader.glsl */,
+			);
+			name = shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +215,7 @@
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
 				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,
+				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +353,7 @@
 				64E85D4A1A4F65C30042EE5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

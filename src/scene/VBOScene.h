@@ -14,17 +14,28 @@
 #include <stdio.h>
 
 #include "Scene.h"
+#include "../openGL/ShaderLoader.h"
 
 class VBOScene : public Scene
 {
-    GLuint VertexArrayID;
+    protected:
+        GLuint VertexArrayID;
+        GLuint programID;
+        GLuint vertexbuffer;
+        GLfloat* buffer;
 
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
         {
-            //glGenVertexArrays(1, &VertexArrayID);
-            //glBindVertexArray(VertexArrayID);
+            glGenVertexArrays(1, &VertexArrayID);
+            glBindVertexArray(VertexArrayID);
+            
+            glGenBuffers(1, &vertexbuffer);
+            glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+            
+            programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
         }
+        void bindBuffer();
         void render();
 };
 
