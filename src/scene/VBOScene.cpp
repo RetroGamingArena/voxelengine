@@ -8,6 +8,7 @@
 
 #include "VBOScene.h"
 #include "../openGL/VertexBuffer.h"
+#include "../openGL/ColorBuffer.h"
 
 void VBOScene::render()
 {
@@ -27,19 +28,41 @@ void VBOScene::render()
                           (void*)0            // décalage du tableau de tampon
                           );
     
-    glDrawArrays(GL_TRIANGLES, 0, getVertexCount()*3);
+    glEnableVertexAttribArray(1);
+    glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
+    glVertexAttribPointer(
+                          1,                  // attribut 0. Aucune raison particulière pour 0, mais cela doit correspondre au « layout » dans le shader
+                          4,                  // taille
+                          GL_FLOAT,           // type
+                          GL_FALSE,           // normalisé ?
+                          0,                  // nombre d'octets séparant deux sommets dans le tampon
+                          (void*)0            // décalage du tableau de tampon
+                          );
+    
+    int test = getVertexCount();
+    glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
     
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
 }
 
 void VBOScene::bindBuffer()
 {
-    //int test = getVertexCount();
+    int test = vertexBuffer->getSize();
+    int test2 = colorBuffer->getSize();
+    
+    glGenBuffers(1, &vertexbufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getSize(), vertexBuffer->getData(), GL_STATIC_DRAW);
+    
+    glGenBuffers(1, &colorBufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*colorBuffer->getSize(), colorBuffer->getData(), GL_STATIC_DRAW);
 }
 
 void VBOScene::init()
 {
     VertexBuffer* _buffer = new VertexBuffer(getVertexCount());
     this->vertexBuffer = _buffer;
+    this->colorBuffer = new ColorBuffer(getVertexCount());
 }

@@ -23,23 +23,28 @@ class VBOScene : public Scene
         GLuint VertexArrayID;
         GLuint programID;
         GLuint vertexbufferID;
+        GLuint colorBufferID;
         Buffer* vertexBuffer;
-        GLfloat* colorBuffer;
+        Buffer* colorBuffer;
 
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
         {
             glGenVertexArrays(1, &VertexArrayID);
             glBindVertexArray(VertexArrayID);
-            
-            glGenBuffers(1, &vertexbufferID);
-            glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
-            
+
             programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
             
             matrixID = glGetUniformLocation(programID, "MVP");
+            
+            /*glGenBuffers(1, &vertexbufferID);
+            glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);*/
+            
+            /*glGenBuffers(1, &colorBufferID);
+            glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);*/
         }
         Buffer* getVertexbuffer(){return vertexBuffer;}
+        Buffer* getColorBuffer(){return colorBuffer;}
         void bindBuffer();
         void render();
         void init();

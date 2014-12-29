@@ -15,8 +15,8 @@ Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
-    windowWidth = 640;
-    windowHeight = 480;
+    windowWidth = 1024;
+    windowHeight = 768;
     if (!glfwInit())
         exit(EXIT_FAILURE);
     glfwWindowHint(GLFW_SAMPLES, 4);
@@ -31,6 +31,9 @@ Engine::Engine()
     if (glewInit() != GLEW_OK)
         exit(EXIT_FAILURE);
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+    glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
     scene = new VoxelScene(window);
     scene->init();
 }

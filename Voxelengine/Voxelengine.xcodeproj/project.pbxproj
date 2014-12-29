@@ -23,6 +23,7 @@
 		64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7C1A516EAA0042EE5A /* Cube.cpp */; };
 		64E85D811A518B130042EE5A /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7F1A518B130042EE5A /* Buffer.cpp */; };
 		64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D821A51908D0042EE5A /* VertexBuffer.cpp */; };
+		64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -292,6 +293,8 @@
 		64E85E681A51C4C60042EE5A /* wrap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wrap.hpp; sourceTree = "<group>"; };
 		64E85E691A51C4C60042EE5A /* wrap.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		64E85E6B1A51C4C60042EE5A /* xstream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
+		64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColorBuffer.cpp; path = openGL/ColorBuffer.cpp; sourceTree = "<group>"; };
+		64E85E6D1A51D1A80042EE5A /* ColorBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorBuffer.h; path = openGL/ColorBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +389,8 @@
 				64E85D801A518B130042EE5A /* Buffer.h */,
 				64E85D821A51908D0042EE5A /* VertexBuffer.cpp */,
 				64E85D831A51908D0042EE5A /* VertexBuffer.h */,
+				64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */,
+				64E85E6D1A51D1A80042EE5A /* ColorBuffer.h */,
 			);
 			name = openGL;
 			sourceTree = "<group>";
@@ -729,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
+				64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
