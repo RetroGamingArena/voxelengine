@@ -28,6 +28,7 @@ class World
         }
         vector<Chunk*> getChunks(){return chunks;}
         void bufferize(VBOScene* scene);
+        int cubeCount();
 };
 
 #endif /* defined(__Voxelengine__World__) */

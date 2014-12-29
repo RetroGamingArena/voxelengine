@@ -12,19 +12,14 @@ void Cube::bufferize(VBOScene* scene)
 {
     int cursor = scene->getVertexbuffer()->getCursor();
 
-    //bufferizeSquare(scene, -1.0, -1.0, -1.0, 1.0, 1.0, -1.0);
+    bufferizeSquare(scene, -1.0, -1.0,  -1.0, -1.0, 1.0,  1.0);
+    bufferizeSquare(scene,  1.0, -1.0, -1.0,  1.0, 1.0, 1.0);
     
-    bufferizeSquare(scene, -1.0, -1.0, 1.0, 1.0, 1.0, 1.0);
+    bufferizeSquare(scene, -1.0, -1.0,  -1.0, 1.0, -1.0,  1.0);
+    bufferizeSquare(scene, -1.0, 1.0,  -1.0, 1.0, 1.0,  1.0);
     
-    /*scene->getVertexbuffer()->getData()[cursor++] = -1.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = -1.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 0.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 1.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = -1.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 0.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 0.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 1.0f;
-    scene->getVertexbuffer()->getData()[cursor++] = 0.0f;*/
+    bufferizeSquare(scene, -1.0, -1.0, -1.0, 1.0, 1.0, -1.0);
+    bufferizeSquare(scene, -1.0, -1.0,  1.0, 1.0, 1.0,  1.0);
     
     scene->getVertexbuffer()->setCursor(cursor);
 }
@@ -33,16 +28,68 @@ void Cube::bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int 
 {
     int cursor = scene->getVertexbuffer()->getCursor();
     
-    if(z1==z2)
+    if(x1==x2)
     {
         scene->getVertexbuffer()->getData()[cursor++] = x1;
         scene->getVertexbuffer()->getData()[cursor++] = y1;
         scene->getVertexbuffer()->getData()[cursor++] = z1;
     
         scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+    
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
         scene->getVertexbuffer()->getData()[cursor++] = y2;
         scene->getVertexbuffer()->getData()[cursor++] = z1;
-    
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y2;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y2;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+    }
+    else if(y1==y2)
+    {
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x2;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x2;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x2;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z2;
+    }
+    else if(z1==z2)
+    {
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y1;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
+        scene->getVertexbuffer()->getData()[cursor++] = x1;
+        scene->getVertexbuffer()->getData()[cursor++] = y2;
+        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        
         scene->getVertexbuffer()->getData()[cursor++] = x2;
         scene->getVertexbuffer()->getData()[cursor++] = y1;
         scene->getVertexbuffer()->getData()[cursor++] = z1;
@@ -59,18 +106,6 @@ void Cube::bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int 
         scene->getVertexbuffer()->getData()[cursor++] = y2;
         scene->getVertexbuffer()->getData()[cursor++] = z1;
     }
-    
-    /*scene->getVertexbuffer()->getData()[cursor++] = x1;
-    scene->getVertexbuffer()->getData()[cursor++] = y1;
-    scene->getVertexbuffer()->getData()[cursor++] = z2;
-    
-    scene->getVertexbuffer()->getData()[cursor++] = x1;
-    scene->getVertexbuffer()->getData()[cursor++] = y2;
-    scene->getVertexbuffer()->getData()[cursor++] = z2;
-    
-    scene->getVertexbuffer()->getData()[cursor++] = x2;
-    scene->getVertexbuffer()->getData()[cursor++] = y2;
-    scene->getVertexbuffer()->getData()[cursor++] = z2;*/
     
     scene->getVertexbuffer()->setCursor(cursor);
 }

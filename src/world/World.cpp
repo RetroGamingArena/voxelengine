@@ -15,3 +15,13 @@ void World::bufferize(VBOScene* scene)
         chunks[i]->bufferize(scene);
     }
 }
+
+int World::cubeCount()
+{
+    int res = 0;
+    for(int i=0; i < chunks.size() ; i++)
+    {
+        res += chunks[i]->getCubes().size();
+    }
+    return res;
+}

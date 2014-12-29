@@ -26,6 +26,7 @@ class Chunk
         {
             cubes.push_back(new Cube());
         }
+        vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);    
 };
 

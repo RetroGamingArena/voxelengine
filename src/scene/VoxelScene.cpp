@@ -10,7 +10,7 @@
 
 int VoxelScene::getVertexCount()
 {
-    return 6;
+    return world->cubeCount()*6*6;
 }
 
 void VoxelScene::init()
