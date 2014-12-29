@@ -27,6 +27,7 @@ class Scene
     protected:
         glm::mat4 MVP;
         GLFWwindow* window;
+        GLuint matrixID;
     
     public:
         Scene(GLFWwindow* window)

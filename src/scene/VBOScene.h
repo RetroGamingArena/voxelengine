@@ -22,7 +22,6 @@ class VBOScene : public Scene
     protected:
         GLuint VertexArrayID;
         GLuint programID;
-        GLuint matrixID;
         GLuint vertexbufferID;
         Buffer* vertexBuffer;
         GLfloat* colorBuffer;
