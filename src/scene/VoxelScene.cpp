@@ -19,15 +19,5 @@ void VoxelScene::init()
     
     world->bufferize(this);
     
-    /*vertexBuffer[0] = -1.0f;
-    vertexBuffer[1] = -1.0f;
-    vertexBuffer[2] = 0.0f;
-    vertexBuffer[3] =  1.0f;
-    vertexBuffer[4] = -1.0f;
-    vertexBuffer[5] = 0.0f;
-    vertexBuffer[6] = 0.0f;
-    vertexBuffer[7] = 1.0f;
-    vertexBuffer[8] = 0.0f;*/
-    
     bindBuffer();
 }

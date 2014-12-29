@@ -14,7 +14,25 @@
 
 class Cube
 {
+    float x1;
+    float y1;
+    float z1;
+
+    float x2;
+    float Y2;
+    float z2;
+
     public:
+        Cube()
+        {
+            x1 = -1.0;
+            y1 = -1.0;
+            z1 = -1.0;
+            
+            x2 = 1.0;
+            Y2 = 1.0;
+            z2 = 1.0;
+        }
         void bufferize(VBOScene* scene);
 };
 

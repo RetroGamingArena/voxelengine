@@ -29,6 +29,8 @@ class Buffer
         }
         GLfloat* getData(){return data;};
         int getSize(){return itemSize * vertexCount;};
+        int getCursor(){return cursor;};
+        void setCursor(int cursor){this->cursor = cursor;};
         void init();
 };
 
