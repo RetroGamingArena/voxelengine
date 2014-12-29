@@ -271,7 +271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "Cube::bufferize(VBOScene* scene, this-&gt;x, this-&gt;y, this-&gt;z)"
+            landmarkName = "Cube::bufferize(VBOScene* scene, float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -320,6 +320,38 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "Engine::Engine()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/Cube.cpp"
+            timestampString = "441589363.116069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "Cube::bufferize(VBOScene* scene, float x, float y, float z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/Chunk.cpp"
+            timestampString = "441589406.840589"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "Chunk::bufferize(VBOScene* scene)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

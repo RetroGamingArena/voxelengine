@@ -33,6 +33,8 @@ class Chunk
             z=0;
 
             cubes.push_back(new Cube(0, 0, 0));
+            cubes.push_back(new Cube(1, 0, 0));
+            cubes.push_back(new Cube(0, 0, 1));
         }
         vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);    

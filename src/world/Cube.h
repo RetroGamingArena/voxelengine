@@ -26,9 +26,9 @@ class Cube
     public:
         Cube(float x, float y, float z)
         {
-            this->x = 0.0;
-            this->y = 0.0;
-            this->z = 0.0;
+            this->x = x;
+            this->y = y;
+            this->z = z;
         }
         void bufferize(VBOScene* scene, float x, float y, float z);
 };
