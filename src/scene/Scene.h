@@ -21,6 +21,7 @@ class Scene
     public:
         Scene(GLFWwindow* window){this->window = window;}
         virtual void render() = 0;
+        virtual void init() = 0;
 };
 
 #endif /* defined(__Voxelengine__Scene__) */

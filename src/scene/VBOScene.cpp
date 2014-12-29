@@ -31,5 +31,10 @@ void VBOScene::render()
 
 void VBOScene::bindBuffer()
 {
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*9, buffer, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*getVertexCount(), vertexBuffer, GL_STATIC_DRAW);
+}
+
+void VBOScene::init()
+{
+    vertexBuffer = new GLfloat[getVertexCount()];
 }

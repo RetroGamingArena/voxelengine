@@ -10,5 +10,21 @@
 #define __Voxelengine__World__
 
 #include <stdio.h>
+#include <vector>
+#include "Chunk.h"
+
+using namespace std;
+
+class World
+{
+    vector<Chunk*> chunks;
+    
+    public:
+        World()
+        {
+            chunks.push_back(new Chunk());
+        }
+        vector<Chunk*> getChunks(){return chunks;}
+};
 
 #endif /* defined(__Voxelengine__World__) */

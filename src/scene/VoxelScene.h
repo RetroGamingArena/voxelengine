@@ -16,21 +16,15 @@
 
 class VoxelScene : public VBOScene
 {
+    World* world;
+    
     public:
         VoxelScene(GLFWwindow* window) : VBOScene(window)
         {
-            buffer = new GLfloat[9];
-            buffer[0] = -1.0f;
-            buffer[1] = -1.0f;
-            buffer[2] = 0.0f;
-            buffer[3] =  1.0f;
-            buffer[4] = -1.0f;
-            buffer[5] = 0.0f;
-            buffer[6] = 0.0f;
-            buffer[7] = 1.0f;
-            buffer[8] = 0.0f;
-            bindBuffer();
+           
         }
+        int getVertexCount();
+        void init();
 };
 
 #endif /* defined(__Voxelengine__VoxelScene__) */

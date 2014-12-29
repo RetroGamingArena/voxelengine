@@ -19,6 +19,9 @@
 		64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */; };
 		64E85D771A5168C80042EE5A /* fragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E85D751A5168B00042EE5A /* fragmentShader.glsl */; };
 		64E85D781A5168C80042EE5A /* vertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E85D761A5168B00042EE5A /* vertexShader.glsl */; };
+		64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D791A516C790042EE5A /* Chunk.cpp */; };
+		64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7C1A516EAA0042EE5A /* Cube.cpp */; };
+		64E85D811A518B130042EE5A /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7F1A518B130042EE5A /* Buffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +58,12 @@
 		64E85D701A50D8C50042EE5A /* ShaderLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShaderLoader.h; path = openGL/ShaderLoader.h; sourceTree = "<group>"; };
 		64E85D751A5168B00042EE5A /* fragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = fragmentShader.glsl; path = ../shaders/fragmentShader.glsl; sourceTree = "<group>"; };
 		64E85D761A5168B00042EE5A /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = vertexShader.glsl; path = ../shaders/vertexShader.glsl; sourceTree = "<group>"; };
+		64E85D791A516C790042EE5A /* Chunk.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Chunk.cpp; path = world/Chunk.cpp; sourceTree = "<group>"; };
+		64E85D7A1A516C790042EE5A /* Chunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chunk.h; path = world/Chunk.h; sourceTree = "<group>"; };
+		64E85D7C1A516EAA0042EE5A /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = world/Cube.cpp; sourceTree = "<group>"; };
+		64E85D7D1A516EAA0042EE5A /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = world/Cube.h; sourceTree = "<group>"; };
+		64E85D7F1A518B130042EE5A /* Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Buffer.cpp; path = openGL/Buffer.cpp; sourceTree = "<group>"; };
+		64E85D801A518B130042EE5A /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Buffer.h; path = openGL/Buffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +140,10 @@
 			children = (
 				64E85D611A4F79710042EE5A /* World.cpp */,
 				64E85D621A4F79710042EE5A /* World.h */,
+				64E85D791A516C790042EE5A /* Chunk.cpp */,
+				64E85D7A1A516C790042EE5A /* Chunk.h */,
+				64E85D7C1A516EAA0042EE5A /* Cube.cpp */,
+				64E85D7D1A516EAA0042EE5A /* Cube.h */,
 			);
 			name = world;
 			sourceTree = "<group>";
@@ -140,6 +153,8 @@
 			children = (
 				64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */,
 				64E85D701A50D8C50042EE5A /* ShaderLoader.h */,
+				64E85D7F1A518B130042EE5A /* Buffer.cpp */,
+				64E85D801A518B130042EE5A /* Buffer.h */,
 			);
 			name = openGL;
 			sourceTree = "<group>";
@@ -209,9 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
+				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
+				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
 				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,

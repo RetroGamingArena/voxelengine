@@ -22,7 +22,8 @@ class VBOScene : public Scene
         GLuint VertexArrayID;
         GLuint programID;
         GLuint vertexbuffer;
-        GLfloat* buffer;
+        GLfloat* vertexBuffer;
+        GLfloat* colorBuffer;
 
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
@@ -37,6 +38,8 @@ class VBOScene : public Scene
         }
         void bindBuffer();
         void render();
+        void init();
+        virtual int getVertexCount() = 0;
 };
 
 #endif /* defined(__Voxelengine__VBOScene__) */

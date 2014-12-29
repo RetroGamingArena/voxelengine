@@ -32,6 +32,7 @@ Engine::Engine()
         exit(EXIT_FAILURE);
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     scene = new VoxelScene(window);
+    scene->init();
 }
 
 Engine* Engine::getInstance()
