@@ -13,5 +13,7 @@ float PerlinGenerator::getY(float x, float y)
 {
     int absBound = (destSize/Chunk::size)/2;
     float height = heightMap.GetValue(x+absBound*Chunk::size, y+absBound*Chunk::size);
+    if(height < -1)
+        height = -1;
     return (height+1)*16;
 }
