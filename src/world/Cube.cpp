@@ -21,50 +21,11 @@ void Cube::bufferize(VBOScene* scene, float x, float y, float z)
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z);
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size);
     
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
-    bufferizeSquareColor(scene, 0.1, 1.0,  0.3);
+    for(int i = 0; i<36; i++)
+        bufferizeSquareColor(scene, 0.0, 0.5,  0.0);
 }
 
-void Cube::bufferizeSquareColor(VBOScene* scene, int r, int g, int b)
+void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
 {
     int cursor = scene->getColorBuffer()->getCursor();
     
@@ -76,7 +37,7 @@ void Cube::bufferizeSquareColor(VBOScene* scene, int r, int g, int b)
     scene->getColorBuffer()->setCursor(cursor);
 }
 
-void Cube::bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int y2, int z2)
+void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2)
 {
     int cursor = scene->getVertexbuffer()->getCursor();
     

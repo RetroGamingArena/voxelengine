@@ -96,5 +96,5 @@ glm::vec3 TrackBallCamera::getUp()
                                 cos(_angleZ - 3.14f/2.0f)
                                 );
     
-    return glm::cross( right, direction );
+    return glm::vec3(0,1,0);//glm::cross( right, direction );
 }

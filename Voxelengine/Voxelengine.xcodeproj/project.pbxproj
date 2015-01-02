@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60A1A5566D20006BF88 /* Camera.cpp */; };
 		6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */; };
+		6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F6111A56D1210006BF88 /* WorldGenerator.cpp */; };
+		6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F6141A56D17A0006BF88 /* PerlinGenerator.cpp */; };
+		6458F6181A56E5490006BF88 /* libnoise.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6458F6171A56E5490006BF88 /* libnoise.dylib */; };
+		6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F61A1A56E9130006BF88 /* noiseutils.cpp */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
 		64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */; };
@@ -47,6 +51,13 @@
 		6458F60B1A5566D20006BF88 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = camera/Camera.h; sourceTree = "<group>"; };
 		6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackBallCamera.cpp; path = camera/TrackBallCamera.cpp; sourceTree = "<group>"; };
 		6458F60E1A5567190006BF88 /* TrackBallCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackBallCamera.h; path = camera/TrackBallCamera.h; sourceTree = "<group>"; };
+		6458F6111A56D1210006BF88 /* WorldGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldGenerator.cpp; path = world/generator/WorldGenerator.cpp; sourceTree = "<group>"; };
+		6458F6121A56D1210006BF88 /* WorldGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldGenerator.h; path = world/generator/WorldGenerator.h; sourceTree = "<group>"; };
+		6458F6141A56D17A0006BF88 /* PerlinGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PerlinGenerator.cpp; path = world/generator/PerlinGenerator.cpp; sourceTree = "<group>"; };
+		6458F6151A56D17A0006BF88 /* PerlinGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PerlinGenerator.h; path = world/generator/PerlinGenerator.h; sourceTree = "<group>"; };
+		6458F6171A56E5490006BF88 /* libnoise.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnoise.dylib; path = ../../../../../usr/local/lib/libnoise.dylib; sourceTree = "<group>"; };
+		6458F6191A56E76E0006BF88 /* noiseutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = noiseutils.h; path = world/generator/noiseutils.h; sourceTree = "<group>"; };
+		6458F61A1A56E9130006BF88 /* noiseutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = noiseutils.cpp; path = world/generator/noiseutils.cpp; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
 		64E85D4E1A4F65FF0042EE5A /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
@@ -308,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6458F6181A56E5490006BF88 /* libnoise.dylib in Frameworks */,
 				64E85D551A4F701D0042EE5A /* OpenGL.framework in Frameworks */,
 				64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */,
 				64E85D6A1A50AA9E0042EE5A /* libGLEW.a in Frameworks */,
@@ -328,9 +340,23 @@
 			name = camera;
 			sourceTree = "<group>";
 		};
+		6458F6101A56D0450006BF88 /* generator */ = {
+			isa = PBXGroup;
+			children = (
+				6458F6111A56D1210006BF88 /* WorldGenerator.cpp */,
+				6458F6121A56D1210006BF88 /* WorldGenerator.h */,
+				6458F6141A56D17A0006BF88 /* PerlinGenerator.cpp */,
+				6458F6151A56D17A0006BF88 /* PerlinGenerator.h */,
+				6458F6191A56E76E0006BF88 /* noiseutils.h */,
+				6458F61A1A56E9130006BF88 /* noiseutils.cpp */,
+			);
+			name = generator;
+			sourceTree = "<group>";
+		};
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
+				6458F6171A56E5490006BF88 /* libnoise.dylib */,
 				64E85D691A50AA9E0042EE5A /* libGLEW.a */,
 				64E85D541A4F701D0042EE5A /* OpenGL.framework */,
 				64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */,
@@ -387,6 +413,7 @@
 		64E85D601A4F78630042EE5A /* world */ = {
 			isa = PBXGroup;
 			children = (
+				6458F6101A56D0450006BF88 /* generator */,
 				64E85D611A4F79710042EE5A /* World.cpp */,
 				64E85D621A4F79710042EE5A /* World.h */,
 				64E85D791A516C790042EE5A /* Chunk.cpp */,
@@ -756,7 +783,9 @@
 				64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
+				6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
+				6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
@@ -764,6 +793,7 @@
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
 				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,
+				6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

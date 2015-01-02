@@ -14,31 +14,35 @@
 
 #include "Cube.h"
 #include "../scene/VBOScene.h"
+#include "generator/WorldGenerator.h"
 
 using namespace std;
 
 class Chunk
 {
-    float x;
-    float y;
-    float z;
+    float p;
+    float q;
+    float r;
     
     vector<Cube*> cubes;
+    
+    static int size;
     
     public:
         Chunk()
         {
-            x=0;
-            y=0;
-            z=0;
+            p=0;
+            q=0;
+            r=0;
 
-            cubes.push_back(new Cube(0, 0, 0));
+            /*cubes.push_back(new Cube(0, 0, 0));
             cubes.push_back(new Cube(1, 0, 0));
             cubes.push_back(new Cube(0, 0, 1));
-            cubes.push_back(new Cube(0, 1, 0));
+            cubes.push_back(new Cube(0, 1, 0));*/
         }
         vector<Cube*> getCubes(){return cubes;}
-        void bufferize(VBOScene* scene);    
+        void bufferize(VBOScene* scene);
+        void generate(WorldGenerator* generator);
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

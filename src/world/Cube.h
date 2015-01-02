@@ -20,8 +20,8 @@ class Cube
     float y;
     float z;
 
-    static void bufferizeSquare(VBOScene* scene, int x1, int y1, int z1, int x2, int y2, int z2);
-    static void bufferizeSquareColor(VBOScene* scene, int r, int g, int b);
+    static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2);
+    static void bufferizeSquareColor(VBOScene* scene, float r, float g, float b);
     
     public:
         Cube(float x, float y, float z)

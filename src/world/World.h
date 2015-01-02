@@ -14,17 +14,26 @@
 
 #include "Chunk.h"
 #include "../scene/VBOScene.h"
+#include "generator/WorldGenerator.h"
+#include "generator/PerlinGenerator.h"
 
 using namespace std;
 
 class World
 {
     vector<Chunk*> chunks;
+    WorldGenerator* generator;
     
     public:
         World()
         {
-            chunks.push_back(new Chunk());
+            generator = new PerlinGenerator();
+            
+            Chunk* chunk = new Chunk();
+            chunk->generate(generator);
+            
+            chunks.push_back(chunk);
+            
         }
         vector<Chunk*> getChunks(){return chunks;}
         void bufferize(VBOScene* scene);
