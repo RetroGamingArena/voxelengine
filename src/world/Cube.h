@@ -14,9 +14,11 @@
 
 class Cube
 {
-    float x;
-    float y;
-    float z;
+    unsigned char x;
+    unsigned char y;
+    unsigned char z;
+    
+    unsigned char type;
 
     static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2);
     static void bufferizeSquareColor(VBOScene* scene, float r, float g, float b);
@@ -28,7 +30,10 @@ class Cube
             this->x = x;
             this->y = y;
             this->z = z;
-        }
+        };
+        unsigned char getY(){return y;};
+        unsigned char getType(){return type;};
+        void setType(unsigned char type){this->type = type;};
         void bufferize(VBOScene* scene, float x, float y, float z);
 };
 

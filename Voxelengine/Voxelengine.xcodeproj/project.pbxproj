@@ -13,6 +13,7 @@
 		6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F6141A56D17A0006BF88 /* PerlinGenerator.cpp */; };
 		6458F6181A56E5490006BF88 /* libnoise.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6458F6171A56E5490006BF88 /* libnoise.dylib */; };
 		6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F61A1A56E9130006BF88 /* noiseutils.cpp */; };
+		6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F61C1A5733000006BF88 /* CubeType.cpp */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
 		64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */; };
@@ -58,6 +59,8 @@
 		6458F6171A56E5490006BF88 /* libnoise.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnoise.dylib; path = ../../../../../usr/local/lib/libnoise.dylib; sourceTree = "<group>"; };
 		6458F6191A56E76E0006BF88 /* noiseutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = noiseutils.h; path = world/generator/noiseutils.h; sourceTree = "<group>"; };
 		6458F61A1A56E9130006BF88 /* noiseutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = noiseutils.cpp; path = world/generator/noiseutils.cpp; sourceTree = "<group>"; };
+		6458F61C1A5733000006BF88 /* CubeType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CubeType.cpp; path = world/CubeType.cpp; sourceTree = "<group>"; };
+		6458F61D1A5733000006BF88 /* CubeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CubeType.h; path = world/CubeType.h; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
 		64E85D4E1A4F65FF0042EE5A /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
@@ -420,6 +423,8 @@
 				64E85D7A1A516C790042EE5A /* Chunk.h */,
 				64E85D7C1A516EAA0042EE5A /* Cube.cpp */,
 				64E85D7D1A516EAA0042EE5A /* Cube.h */,
+				6458F61C1A5733000006BF88 /* CubeType.cpp */,
+				6458F61D1A5733000006BF88 /* CubeType.h */,
 			);
 			name = world;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */,
+				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,

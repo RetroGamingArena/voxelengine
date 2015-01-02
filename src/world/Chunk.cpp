@@ -31,6 +31,8 @@ void Chunk::generate(WorldGenerator* generator)
         for(int k = 0; k < size; k++)
             //for(int j = 0; j < generator->getY(pp+i, rr+k); j++)
             {
-                cubes.push_back(new Cube(i, generator->getY(pp+i, rr+k)/*j*/, k));
+                Cube* cube = new Cube(i, generator->getY(pp+i, rr+k)/*j*/, k);
+                cube->setType(1);
+                cubes.push_back(cube);
             }
 }

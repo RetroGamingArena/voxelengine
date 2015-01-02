@@ -8,6 +8,7 @@
 
 #include "Cube.h"
 #include "Chunk.h"
+#include "CubeType.h"
 
 float Cube::size = 1.0;
 
@@ -22,12 +23,11 @@ void Cube::bufferize(VBOScene* scene, float x, float y, float z)
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z);
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size);
     
+    glm::vec3 color = CubeType::getColor(this);
+    
     for(int i = 0; i<6; i++)
-    {
-        float color = this->y/(float)Chunk::size;
         for(int j = 0; j<6; j++)
-        bufferizeSquareColor(scene, 0, color,  0);
-    }
+            bufferizeSquareColor(scene, color.r, color.g,  color.b);
 }
 
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
