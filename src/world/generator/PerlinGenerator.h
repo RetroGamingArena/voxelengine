@@ -23,13 +23,27 @@ class PerlinGenerator : public WorldGenerator
     utils::NoiseMap heightMap;
     utils::NoiseMapBuilderPlane heightMapBuilder;
     
+    float lowerXBound;
+    float upperXBound;
+    float lowerYBound;
+    float upperYBound;
+    
+    int destSize;
+    
     public:
         PerlinGenerator()
         {
+            lowerXBound = 2.0;
+            upperXBound = 6.0;
+            lowerYBound = 1.0;
+            upperYBound = 5.0;
+            
+            destSize = 224;
+            
             heightMapBuilder.SetSourceModule (module);
             heightMapBuilder.SetDestNoiseMap (heightMap);
-            heightMapBuilder.SetDestSize (256, 256);
-            heightMapBuilder.SetBounds (2.0, 6.0, 1.0, 5.0);
+            heightMapBuilder.SetDestSize (destSize, destSize);
+            heightMapBuilder.SetBounds (lowerXBound, upperXBound, lowerYBound, upperYBound);
             heightMapBuilder.Build ();
         }
         float getY(float x, float y);

@@ -24,13 +24,19 @@ class World
     vector<Chunk*> chunks;
     WorldGenerator* generator;
     
+    float lowerPBound;
+    float upperPBound;
+    float lowerRBound;
+    float upperRBound;
+    
     public:
+        static int size;
         World()
         {
             generator = new PerlinGenerator();
             
-            for(int p=-1; p<=1; p++)
-                for(int r=-1; r<=1; r++)
+            for(int p=-size; p<=size; p++)
+                for(int r=-size; r<=size; r++)
                 {
                     Chunk* chunk = new Chunk(p,0,r);
                     chunk->generate(generator);

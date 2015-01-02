@@ -8,6 +8,8 @@
 
 #include "World.h"
 
+int World::size=1;
+
 void World::bufferize(VBOScene* scene)
 {
     for(int i=0; i < chunks.size() ; i++)

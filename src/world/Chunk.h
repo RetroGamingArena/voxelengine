@@ -25,10 +25,9 @@ class Chunk
     float r;
     
     vector<Cube*> cubes;
-    
-    static int size;
-    
+
     public:
+        static int size;
         Chunk(float p, float q, float r)
         {
             this->p=p;

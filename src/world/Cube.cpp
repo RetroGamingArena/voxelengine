@@ -7,6 +7,7 @@
 //
 
 #include "Cube.h"
+#include "Chunk.h"
 
 float Cube::size = 1.0;
 
@@ -23,10 +24,9 @@ void Cube::bufferize(VBOScene* scene, float x, float y, float z)
     
     for(int i = 0; i<6; i++)
     {
-        float color = rand()/(float)RAND_MAX;
-        color = color/2+0.5;
+        float color = this->y/(float)Chunk::size;
         for(int j = 0; j<6; j++)
-        bufferizeSquareColor(scene, 0.0, color,  0.0);
+        bufferizeSquareColor(scene, 0, color,  0);
     }
 }
 
