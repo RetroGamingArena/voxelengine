@@ -14,11 +14,10 @@
 void TrackBallCamera::onMouseMotion(double xpos, double ypos)
 {
     double dx = xpos-oldX;
-    double dy = xpos-oldY;
+    double dy = ypos-oldY;
     
     if (_hold) //si nous maintenons le bouton gauche enfoncé
     {
-        // TODO dXY
         _angleZ += dx*_motionSensivity; //mouvement sur X de la souris -> changement de la rotation horizontale
         _angleY += dy*_motionSensivity; //mouvement sur Y de la souris -> changement de la rotation verticale
         //pour éviter certains problèmes, on limite la rotation verticale à des angles entre -90° et 90°

@@ -10,5 +10,5 @@
 
 float PerlinGenerator::getY(float x, float y)
 {
-    return (heightMap.GetValue(x, y)+1)*2;
+    return (heightMap.GetValue(x, y)+1)*4;
 }

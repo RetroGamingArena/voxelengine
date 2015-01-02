@@ -29,11 +29,11 @@ class Chunk
     static int size;
     
     public:
-        Chunk()
+        Chunk(float p, float q, float r)
         {
-            p=0;
-            q=0;
-            r=0;
+            this->p=p;
+            this->q=q;
+            this->r=r;
 
             /*cubes.push_back(new Cube(0, 0, 0));
             cubes.push_back(new Cube(1, 0, 0));

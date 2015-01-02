@@ -29,10 +29,13 @@ class World
         {
             generator = new PerlinGenerator();
             
-            Chunk* chunk = new Chunk();
-            chunk->generate(generator);
-            
-            chunks.push_back(chunk);
+            for(int p=-1; p<=1; p++)
+                for(int r=-1; r<=1; r++)
+                {
+                    Chunk* chunk = new Chunk(p,0,r);
+                    chunk->generate(generator);
+                    chunks.push_back(chunk);
+                }
             
         }
         vector<Chunk*> getChunks(){return chunks;}

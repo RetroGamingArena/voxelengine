@@ -21,8 +21,13 @@ void Cube::bufferize(VBOScene* scene, float x, float y, float z)
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z);
     bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size);
     
-    for(int i = 0; i<36; i++)
-        bufferizeSquareColor(scene, 0.0, 0.5,  0.0);
+    for(int i = 0; i<6; i++)
+    {
+        float color = rand()/(float)RAND_MAX;
+        color = color/2+0.5;
+        for(int j = 0; j<6; j++)
+        bufferizeSquareColor(scene, 0.0, color,  0.0);
+    }
 }
 
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)

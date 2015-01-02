@@ -14,8 +14,6 @@
 
 class Cube
 {
-    static float size;
-    
     float x;
     float y;
     float z;
@@ -24,6 +22,7 @@ class Cube
     static void bufferizeSquareColor(VBOScene* scene, float r, float g, float b);
     
     public:
+        static float size;
         Cube(float x, float y, float z)
         {
             this->x = x;
