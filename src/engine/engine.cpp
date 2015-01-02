@@ -10,6 +10,7 @@
 
 #include "engine.h"
 #include "../scene/VoxelScene.h"
+#include "../camera/TrackBallCamera.h"
 
 Engine* Engine::instance = NULL;
 
@@ -26,7 +27,13 @@ Engine::Engine()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     GLFWmonitor *monitor = NULL;
     window = glfwCreateWindow(windowWidth, windowHeight, "Voxel Engine", monitor, NULL);
+    
     glfwMakeContextCurrent(window);
+    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetMouseButtonCallback(window, mouseButtonCallback);
+    glfwSetCursorPosCallback(window, cursorPositionCallback);
+    glfwSetScrollCallback(window, scrollCallback);
+    
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
         exit(EXIT_FAILURE);
@@ -34,6 +41,7 @@ Engine::Engine()
     glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+    //camera = new TrackBallCamera();
     scene = new VoxelScene(window);
     scene->init();
 }
@@ -45,6 +53,23 @@ Engine* Engine::getInstance()
     return instance;
 }
 
+void Engine::cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
+{
+    Engine* engine = getInstance();
+    engine->getScene()->getCamera()->onMouseMotion(xpos, ypos);
+}
+
+void Engine::mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+{
+    Engine* engine = getInstance();
+    engine->getScene()->getCamera()->onMouseButton(button, action);
+}
+void Engine::scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    Engine* engine = getInstance();
+    engine->getScene()->getCamera()->onMouseWheel(xoffset, yoffset);
+}
+
 int Engine::run()
 {
     //window open
@@ -54,10 +79,10 @@ int Engine::run()
         exit(EXIT_FAILURE);
     }
     
-    while (!glfwWindowShouldClose(window))
+    while (glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS && glfwWindowShouldClose(window) == 0 )
     {
+        scene->getCamera()->look();
         scene->render();
-
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

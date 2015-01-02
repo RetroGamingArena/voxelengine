@@ -14,6 +14,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Scene.h"
+#include "Camera.h"
 
 class Engine
 {
@@ -26,8 +27,13 @@ class Engine
     static Engine *instance;
     Engine();
 
+    static void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
+    static void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
+    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
+    
     public:
         static Engine* getInstance();
+        Scene* getScene(){return scene;}
         int run();
 };
 

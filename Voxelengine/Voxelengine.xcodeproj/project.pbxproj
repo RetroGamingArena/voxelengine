@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60A1A5566D20006BF88 /* Camera.cpp */; };
+		6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
 		64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */; };
@@ -41,6 +43,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6458F60A1A5566D20006BF88 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = camera/Camera.cpp; sourceTree = "<group>"; };
+		6458F60B1A5566D20006BF88 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = camera/Camera.h; sourceTree = "<group>"; };
+		6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackBallCamera.cpp; path = camera/TrackBallCamera.cpp; sourceTree = "<group>"; };
+		6458F60E1A5567190006BF88 /* TrackBallCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackBallCamera.h; path = camera/TrackBallCamera.h; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
 		64E85D4E1A4F65FF0042EE5A /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
@@ -311,6 +317,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6458F6091A5566630006BF88 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				6458F60A1A5566D20006BF88 /* Camera.cpp */,
+				6458F60B1A5566D20006BF88 /* Camera.h */,
+				6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */,
+				6458F60E1A5567190006BF88 /* TrackBallCamera.h */,
+			);
+			name = camera;
+			sourceTree = "<group>";
+		};
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +400,7 @@
 		64E85D6E1A50D6660042EE5A /* openGL */ = {
 			isa = PBXGroup;
 			children = (
+				6458F6091A5566630006BF88 /* camera */,
 				64E85D6F1A50D8C50042EE5A /* ShaderLoader.cpp */,
 				64E85D701A50D8C50042EE5A /* ShaderLoader.h */,
 				64E85D7F1A518B130042EE5A /* Buffer.cpp */,
@@ -733,8 +751,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
 				64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */,
+				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
