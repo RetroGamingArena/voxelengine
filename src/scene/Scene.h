@@ -23,6 +23,7 @@ class Scene
     Camera* camera;
     
     protected:
+        GLfloat* lightpos;//[] = {.5, 1., 1., 0.};
         GLFWwindow* window;
         GLuint matrixID;
     
@@ -31,9 +32,15 @@ class Scene
         {
             this->window = window;
             camera = new TrackBallCamera();
-            //MVP    = camera->getMVP();//projection * view * model;
+            
+            lightpos = new GLfloat[4];
+            lightpos[0] = 16;
+            lightpos[1] = 3;
+            lightpos[2] = 16;
+            lightpos[3] = 0.;
         }
         Camera* getCamera(){return camera;}
+        //GLfloat* getLightPos(){return lightpos;}
         virtual void render() = 0;
         virtual void init() = 0;
 };

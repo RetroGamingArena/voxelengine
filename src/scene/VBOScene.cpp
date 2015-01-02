@@ -16,6 +16,8 @@ void VBOScene::render()
     glUseProgram(programID);
 
     glUniformMatrix4fv(matrixID, 1, GL_FALSE, &getCamera()->getMVP()[0][0]);
+    glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
+    
     
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
