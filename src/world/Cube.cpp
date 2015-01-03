@@ -32,98 +32,104 @@ void Cube::bufferize(VBOScene* scene, float x, float y, float z)
 
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
 {
-    int cursor = scene->getColorBuffer()->getCursor();
+    //int cursor = scene->getColorBuffer()->getCursor();
     
-    scene->getColorBuffer()->getData()[cursor++] = r;
-    scene->getColorBuffer()->getData()[cursor++] = g;
-    scene->getColorBuffer()->getData()[cursor++] = b;
-    scene->getColorBuffer()->getData()[cursor++] = 0.5;
+    //std::vector<GLfloat>* data  = scene->getColorBuffer()->getData();
+    //data->resize(data->size()+4);
     
-    scene->getColorBuffer()->setCursor(cursor);
+    (*scene->getColorBuffer()->getData()).push_back(r);
+    (*scene->getColorBuffer()->getData()).push_back(g);
+    (*scene->getColorBuffer()->getData()).push_back(b);
+    (*scene->getColorBuffer()->getData()).push_back(0.5);
+    
+    //scene->getColorBuffer()->setCursor(cursor);
 }
 
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2)
 {
-    int cursor = scene->getVertexbuffer()->getCursor();
+    //int cursor = scene->getVertexbuffer()->getCursor();
     
+    //std::vector<GLfloat>* data  = scene->getVertexbuffer()->getData();
+    //data->resize(data->size()+12);
+
     if(x1==x2)
     {
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
     
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
     
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
     }
     else if(y1==y2)
     {
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
+       
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
-        
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z2;
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z2);
     }
     else if(z1==z2)
     {
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x1;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x1);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y1;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y1);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
         
-        scene->getVertexbuffer()->getData()[cursor++] = x2;
-        scene->getVertexbuffer()->getData()[cursor++] = y2;
-        scene->getVertexbuffer()->getData()[cursor++] = z1;
+        (*scene->getVertexbuffer()->getData()).push_back(x2);
+        (*scene->getVertexbuffer()->getData()).push_back(y2);
+        (*scene->getVertexbuffer()->getData()).push_back(z1);
     }
     
-    scene->getVertexbuffer()->setCursor(cursor);
+    //scene->getVertexbuffer()->setCursor(cursor);
 }

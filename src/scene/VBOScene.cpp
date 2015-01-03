@@ -51,11 +51,11 @@ void VBOScene::bindBuffer()
 {
     glGenBuffers(1, &vertexbufferID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getSize(), vertexBuffer->getData(), GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getData()->size(), &(*vertexBuffer->getData())[0], GL_STATIC_DRAW);
     
     glGenBuffers(1, &colorBufferID);
     glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*colorBuffer->getSize(), colorBuffer->getData(), GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*colorBuffer->getData()->size(), &(*colorBuffer->getData())[0], GL_STATIC_DRAW);
 }
 
 void VBOScene::init()

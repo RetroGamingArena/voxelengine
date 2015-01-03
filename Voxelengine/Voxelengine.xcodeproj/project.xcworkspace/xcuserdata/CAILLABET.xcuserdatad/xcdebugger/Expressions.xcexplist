@@ -3,16 +3,44 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CubeType::getColor(unsigned char, unsigned char):CubeType.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "y/(float)Chunk::size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
+      </ContextState>
+      <ContextState
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
+            <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
             <PersistentString
                value = "getVertexCount()">
             </PersistentString>
             <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float):Cube.cpp">
+         <PersistentStrings>
             <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
+               value = "scene-&gt;getVertexbuffer()-&gt;getVector()">
+            </PersistentString>
+            <PersistentString
+               value = "scene-&gt;getVertexbuffer()-&gt;getVector()[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

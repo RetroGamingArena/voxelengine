@@ -10,5 +10,5 @@
 
 void Buffer::init()
 {
-    data = new GLfloat[getSize()];
+    //data = new GLfloat[getSize()];
 }
