@@ -12,6 +12,22 @@
 
 float Cube::size = 1.0;
 
+int Cube::getIndex(int x, int y, int z)
+{
+    return x+z*Chunk::size+y*Chunk::size*Chunk::size;
+}
+
+glm::vec3 Cube::getCoords(int index)
+{
+    int SIZE_SIZE = Chunk::size*Chunk::size;
+    
+    glm::vec3 res;
+    res.x = (index % (SIZE_SIZE)) % Chunk::size;
+    res.y = (index / (SIZE_SIZE));
+    res.z = (index % (SIZE_SIZE)) / Chunk::size;
+    return res;
+}
+
 void Cube::bufferize(VBOScene* scene, float x, float y, float z)
 {
     bufferizeSquare(scene, this->x+x,      this->y+y, this->z+z, this->x+x,      this->y+y+size, this->z+z+size);

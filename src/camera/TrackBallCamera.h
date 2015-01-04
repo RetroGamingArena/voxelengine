@@ -40,7 +40,7 @@ class TrackBallCamera : public Camera
             _hold = false; //au départ on part du principe que le bouton n'est pas maintenu
             _angleY = 3.14/2;
             _angleZ = 3.14/2;
-            _distance = 10; //distance initiale de la caméra avec le centre de la scène
+            _distance = 20; //distance initiale de la caméra avec le centre de la scène
             _motionSensivity = 0.3;
             _scrollSensivity = 1;
             

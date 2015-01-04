@@ -42,6 +42,7 @@ class Chunk
         vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
+        bool isCubeVisible();
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

@@ -31,6 +31,8 @@ class Cube
             this->y = y;
             this->z = z;
         };
+        static glm::vec3 getCoords(int index);
+        static int getIndex(int x, int y, int z);
         unsigned char getY(){return y;};
         unsigned char getType(){return type;};
         void setType(unsigned char type){this->type = type;};
