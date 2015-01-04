@@ -10,7 +10,7 @@
 #define __Voxelengine__Chunk__
 
 #include <stdio.h>
-#include <vector>
+#include <map>
 
 #include "Cube.h"
 #include "../scene/VBOScene.h"
@@ -25,6 +25,7 @@ class Chunk
     float r;
     
     vector<Cube*> cubes;
+    map<int, Cube*> indexedCubes;
 
     public:
         static int size;
@@ -33,16 +34,11 @@ class Chunk
             this->p=p;
             this->q=q;
             this->r=r;
-
-            /*cubes.push_back(new Cube(0, 0, 0));
-            cubes.push_back(new Cube(1, 0, 0));
-            cubes.push_back(new Cube(0, 0, 1));
-            cubes.push_back(new Cube(0, 1, 0));*/
         }
         vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
-        bool isCubeVisible();
+        bool isCubeVisible(int index);
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

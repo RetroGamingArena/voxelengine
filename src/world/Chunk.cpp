@@ -18,7 +18,7 @@ void Chunk::bufferize(VBOScene* scene)
     
     for(int i=0; i < cubes.size() ; i++)
     {
-        if(cubes[i] != NULL && cubes[i]->getType() > 0)
+        if( cubes[i] != NULL && cubes[i]->getType() > 0)// && isCubeVisible(Cube::getIndex(cubes[i]->getX(), cubes[i]->getY(), cubes[i]->getZ() )))
             cubes[i]->bufferize(scene, pp, qq, rr);
     }
 }
@@ -51,9 +51,10 @@ void Chunk::generate(WorldGenerator* generator)
                     cube->setType(5); //rock
                 else
                     cube->setType(6); //snow
-                
-                //cubes[Cube::getIndex(i, j, k)] = cube;
                 cubes.push_back(cube);
+                //cubes[Cube::getIndex(i, j, k)] = cube;
+                //cubes.
+                indexedCubes.insert(std::pair<int, Cube*>(Cube::getIndex(i, j, k), cube));
             }
             /*for(int j = height; j < size; j++)
             {
@@ -64,7 +65,29 @@ void Chunk::generate(WorldGenerator* generator)
         }
 }
 
-bool Chunk::isCubeVisible()
+bool Chunk::isCubeVisible(int index)
 {
+    glm::vec3 coords = Cube::getCoords(index);
+    
+    int x = coords.x;
+    int y = coords.y;
+    int z = coords.z;
+    
+    if( x==0 || y==0 || z==0 || x==(size-1) || y==(size-1) || z==(size-1) )
+        return true;
+    
+    try
+    {
+        bool test = !(indexedCubes.at(Cube::getIndex(x-1, y,   z)) != 0 && indexedCubes.at(Cube::getIndex(x+1, y,   z)) != 0
+                      && indexedCubes.at(Cube::getIndex(x,   y-1, z)) != 0
+                      && indexedCubes.at(Cube::getIndex(x,   y+1, z)) != 0
+                      && indexedCubes.at(Cube::getIndex(x,   y,   z-1)) != 0
+                      && indexedCubes.at(Cube::getIndex(x,   y,   z+1)) != 0);
+        return test;
+    }
+    catch(out_of_range e)
+    {
+        return true;
+    }
     return true;
 }

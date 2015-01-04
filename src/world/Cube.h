@@ -33,7 +33,9 @@ class Cube
         };
         static glm::vec3 getCoords(int index);
         static int getIndex(int x, int y, int z);
+        unsigned char getX(){return x;};
         unsigned char getY(){return y;};
+        unsigned char getZ(){return z;};
         unsigned char getType(){return type;};
         void setType(unsigned char type){this->type = type;};
         void bufferize(VBOScene* scene, float x, float y, float z);
