@@ -38,7 +38,20 @@ void Chunk::generate(WorldGenerator* generator)
             for(int j = 0; j <= height; j++)
             {
                 Cube* cube = new Cube(i, j, k);
-                cube->setType(1);
+                
+                if(j<16)
+                    cube->setType(2); //dirt
+                else if(j<18)
+                    cube->setType(3); //sand
+                else if(j<20)
+                    cube->setType(1); //grass
+                else if(j<25)
+                    cube->setType(4); //dirt
+                else if(j<28)
+                    cube->setType(5); //rock
+                else
+                    cube->setType(6); //snow
+                
                 //cubes[Cube::getIndex(i, j, k)] = cube;
                 cubes.push_back(cube);
             }

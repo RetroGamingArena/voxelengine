@@ -19,6 +19,31 @@ glm::vec3 CubeType::getColor(Cube* cube)
             res.g = cube->getY()/(float)Chunk::size;
             res.b = 0;
             break;
+        case 2:
+            res.r = 0;
+            res.g = 0;
+            res.b = cube->getY()/(float)Chunk::size;
+            break;
+        case 3:
+            res.r = cube->getY()/(float)Chunk::size;
+            res.g = cube->getY()/(float)Chunk::size;
+            res.b = 0;
+            break;
+        case 4:
+            res.r = 1-cube->getY()/(float)Chunk::size;
+            res.g = 1-cube->getY()/(float)Chunk::size;
+            res.b = 0;
+            break;
+        case 5:
+            res.r = 1-cube->getY()/(float)Chunk::size;
+            res.g = 1-cube->getY()/(float)Chunk::size;
+            res.b = 1-cube->getY()/(float)Chunk::size;
+            break;
+        case 6:
+            res.r = 1;
+            res.g = 1;
+            res.b = 1;
+            break;
         default:
             break;
     }
