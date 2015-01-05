@@ -14,6 +14,15 @@
 		6458F6181A56E5490006BF88 /* libnoise.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6458F6171A56E5490006BF88 /* libnoise.dylib */; };
 		6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F61A1A56E9130006BF88 /* noiseutils.cpp */; };
 		6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F61C1A5733000006BF88 /* CubeType.cpp */; };
+		646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172331A59BE910008EBA0 /* GlobalBuffer.cpp */; };
+		646172391A5A8D760008EBA0 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172371A5A8D760008EBA0 /* UI.cpp */; };
+		6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6461723A1A5A8DC00008EBA0 /* DebugUI.cpp */; };
+		6461723F1A5AEFE20008EBA0 /* uiFragmentShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6461723D1A5AEFD90008EBA0 /* uiFragmentShader.glsl */; };
+		646172401A5AEFE20008EBA0 /* uiVertexShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6461723E1A5AEFD90008EBA0 /* uiVertexShader.glsl */; };
+		646172E81A5B29C50008EBA0 /* Control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172E61A5B29C50008EBA0 /* Control.cpp */; };
+		646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172E91A5B2A650008EBA0 /* Label.cpp */; };
+		646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172F01A5B458C0008EBA0 /* lodepng.cpp */; };
+		646172F41A5B45E30008EBA0 /* font.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 646172EE1A5B38B20008EBA0 /* font.png */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
 		64E85D531A4F6C6E0042EE5A /* libglfw3.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E85D521A4F6C6E0042EE5A /* libglfw3.3.0.dylib */; };
@@ -34,12 +43,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		646172F31A5B45CA0008EBA0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = textures;
+			dstSubfolderSpec = 1;
+			files = (
+				646172F41A5B45E30008EBA0 /* font.png in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64E85D3F1A4F65C30042EE5A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = shaders;
 			dstSubfolderSpec = 1;
 			files = (
+				6461723F1A5AEFE20008EBA0 /* uiFragmentShader.glsl in CopyFiles */,
+				646172401A5AEFE20008EBA0 /* uiVertexShader.glsl in CopyFiles */,
 				64E85D771A5168C80042EE5A /* fragmentShader.glsl in CopyFiles */,
 				64E85D781A5168C80042EE5A /* vertexShader.glsl in CopyFiles */,
 			);
@@ -61,6 +82,21 @@
 		6458F61A1A56E9130006BF88 /* noiseutils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = noiseutils.cpp; path = world/generator/noiseutils.cpp; sourceTree = "<group>"; };
 		6458F61C1A5733000006BF88 /* CubeType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CubeType.cpp; path = world/CubeType.cpp; sourceTree = "<group>"; };
 		6458F61D1A5733000006BF88 /* CubeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CubeType.h; path = world/CubeType.h; sourceTree = "<group>"; };
+		646172331A59BE910008EBA0 /* GlobalBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GlobalBuffer.cpp; path = openGL/GlobalBuffer.cpp; sourceTree = "<group>"; };
+		646172341A59BE910008EBA0 /* GlobalBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalBuffer.h; path = openGL/GlobalBuffer.h; sourceTree = "<group>"; };
+		646172371A5A8D760008EBA0 /* UI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UI.cpp; path = UI/UI.cpp; sourceTree = "<group>"; };
+		646172381A5A8D760008EBA0 /* UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UI.h; path = UI/UI.h; sourceTree = "<group>"; };
+		6461723A1A5A8DC00008EBA0 /* DebugUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DebugUI.cpp; path = UI/DebugUI.cpp; sourceTree = "<group>"; };
+		6461723B1A5A8DC00008EBA0 /* DebugUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugUI.h; path = UI/DebugUI.h; sourceTree = "<group>"; };
+		6461723D1A5AEFD90008EBA0 /* uiFragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = uiFragmentShader.glsl; path = ../shaders/uiFragmentShader.glsl; sourceTree = "<group>"; };
+		6461723E1A5AEFD90008EBA0 /* uiVertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; name = uiVertexShader.glsl; path = ../shaders/uiVertexShader.glsl; sourceTree = "<group>"; };
+		646172E61A5B29C50008EBA0 /* Control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Control.cpp; path = UI/control/Control.cpp; sourceTree = "<group>"; };
+		646172E71A5B29C50008EBA0 /* Control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Control.h; path = UI/control/Control.h; sourceTree = "<group>"; };
+		646172E91A5B2A650008EBA0 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Label.cpp; path = UI/control/Label.cpp; sourceTree = "<group>"; };
+		646172EA1A5B2A650008EBA0 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Label.h; path = UI/control/Label.h; sourceTree = "<group>"; };
+		646172EE1A5B38B20008EBA0 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
+		646172F01A5B458C0008EBA0 /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
+		646172F11A5B458C0008EBA0 /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
 		64E85D4E1A4F65FF0042EE5A /* engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engine.h; sourceTree = "<group>"; };
@@ -356,9 +392,51 @@
 			name = generator;
 			sourceTree = "<group>";
 		};
+		646172361A5A8CE60008EBA0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				646172E51A5B29450008EBA0 /* control */,
+				646172371A5A8D760008EBA0 /* UI.cpp */,
+				646172381A5A8D760008EBA0 /* UI.h */,
+				6461723A1A5A8DC00008EBA0 /* DebugUI.cpp */,
+				6461723B1A5A8DC00008EBA0 /* DebugUI.h */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		646172E51A5B29450008EBA0 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				646172E61A5B29C50008EBA0 /* Control.cpp */,
+				646172E71A5B29C50008EBA0 /* Control.h */,
+				646172E91A5B2A650008EBA0 /* Label.cpp */,
+				646172EA1A5B2A650008EBA0 /* Label.h */,
+			);
+			name = control;
+			sourceTree = "<group>";
+		};
+		646172ED1A5B38B20008EBA0 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				646172EE1A5B38B20008EBA0 /* font.png */,
+			);
+			name = textures;
+			path = ../textures;
+			sourceTree = "<group>";
+		};
+		646172EF1A5B458C0008EBA0 /* lodepng */ = {
+			isa = PBXGroup;
+			children = (
+				646172F01A5B458C0008EBA0 /* lodepng.cpp */,
+				646172F11A5B458C0008EBA0 /* lodepng.h */,
+			);
+			path = lodepng;
+			sourceTree = "<group>";
+		};
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
+				646172ED1A5B38B20008EBA0 /* textures */,
 				6458F6171A56E5490006BF88 /* libnoise.dylib */,
 				64E85D691A50AA9E0042EE5A /* libGLEW.a */,
 				64E85D541A4F701D0042EE5A /* OpenGL.framework */,
@@ -381,6 +459,7 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				646172361A5A8CE60008EBA0 /* UI */,
 				64E85D6E1A50D6660042EE5A /* openGL */,
 				64E85D601A4F78630042EE5A /* world */,
 				64E85D591A4F77B40042EE5A /* scene */,
@@ -441,6 +520,8 @@
 				64E85D831A51908D0042EE5A /* VertexBuffer.h */,
 				64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */,
 				64E85E6D1A51D1A80042EE5A /* ColorBuffer.h */,
+				646172331A59BE910008EBA0 /* GlobalBuffer.cpp */,
+				646172341A59BE910008EBA0 /* GlobalBuffer.h */,
 			);
 			name = openGL;
 			sourceTree = "<group>";
@@ -450,6 +531,8 @@
 			children = (
 				64E85D751A5168B00042EE5A /* fragmentShader.glsl */,
 				64E85D761A5168B00042EE5A /* vertexShader.glsl */,
+				6461723D1A5AEFD90008EBA0 /* uiFragmentShader.glsl */,
+				6461723E1A5AEFD90008EBA0 /* uiVertexShader.glsl */,
 			);
 			name = shaders;
 			sourceTree = "<group>";
@@ -457,6 +540,7 @@
 		64E85D851A51C4C50042EE5A /* depends */ = {
 			isa = PBXGroup;
 			children = (
+				646172EF1A5B458C0008EBA0 /* lodepng */,
 				64E85D861A51C4C50042EE5A /* glm */,
 			);
 			name = depends;
@@ -737,6 +821,7 @@
 				64E85D3D1A4F65C30042EE5A /* Sources */,
 				64E85D3E1A4F65C30042EE5A /* Frameworks */,
 				64E85D3F1A4F65C30042EE5A /* CopyFiles */,
+				646172F31A5B45CA0008EBA0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -784,14 +869,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
+				6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
 				64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
+				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
+				646172391A5A8D760008EBA0 /* UI.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */,
 				64E85D661A508DC00042EE5A /* VBOScene.cpp in Sources */,
 				6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
+				646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */,
 				64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */,
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
@@ -799,6 +888,8 @@
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
 				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,
+				646172E81A5B29C50008EBA0 /* Control.cpp in Sources */,
+				646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */,
 				6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
 			);

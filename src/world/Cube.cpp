@@ -30,46 +30,76 @@ glm::vec3 Cube::getCoords(int index)
 
 void Cube::bufferize(VBOScene* scene, float x, float y, float z)
 {
-    bufferizeSquare(scene, this->x+x,      this->y+y, this->z+z, this->x+x,      this->y+y+size, this->z+z+size);
-    bufferizeSquare(scene, this->x+x+size, this->y+y, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size);
-    
-    bufferizeSquare(scene, this->x+x, this->y+y,      this->z+z, this->x+x+size, this->y+y,      this->z+z+size);
-    bufferizeSquare(scene, this->x+x, this->y+y+size, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size);
-    
-    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z);
-    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size);
-    
     glm::vec3 color = CubeType::getColor(this);
     
-    for(int i = 0; i<6; i++)
+    bufferizeSquare(scene, this->x+x,      this->y+y, this->z+z, this->x+x,      this->y+y+size, this->z+z+size, color);
+    bufferizeSquare(scene, this->x+x+size, this->y+y, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size, color);
+    
+    bufferizeSquare(scene, this->x+x, this->y+y,      this->z+z, this->x+x+size, this->y+y,      this->z+z+size, color);
+    bufferizeSquare(scene, this->x+x, this->y+y+size, this->z+z, this->x+x+size, this->y+y+size, this->z+z+size, color);
+    
+    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z,      this->x+x+size, this->y+y+size, this->z+z,      color);
+    bufferizeSquare(scene, this->x+x, this->y+y, this->z+z+size, this->x+x+size, this->y+y+size, this->z+z+size, color);
+
+    /*for(int i = 0; i<6; i++)
         for(int j = 0; j<6; j++)
-            bufferizeSquareColor(scene, color.r, color.g,  color.b);
+            bufferizeSquareColor(scene, color.r, color.g,  color.b);*/
+}
+
+void Cube::bufferizeVertex(VBOScene* scene, float x, float y, float z, float r, float g, float b)
+{
+    (*scene->getBuffer()->getData()).push_back(x);
+    (*scene->getBuffer()->getData()).push_back(y);
+    (*scene->getBuffer()->getData()).push_back(z);
+    (*scene->getBuffer()->getData()).push_back(r);
+    (*scene->getBuffer()->getData()).push_back(g);
+    (*scene->getBuffer()->getData()).push_back(b);
 }
 
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
 {
-    //int cursor = scene->getColorBuffer()->getCursor();
-    
-    //std::vector<GLfloat>* data  = scene->getColorBuffer()->getData();
-    //data->resize(data->size()+4);
-    
-    (*scene->getColorBuffer()->getData()).push_back(r);
+    /*(*scene->getColorBuffer()->getData()).push_back(r);
     (*scene->getColorBuffer()->getData()).push_back(g);
     (*scene->getColorBuffer()->getData()).push_back(b);
-    (*scene->getColorBuffer()->getData()).push_back(0.5);
-    
-    //scene->getColorBuffer()->setCursor(cursor);
+    (*scene->getColorBuffer()->getData()).push_back(0.5);*/
+}
+
+void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color)
+{
+    if(x1==x2)
+    {
+        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y2, z2, color.r, color.g, color.b);
+    }
+    else if(y1==y2)
+    {
+        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y1, z2, color.r, color.g, color.b);
+    }
+    else if(z1==z2)
+    {
+        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeVertex(scene, x2, y2, z1, color.r, color.g, color.b);
+    }
 }
 
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2)
 {
-    //int cursor = scene->getVertexbuffer()->getCursor();
-    
-    //std::vector<GLfloat>* data  = scene->getVertexbuffer()->getData();
-    //data->resize(data->size()+12);
-
-    if(x1==x2)
+    /*if(x1==x2)
     {
+        
         (*scene->getVertexbuffer()->getData()).push_back(x1);
         (*scene->getVertexbuffer()->getData()).push_back(y1);
         (*scene->getVertexbuffer()->getData()).push_back(z1);
@@ -145,7 +175,5 @@ void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float 
         (*scene->getVertexbuffer()->getData()).push_back(x2);
         (*scene->getVertexbuffer()->getData()).push_back(y2);
         (*scene->getVertexbuffer()->getData()).push_back(z1);
-    }
-    
-    //scene->getVertexbuffer()->setCursor(cursor);
+    }*/
 }

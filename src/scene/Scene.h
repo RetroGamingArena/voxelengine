@@ -14,6 +14,8 @@
 #include <GLFW/glfw3.h>
 
 #include "../camera/Camera.h"
+#include "../UI/UI.h"
+#include "../UI/DebugUI.h"
 #include "../camera/TrackBallCamera.h"
 #include "../../depends/glm/glm.hpp"
 #include "../../depends/glm/gtc/matrix_transform.hpp"
@@ -26,6 +28,7 @@ class Scene
         GLfloat* lightpos;//[] = {.5, 1., 1., 0.};
         GLFWwindow* window;
         GLuint matrixID;
+        UI* ui;
     
     public:
         Scene(GLFWwindow* window)
@@ -38,6 +41,8 @@ class Scene
             lightpos[1] = 3;
             lightpos[2] = 16;
             lightpos[3] = 0.;
+            
+            ui = new DebugUI();
         }
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}

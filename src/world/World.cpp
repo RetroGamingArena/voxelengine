@@ -8,7 +8,7 @@
 
 #include "World.h"
 
-int World::size=1;
+int World::size=0;
 
 void World::bufferize(VBOScene* scene)
 {

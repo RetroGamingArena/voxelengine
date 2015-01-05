@@ -9,58 +9,45 @@
 #include "VBOScene.h"
 #include "../openGL/VertexBuffer.h"
 #include "../openGL/ColorBuffer.h"
+#include "../openGL/GlobalBuffer.h"
 
 void VBOScene::render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(programID);
 
+    //3D
     glUniformMatrix4fv(matrixID, 1, GL_FALSE, &getCamera()->getMVP()[0][0]);
+    
     glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
     
+    glBindBuffer(GL_ARRAY_BUFFER, bufferID);
     
     glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
-    glVertexAttribPointer(
-                          0,                  // attribut 0. Aucune raison particulière pour 0, mais cela doit correspondre au « layout » dans le shader
-                          3,                  // taille
-                          GL_FLOAT,           // type
-                          GL_FALSE,           // normalisé ?
-                          0,                  // nombre d'octets séparant deux sommets dans le tampon
-                          (void*)0            // décalage du tableau de tampon
-                          );
-    
     glEnableVertexAttribArray(1);
-    glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
-    glVertexAttribPointer(
-                          1,                  // attribut 0. Aucune raison particulière pour 0, mais cela doit correspondre au « layout » dans le shader
-                          4,                  // taille
-                          GL_FLOAT,           // type
-                          GL_FALSE,           // normalisé ?
-                          0,                  // nombre d'octets séparant deux sommets dans le tampon
-                          (void*)0            // décalage du tableau de tampon
-                          );
     
-    glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
+    glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 );
+    glVertexAttribPointer( 1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3));
+    
+    glDrawArrays(GL_TRIANGLES, 0, buffer->getData()->size());
     
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    
+    //2D
+    ui->render();
 }
 
 void VBOScene::bindBuffer()
 {
-    glGenBuffers(1, &vertexbufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*vertexBuffer->getData()->size(), &(*vertexBuffer->getData())[0], GL_STATIC_DRAW);
-    
-    glGenBuffers(1, &colorBufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, colorBufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*colorBuffer->getData()->size(), &(*colorBuffer->getData())[0], GL_STATIC_DRAW);
+    glGenBuffers(1, &bufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, bufferID);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 void VBOScene::init()
 {
-    VertexBuffer* _buffer = new VertexBuffer(getVertexCount());
-    this->vertexBuffer = _buffer;
-    this->colorBuffer = new ColorBuffer(getVertexCount());
+    this->buffer = new GlobalBuffer();
 }

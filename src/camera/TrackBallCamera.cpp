@@ -83,17 +83,5 @@ glm::vec3 TrackBallCamera::getCenter()
 
 glm::vec3 TrackBallCamera::getUp()
 {
-    glm::vec3 direction(
-                        cos(_angleY) * sin(_angleZ),
-                        sin(_angleY),
-                        cos(_angleY) * cos(_angleZ)
-                        );
-    
-    glm::vec3 right = glm::vec3(
-                                sin(_angleZ - 3.14f/2.0f),
-                                0,
-                                cos(_angleZ - 3.14f/2.0f)
-                                );
-    
-    return glm::vec3(0,1,0);//glm::cross( right, direction );
+    return glm::vec3(0,1,0);
 }

@@ -22,10 +22,9 @@ class VBOScene : public Scene
     protected:
         GLuint VertexArrayID;
         GLuint programID;
-        GLuint vertexbufferID;
-        GLuint colorBufferID;
-        Buffer* vertexBuffer;
-        Buffer* colorBuffer;
+    
+        GLuint bufferID;
+        Buffer* buffer;
 
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
@@ -37,8 +36,7 @@ class VBOScene : public Scene
             
             matrixID = glGetUniformLocation(programID, "MVP");
         }
-        Buffer* getVertexbuffer(){return vertexBuffer;}
-        Buffer* getColorBuffer(){return colorBuffer;}
+        Buffer* getBuffer(){return buffer;}
         void bindBuffer();
         void render();
         void init();

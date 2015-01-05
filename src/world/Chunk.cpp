@@ -18,7 +18,7 @@ void Chunk::bufferize(VBOScene* scene)
     
     for(int i=0; i < cubes.size() ; i++)
     {
-        if( cubes[i] != NULL && cubes[i]->getType() > 0)// && isCubeVisible(Cube::getIndex(cubes[i]->getX(), cubes[i]->getY(), cubes[i]->getZ() )))
+        if( cubes[i] != NULL && cubes[i]->getType() > 0 && isCubeVisible(Cube::getIndex(cubes[i]->getX(), cubes[i]->getY(), cubes[i]->getZ() )))
             cubes[i]->bufferize(scene, pp, qq, rr);
     }
 }
@@ -28,8 +28,6 @@ void Chunk::generate(WorldGenerator* generator)
     float pp = p * Chunk::size * Cube::size;
     float rr = r * Chunk::size * Cube::size;
 
-    //cubes.resize(size*size*size);
-    
     for(int i = 0; i < size; i++)
         for(int k = 0; k < size; k++)
         {
@@ -52,16 +50,8 @@ void Chunk::generate(WorldGenerator* generator)
                 else
                     cube->setType(6); //snow
                 cubes.push_back(cube);
-                //cubes[Cube::getIndex(i, j, k)] = cube;
-                //cubes.
                 indexedCubes.insert(std::pair<int, Cube*>(Cube::getIndex(i, j, k), cube));
             }
-            /*for(int j = height; j < size; j++)
-            {
-                Cube* cube = new Cube(i, j, k);
-                cube->setType(0);
-                cubes[Cube::getIndex(i, j, k)] = cube;
-            }*/
         }
 }
 
