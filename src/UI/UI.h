@@ -109,6 +109,7 @@ class UI
             glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
             glBindBuffer(GL_ARRAY_BUFFER, 0);
         }
+        std::vector<Control*> getControls(){return controls;};
         void printText(const char * text, int x, int y, int size);
 };
 

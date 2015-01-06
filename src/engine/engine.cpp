@@ -16,6 +16,7 @@ Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
+    nbFrames = 0;
     windowWidth = 1024;
     windowHeight = 768;
     if (!glfwInit())
@@ -83,6 +84,21 @@ int Engine::run()
     {
         scene->getCamera()->look();
         scene->render();
+        
+        //FPS
+        nbFrames++;
+        double currentTime = glfwGetTime();
+        if ( currentTime - lastTime >= (1.0 / 60) )
+        {
+            FPS = nbFrames;
+            Label* label = (Label*)scene->getUI()->getControls()[0];
+            char caption [25];
+            sprintf (caption, "Minequest - FPS:  %i t", nbFrames);
+            label->setCaption(caption);
+            nbFrames = 0;
+            lastTime += 1.0;
+        }
+        
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

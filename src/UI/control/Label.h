@@ -25,6 +25,12 @@ class Label : public Control
             strcpy(this->caption, caption);
         }
         char* getCaption(){return caption;};
+        void setCaption(const char* caption)
+        {
+            delete[] this->caption;
+            this->caption = new char[strlen(caption)];
+            strcpy(this->caption, caption);
+        }
         void render(/*UI* ui*/);
 };
 

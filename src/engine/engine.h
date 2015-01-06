@@ -25,6 +25,11 @@ class Engine
     Scene* scene;
     
     static Engine *instance;
+    
+    int nbFrames;
+    double lastTime;
+    double FPS;
+    
     Engine();
 
     static void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos);

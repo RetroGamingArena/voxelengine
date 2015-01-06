@@ -18,7 +18,7 @@ class DebugUI : public UI
     public:
         DebugUI() : UI()
         {
-            controls.push_back(new Label("Test", 20, 20));
+            controls.push_back(new Label("Minequest - FPS: ", 20, 20));
         }
 };
 

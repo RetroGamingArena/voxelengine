@@ -44,6 +44,7 @@ class Scene
             
             ui = new DebugUI();
         }
+        UI* getUI(){return ui;}
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}
         virtual void render() = 0;
