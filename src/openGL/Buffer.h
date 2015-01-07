@@ -14,10 +14,11 @@
 #include <stdio.h>
 #include <vector>
 
+template< typename T>
 class Buffer
 {
     protected:
-        std::vector<GLfloat>* data;
+        std::vector<T>* data;
         int vertexCount;
         int itemSize;
 
@@ -25,10 +26,9 @@ class Buffer
         Buffer(int vertexCount)
         {
             this->vertexCount = vertexCount;
-            data = new std::vector<GLfloat>();
+            data = new std::vector<T>();
         }
-        std::vector<GLfloat>* getData(){return data;};
-        void init();
+        std::vector<T>* getData(){return data;};
 };
 
 #endif /* defined(__Voxelengine__Buffer__) */

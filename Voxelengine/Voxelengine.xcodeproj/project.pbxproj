@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
 		6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60A1A5566D20006BF88 /* Camera.cpp */; };
 		6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */; };
 		6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F6111A56D1210006BF88 /* WorldGenerator.cpp */; };
@@ -38,8 +39,6 @@
 		64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D791A516C790042EE5A /* Chunk.cpp */; };
 		64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7C1A516EAA0042EE5A /* Cube.cpp */; };
 		64E85D811A518B130042EE5A /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7F1A518B130042EE5A /* Buffer.cpp */; };
-		64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D821A51908D0042EE5A /* VertexBuffer.cpp */; };
-		64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndiceBuffer.cpp; path = openGL/IndiceBuffer.cpp; sourceTree = "<group>"; };
+		642FC3C61A5C840E00DC8A94 /* IndiceBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndiceBuffer.h; path = openGL/IndiceBuffer.h; sourceTree = "<group>"; };
 		6458F60A1A5566D20006BF88 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = camera/Camera.cpp; sourceTree = "<group>"; };
 		6458F60B1A5566D20006BF88 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = camera/Camera.h; sourceTree = "<group>"; };
 		6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackBallCamera.cpp; path = camera/TrackBallCamera.cpp; sourceTree = "<group>"; };
@@ -122,8 +123,6 @@
 		64E85D7D1A516EAA0042EE5A /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cube.h; path = world/Cube.h; sourceTree = "<group>"; };
 		64E85D7F1A518B130042EE5A /* Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Buffer.cpp; path = openGL/Buffer.cpp; sourceTree = "<group>"; };
 		64E85D801A518B130042EE5A /* Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Buffer.h; path = openGL/Buffer.h; sourceTree = "<group>"; };
-		64E85D821A51908D0042EE5A /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBuffer.cpp; path = openGL/VertexBuffer.cpp; sourceTree = "<group>"; };
-		64E85D831A51908D0042EE5A /* VertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VertexBuffer.h; path = openGL/VertexBuffer.h; sourceTree = "<group>"; };
 		64E85D871A51C4C50042EE5A /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		64E85D891A51C4C50042EE5A /* _detail.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = _detail.hpp; sourceTree = "<group>"; };
 		64E85D8A1A51C4C50042EE5A /* _fixes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = _fixes.hpp; sourceTree = "<group>"; };
@@ -349,8 +348,6 @@
 		64E85E681A51C4C60042EE5A /* wrap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wrap.hpp; sourceTree = "<group>"; };
 		64E85E691A51C4C60042EE5A /* wrap.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		64E85E6B1A51C4C60042EE5A /* xstream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
-		64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColorBuffer.cpp; path = openGL/ColorBuffer.cpp; sourceTree = "<group>"; };
-		64E85E6D1A51D1A80042EE5A /* ColorBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorBuffer.h; path = openGL/ColorBuffer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,12 +513,10 @@
 				64E85D701A50D8C50042EE5A /* ShaderLoader.h */,
 				64E85D7F1A518B130042EE5A /* Buffer.cpp */,
 				64E85D801A518B130042EE5A /* Buffer.h */,
-				64E85D821A51908D0042EE5A /* VertexBuffer.cpp */,
-				64E85D831A51908D0042EE5A /* VertexBuffer.h */,
-				64E85E6C1A51D1A80042EE5A /* ColorBuffer.cpp */,
-				64E85E6D1A51D1A80042EE5A /* ColorBuffer.h */,
 				646172331A59BE910008EBA0 /* GlobalBuffer.cpp */,
 				646172341A59BE910008EBA0 /* GlobalBuffer.h */,
+				642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */,
+				642FC3C61A5C840E00DC8A94 /* IndiceBuffer.h */,
 			);
 			name = openGL;
 			sourceTree = "<group>";
@@ -871,7 +866,6 @@
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
 				6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
-				64E85E6E1A51D1A80042EE5A /* ColorBuffer.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
 				646172391A5A8D760008EBA0 /* UI.cpp in Sources */,
@@ -881,7 +875,7 @@
 				6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */,
-				64E85D841A51908D0042EE5A /* VertexBuffer.cpp in Sources */,
+				642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */,
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,

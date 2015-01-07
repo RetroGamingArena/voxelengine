@@ -13,13 +13,12 @@
 
 #include "Buffer.h"
 
-class GlobalBuffer : public Buffer
+class GlobalBuffer : public Buffer<GLfloat>
 {
     public:
         GlobalBuffer() : Buffer(vertexCount)
         {
             itemSize = 6;
-            init();
         }
 };
 

@@ -19,7 +19,10 @@ void Chunk::bufferize(VBOScene* scene)
     for(int i=0; i < cubes.size() ; i++)
     {
         if( cubes[i] != NULL && cubes[i]->getType() > 0 && isCubeVisible(Cube::getIndex(cubes[i]->getX(), cubes[i]->getY(), cubes[i]->getZ() )))
+        {
             cubes[i]->bufferize(scene, pp, qq, rr);
+            //break;
+        }
     }
 }
 

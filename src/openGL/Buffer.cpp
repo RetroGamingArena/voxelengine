@@ -7,8 +7,3 @@
 //
 
 #include "Buffer.h"
-
-void Buffer::init()
-{
-    //data = new GLfloat[getSize()];
-}

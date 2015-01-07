@@ -64,116 +64,62 @@ void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
     (*scene->getColorBuffer()->getData()).push_back(0.5);*/
 }
 
+void Cube::bufferizeIndice(VBOScene* scene, unsigned short indice)
+{
+    int size = scene->getIndices()->getData()->size()/6;
+    scene->getIndices()->getData()->push_back(size*4+indice);
+}
+
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color)
 {
     if(x1==x2)
     {
         bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 0);
         bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
-        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
-        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x1, y2, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 3);
     }
     else if(y1==y2)
     {
         bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 0);
         bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
-        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
-        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x2, y1, z2, color.r, color.g, color.b);
+        bufferizeIndice(scene, 3);
     }
     else if(z1==z2)
     {
         bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 0);
         bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
-        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
-        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 2);
+        //bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 1);
         bufferizeVertex(scene, x2, y2, z1, color.r, color.g, color.b);
+        bufferizeIndice(scene, 3);
     }
 }
 
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2)
 {
-    /*if(x1==x2)
-    {
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-    
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-    
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-    }
-    else if(y1==y2)
-    {
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-       
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z2);
-    }
-    else if(z1==z2)
-    {
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x1);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y1);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-        
-        (*scene->getVertexbuffer()->getData()).push_back(x2);
-        (*scene->getVertexbuffer()->getData()).push_back(y2);
-        (*scene->getVertexbuffer()->getData()).push_back(z1);
-    }*/
+
 }

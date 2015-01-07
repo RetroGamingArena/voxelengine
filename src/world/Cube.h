@@ -26,6 +26,8 @@ class Cube
     
     static void bufferizeVertex(VBOScene* scene, float x, float y, float z, float r, float g, float b);
     
+    static void bufferizeIndice(VBOScene* scene, unsigned short indice);
+    
     public:
         static float size;
         Cube(float x, float y, float z)

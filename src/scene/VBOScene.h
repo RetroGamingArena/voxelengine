@@ -15,7 +15,8 @@
 
 #include "Scene.h"
 #include "../openGL/ShaderLoader.h"
-#include "../openGL/Buffer.h"
+#include "../openGL/GlobalBuffer.h"
+#include "../openGL/IndiceBuffer.h"
 
 class VBOScene : public Scene
 {
@@ -24,7 +25,9 @@ class VBOScene : public Scene
         GLuint programID;
     
         GLuint bufferID;
-        Buffer* buffer;
+        GLuint elementbuffer;
+        GlobalBuffer* buffer;
+        IndiceBuffer* indices;
 
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
@@ -36,7 +39,8 @@ class VBOScene : public Scene
             
             matrixID = glGetUniformLocation(programID, "MVP");
         }
-        Buffer* getBuffer(){return buffer;}
+        GlobalBuffer* getBuffer(){return buffer;}
+        IndiceBuffer* getIndices(){return indices;}
         void bindBuffer();
         void render();
         void init();

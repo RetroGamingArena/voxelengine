@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Cube::bufferizeIndice(VBOScene*, unsigned int):Cube.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene-&gt;getIndices()-&gt;getData()-&gt;size()/6+indice">
+            </PersistentString>
+            <PersistentString
+               value = "size*4+indice">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+      </ContextState>
+      <ContextState
          contextName = "CubeType::getColor(unsigned char, unsigned char):CubeType.cpp">
          <PersistentStrings>
             <PersistentString
@@ -11,27 +25,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
-      </ContextState>
-      <ContextState
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
+               value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
                value = "getVertexCount()">
             </PersistentString>
             <PersistentString
-               value = "sizeof(GLfloat)*9">
+               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
       </ContextState>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
       <ContextState
          contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float):Cube.cpp">

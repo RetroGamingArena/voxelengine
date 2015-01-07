@@ -40,7 +40,7 @@ class UI
     GLuint programID;
     
     GLuint bufferID;
-    Buffer* buffer;
+    GlobalBuffer* buffer;
     
     GLuint fontID;
     

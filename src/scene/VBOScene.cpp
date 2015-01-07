@@ -7,9 +7,8 @@
 //
 
 #include "VBOScene.h"
-#include "../openGL/VertexBuffer.h"
-#include "../openGL/ColorBuffer.h"
 #include "../openGL/GlobalBuffer.h"
+#include "../openGL/IndiceBuffer.h"
 
 void VBOScene::render()
 {
@@ -29,7 +28,8 @@ void VBOScene::render()
     glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 );
     glVertexAttribPointer( 1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3));
     
-    glDrawArrays(GL_TRIANGLES, 0, buffer->getData()->size());
+    //glDrawArrays(GL_TRIANGLES, 0, buffer->getData()->size());
+    glDrawElements(GL_TRIANGLES, indices->getData()->size(), GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
     
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
@@ -45,9 +45,14 @@ void VBOScene::bindBuffer()
     glBindBuffer(GL_ARRAY_BUFFER, bufferID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+    
+    glGenBuffers(1, &elementbuffer);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
 }
 
 void VBOScene::init()
 {
     this->buffer = new GlobalBuffer();
+    this->indices = new IndiceBuffer();
 }
