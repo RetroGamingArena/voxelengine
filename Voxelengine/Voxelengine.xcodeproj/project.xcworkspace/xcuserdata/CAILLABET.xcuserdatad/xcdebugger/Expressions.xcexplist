@@ -3,17 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Cube::bufferizeIndice(VBOScene*, unsigned int):Cube.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "scene-&gt;getIndices()-&gt;getData()-&gt;size()/6+indice">
-            </PersistentString>
-            <PersistentString
-               value = "size*4+indice">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
       <ContextState
@@ -28,13 +17,13 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+            <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
                value = "getVertexCount()">
-            </PersistentString>
-            <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -45,6 +34,17 @@
          contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
       <ContextState
+         contextName = "Octree&lt;unsigned char&gt;::bufferize(VBOScene*, float, float, float):Octree.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "this-&gt;entries[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OctreeEntry&lt;unsigned char&gt;::getEntries():OctreeEntry.h">
+      </ContextState>
+      <ContextState
          contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float):Cube.cpp">
          <PersistentStrings>
             <PersistentString
@@ -52,6 +52,25 @@
             </PersistentString>
             <PersistentString
                value = "scene-&gt;getVertexbuffer()-&gt;getVector()[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int):OctreeEntry.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "i * (size / 2)">
+            </PersistentString>
+            <PersistentString
+               value = "(i+1) * (size / 2)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int, unsigned char):OctreeEntry.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "x+y*2+z*4">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

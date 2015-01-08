@@ -16,6 +16,9 @@
 #include "../scene/VBOScene.h"
 #include "generator/WorldGenerator.h"
 
+#include "../octree/Octree.h"
+#include "../octree/Octree.cpp"
+
 using namespace std;
 
 class Chunk
@@ -26,6 +29,7 @@ class Chunk
     
     vector<Cube*> cubes;
     map<int, Cube*> indexedCubes;
+    Octree<unsigned char>* o;
 
     public:
         static int size;
@@ -34,6 +38,9 @@ class Chunk
             this->p=p;
             this->q=q;
             this->r=r;
+            
+            this->o = new Octree<unsigned char>();
+            o->setSize(Chunk::size);
         }
         vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);

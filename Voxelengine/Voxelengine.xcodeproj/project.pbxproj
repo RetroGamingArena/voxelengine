@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
+		642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */; };
+		642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */; };
 		6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60A1A5566D20006BF88 /* Camera.cpp */; };
 		6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */; };
 		6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6458F6111A56D1210006BF88 /* WorldGenerator.cpp */; };
@@ -70,6 +72,10 @@
 /* Begin PBXFileReference section */
 		642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndiceBuffer.cpp; path = openGL/IndiceBuffer.cpp; sourceTree = "<group>"; };
 		642FC3C61A5C840E00DC8A94 /* IndiceBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndiceBuffer.h; path = openGL/IndiceBuffer.h; sourceTree = "<group>"; };
+		642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Octree.cpp; path = octree/Octree.cpp; sourceTree = "<group>"; };
+		642FC3CA1A5DAC7D00DC8A94 /* Octree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Octree.h; path = octree/Octree.h; sourceTree = "<group>"; };
+		642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OctreeEntry.cpp; path = octree/OctreeEntry.cpp; sourceTree = "<group>"; };
+		642FC3CD1A5DCF9900DC8A94 /* OctreeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OctreeEntry.h; path = octree/OctreeEntry.h; sourceTree = "<group>"; };
 		6458F60A1A5566D20006BF88 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = camera/Camera.cpp; sourceTree = "<group>"; };
 		6458F60B1A5566D20006BF88 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = camera/Camera.h; sourceTree = "<group>"; };
 		6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackBallCamera.cpp; path = camera/TrackBallCamera.cpp; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 		64E85E681A51C4C60042EE5A /* wrap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wrap.hpp; sourceTree = "<group>"; };
 		64E85E691A51C4C60042EE5A /* wrap.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		64E85E6B1A51C4C60042EE5A /* xstream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
+		64F6EBD81A5F1DCD00039686 /* TemplateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateDebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +372,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642FC3C81A5DAC6100DC8A94 /* octree */ = {
+			isa = PBXGroup;
+			children = (
+				642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */,
+				642FC3CA1A5DAC7D00DC8A94 /* Octree.h */,
+				642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */,
+				642FC3CD1A5DCF9900DC8A94 /* OctreeEntry.h */,
+			);
+			name = octree;
+			sourceTree = "<group>";
+		};
 		6458F6091A5566630006BF88 /* camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,12 +474,14 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				642FC3C81A5DAC6100DC8A94 /* octree */,
 				646172361A5A8CE60008EBA0 /* UI */,
 				64E85D6E1A50D6660042EE5A /* openGL */,
 				64E85D601A4F78630042EE5A /* world */,
 				64E85D591A4F77B40042EE5A /* scene */,
 				64E85D4C1A4F65FF0042EE5A /* engine */,
 				64E85D4F1A4F65FF0042EE5A /* main.cpp */,
+				64F6EBD81A5F1DCD00039686 /* TemplateDebug.h */,
 			);
 			name = src;
 			path = ../src;
@@ -863,11 +883,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */,
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
 				6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
+				642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */,
 				646172391A5A8D760008EBA0 /* UI.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */,

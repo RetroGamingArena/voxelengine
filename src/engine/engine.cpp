@@ -39,7 +39,7 @@ Engine::Engine()
     if (glewInit() != GLEW_OK)
         exit(EXIT_FAILURE);
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    glClearColor(0.0f, 0.5f, 1.0f, 0.0f);
+    glClearColor(0.5f, 0.9f, 1.0f, 0.0f);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
     //camera = new TrackBallCamera();
