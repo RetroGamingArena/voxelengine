@@ -43,7 +43,6 @@ void OctreeEntry<T>::setCube(int x, int y, int z, int size, unsigned char type)
 
     if(size==1)
     {
-        TemplateDebug::debug();
         this->entries[x+y*4+z*2]->leaf = type;
         return;
     }
@@ -69,5 +68,41 @@ void OctreeEntry<T>::setCube(int x, int y, int z, int size, unsigned char type)
                         this->get(i,j,k)->setCube(offset_x,offset_y,offset_z, size/2, type);
                 }
             }
+}
+
+template<typename T>
+T OctreeEntry<T>::getAbs(int x, int y, int z, int size)
+{
+    if(this->entries == NULL)
+        return 0;
     
+    if(size==1)
+    {
+        TemplateDebug::debug();
+        return this->entries[x+y*4+z*2]->leaf;
+    }
+    
+    for(int i = 0; i < 2; i++)
+    for(int j = 0; j < 2; j++)
+    for(int k = 0; k < 2; k++)
+    {
+        if(   (i * (size / 2) <= x && x < (i+1) * (size / 2))
+           && (j * (size / 2) <= y && y < (j+1) * (size / 2))
+           && (k * (size / 2) <= z && z < (k+1) * (size / 2))
+           )
+        {
+            int offset_x = x - i * (size/2);
+            int offset_y = y - j * (size/2);
+            int offset_z = z - k * (size/2);
+            
+            //offset_y == 4
+            
+            if(size==2)
+                return this->get(i,j,k)->getAbs(i,j,k, 1);
+            else
+                return this->get(i,j,k)->getAbs(offset_x,offset_y,offset_z, size/2);
+        }
+    }
+    return -1;
+    //return this->entries[x+y*4+z*2];
 }

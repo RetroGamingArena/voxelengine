@@ -30,6 +30,7 @@ class Octree : public OctreeEntry<T>
     void bufferize(VBOScene* scene, float x, float y, float z);
     void bufferize(VBOScene* scene, OctreeEntry<T>* OctreeEntry, float p, float q, float r, int size);
     void setSize(int size){this->size=size;};
+    bool isCubeVisible(int x, int y, int z);
 };
 
 #endif /* defined(__Voxelengine__Octree__) */

@@ -3,57 +3,27 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "CubeType::getColor(unsigned char, unsigned char):CubeType.cpp">
+         contextName = "OctreeEntry&lt;unsigned char&gt;::getAbs(int, int, int, int):OctreeEntry.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "y/(float)Chunk::size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "VBOScene::bindBuffer():VBOScene.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
+               value = "this-&gt;entries[3]">
             </PersistentString>
             <PersistentString
-               value = "sizeof(GLfloat)*9">
+               value = "this-&gt;entries">
             </PersistentString>
             <PersistentString
-               value = "getVertexCount()">
+               value = "x+y*4+z*2">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
-      </ContextState>
-      <ContextState
-         contextName = "Octree&lt;unsigned char&gt;::bufferize(VBOScene*, float, float, float):Octree.cpp">
-         <PersistentStrings>
             <PersistentString
                value = "this-&gt;entries[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "OctreeEntry&lt;unsigned char&gt;::getEntries():OctreeEntry.h">
+         contextName = "OctreeEntry&lt;unsigned char&gt;::getAbs(int, int, int):OctreeEntry.cpp">
       </ContextState>
       <ContextState
-         contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float):Cube.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "scene-&gt;getVertexbuffer()-&gt;getVector()">
-            </PersistentString>
-            <PersistentString
-               value = "scene-&gt;getVertexbuffer()-&gt;getVector()[0]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
       <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int):OctreeEntry.cpp">
@@ -67,12 +37,62 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+      </ContextState>
+      <ContextState
+         contextName = "Octree&lt;unsigned char&gt;::bufferize(VBOScene*, float, float, float):Octree.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "this-&gt;entries[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VBOScene::bindBuffer():VBOScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "getVertexCount()">
+            </PersistentString>
+            <PersistentString
+               value = "sizeof(GLfloat)*9">
+            </PersistentString>
+            <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float):Cube.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene-&gt;getVertexbuffer()-&gt;getVector()">
+            </PersistentString>
+            <PersistentString
+               value = "scene-&gt;getVertexbuffer()-&gt;getVector()[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CubeType::getColor(unsigned char, unsigned char):CubeType.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "y/(float)Chunk::size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "OctreeEntry&lt;unsigned char&gt;::getEntries():OctreeEntry.h">
+      </ContextState>
+      <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int, unsigned char):OctreeEntry.cpp">
          <PersistentStrings>
             <PersistentString
                value = "x+y*2+z*4">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

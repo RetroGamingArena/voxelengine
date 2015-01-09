@@ -60,7 +60,7 @@ void Chunk::generate(WorldGenerator* generator)
         }
 }
 
-bool Chunk::isCubeVisible(int index)
+/*bool Chunk::isCubeVisible(int index)
 {
     glm::vec3 coords = Cube::getCoords(index);
     
@@ -85,4 +85,4 @@ bool Chunk::isCubeVisible(int index)
         return true;
     }
     return true;
-}
+}*/

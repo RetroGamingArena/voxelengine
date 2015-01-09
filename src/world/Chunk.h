@@ -27,8 +27,8 @@ class Chunk
     float q;
     float r;
     
-    vector<Cube*> cubes;
-    map<int, Cube*> indexedCubes;
+    /*vector<Cube*> cubes;
+    map<int, Cube*> indexedCubes;*/
     Octree<unsigned char>* o;
 
     public:
@@ -42,10 +42,10 @@ class Chunk
             this->o = new Octree<unsigned char>();
             o->setSize(Chunk::size);
         }
-        vector<Cube*> getCubes(){return cubes;}
+        //vector<Cube*> getCubes(){return cubes;}
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
-        bool isCubeVisible(int index);
+        //bool isCubeVisible(int index);
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

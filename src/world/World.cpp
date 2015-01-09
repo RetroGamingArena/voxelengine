@@ -8,7 +8,7 @@
 
 #include "World.h"
 
-int World::size=1;
+int World::size=2;
 
 void World::bufferize(VBOScene* scene)
 {
@@ -23,7 +23,7 @@ int World::cubeCount()
     int res = 0;
     for(int i=0; i < chunks.size() ; i++)
     {
-        res += chunks[i]->getCubes().size();
+        //res += chunks[i]->getCubes().size();
     }
     return res;
 }
