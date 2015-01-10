@@ -42,7 +42,6 @@ class World
                     chunk->generate(generator);
                     chunks.push_back(chunk);
                 }
-            
         }
         vector<Chunk*> getChunks(){return chunks;}
         void bufferize(VBOScene* scene);

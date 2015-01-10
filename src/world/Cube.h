@@ -23,7 +23,7 @@ class Cube
     static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2);
     static void bufferizeSquareColor(VBOScene* scene, float r, float g, float b);
     
-    static void bufferizeVertex(VBOScene* scene, float x, float y, float z, float r, float g, float b);
+    static void bufferizeVertex(VBOScene* scene, float x, float y, float z, float r, float g, float b, float ao);
     
     static void bufferizeIndice(VBOScene* scene, unsigned short indice);
     
@@ -44,7 +44,7 @@ class Cube
         void setType(unsigned char type){this->type = type;};
         void bufferize(VBOScene* scene, float x, float y, float z);
     
-        static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color);
+        static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color, float* ao);
 };
 
 #endif /* defined(__Voxelengine__Cube__) */
