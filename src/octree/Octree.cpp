@@ -56,7 +56,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 int z = 0;
             
                 float* ao = new float[4];
-                ao[0] = 0;
+                /*ao[0] = 0;
                 ao[1] = 0;
                 ao[2] = 0;
                 ao[3] = 0;
@@ -67,16 +67,23 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 ao[2] = 0;
                 ao[3] = 0;
                 Cube::bufferizeSquare(scene, x+p,      y+q, z+r, x+p,      y+q+size, z+r+size, color, ao); //side
-                Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);
+                Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);*/
         
-                ao[0] = 0;
-                ao[1] = 0;
-                ao[2] = 0;
-                ao[3] = 0;
+                ao[0] = 0.5;
+                ao[1] = 0.5;
+                ao[2] = 0.5;
+                ao[3] = 0.5;
                 
                 //ao[0] = -0.5;
                 //ao[1] = -0.5;
                 Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, color, ao); //bottom
+                
+                Cube::bufferizeIndice(scene, 0);
+                Cube::bufferizeIndice(scene, 1);
+                Cube::bufferizeIndice(scene, 2);
+                Cube::bufferizeIndice(scene, 1);
+                Cube::bufferizeIndice(scene, 2);
+                Cube::bufferizeIndice(scene, 3);
                 
                 if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
                 {
@@ -100,14 +107,55 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                    //  ao[0] = -0.5; //first
                   //  ao[3] = 0.5; //last
                 }
+                
+                ao[0] = 0;
+                ao[1] = 0;
+                ao[2] = 0;
+                ao[3] = 0;
+                
                 Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, color, ao); //top
-    
-                ao[0] = 0.5;
+
+                Cube::bufferizeIndice(scene, 4);
+                Cube::bufferizeIndice(scene, 5);
+                Cube::bufferizeIndice(scene, 6);
+                Cube::bufferizeIndice(scene, 5);
+                Cube::bufferizeIndice(scene, 6);
+                Cube::bufferizeIndice(scene, 7);
+                
+                Cube::bufferizeIndice(scene, 0);
+                Cube::bufferizeIndice(scene, 1);
+                Cube::bufferizeIndice(scene, 4);
+                Cube::bufferizeIndice(scene, 1);
+                Cube::bufferizeIndice(scene, 4);
+                Cube::bufferizeIndice(scene, 5);
+                
+                Cube::bufferizeIndice(scene, 1);
+                Cube::bufferizeIndice(scene, 3);
+                Cube::bufferizeIndice(scene, 5);
+                Cube::bufferizeIndice(scene, 3);
+                Cube::bufferizeIndice(scene, 5);
+                Cube::bufferizeIndice(scene, 7);
+                
+                Cube::bufferizeIndice(scene, 3);
+                Cube::bufferizeIndice(scene, 2);
+                Cube::bufferizeIndice(scene, 7);
+                Cube::bufferizeIndice(scene, 2);
+                Cube::bufferizeIndice(scene, 7);
+                Cube::bufferizeIndice(scene, 6);
+                
+                Cube::bufferizeIndice(scene, 2);
+                Cube::bufferizeIndice(scene, 0);
+                Cube::bufferizeIndice(scene, 6);
+                Cube::bufferizeIndice(scene, 0);
+                Cube::bufferizeIndice(scene, 6);
+                Cube::bufferizeIndice(scene, 4);
+                
+                /*ao[0] = 0.5;
                 ao[1] = 0;
                 ao[2] = 0.5;
                 ao[3] = 0;
                 Cube::bufferizeSquare(scene, x+p, y+q, z+r,      x+p+size, y+q+size, z+r,      color, ao);
-                Cube::bufferizeSquare(scene, x+p, y+q, z+r+size, x+p+size, y+q+size, z+r+size, color, ao); //side
+                Cube::bufferizeSquare(scene, x+p, y+q, z+r+size, x+p+size, y+q+size, z+r+size, color, ao);*/ //side
             }
         }
     }
