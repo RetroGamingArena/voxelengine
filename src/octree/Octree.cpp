@@ -13,7 +13,6 @@
 template<typename T>
 void Octree<T>::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree offset
 {
-    
         for(int i = 0; i < 8; i++)
         {
             int x = (i%4)%2;
@@ -22,7 +21,6 @@ void Octree<T>::bufferize(VBOScene* scene, float p, float q, float r) //TODO oct
 
             bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size);
         }
-    
 }
 
 template<typename T>
@@ -76,7 +74,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 
                 //ao[0] = -0.5;
                 //ao[1] = -0.5;
-                Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, color, ao); //bottom
+                Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, octreeEntry->getLeaf(), ao); //bottom
                 
                 Cube::bufferizeIndice(scene, 0);
                 Cube::bufferizeIndice(scene, 1);
@@ -113,7 +111,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 ao[2] = 0;
                 ao[3] = 0;
                 
-                Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, color, ao); //top
+                Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, octreeEntry->getLeaf(), ao); //top
 
                 Cube::bufferizeIndice(scene, 4);
                 Cube::bufferizeIndice(scene, 5);
@@ -122,6 +120,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 Cube::bufferizeIndice(scene, 6);
                 Cube::bufferizeIndice(scene, 7);
                 
+
                 Cube::bufferizeIndice(scene, 0);
                 Cube::bufferizeIndice(scene, 1);
                 Cube::bufferizeIndice(scene, 4);

@@ -62,6 +62,22 @@ void Cube::bufferizeVertex(VBOScene* scene, float x, float y, float z, float r, 
     (*scene->getBuffer()->getData()).push_back(ao);
 }
 
+void Cube::bufferizeVertex(VBOScene* scene, float x, float y, float z, float type, float ao)
+{
+    /*r = 1.0;
+     g = 1.0;
+     b = 1.0;*/
+    
+    (*scene->getBuffer()->getData()).push_back(x);
+    (*scene->getBuffer()->getData()).push_back(y);
+    (*scene->getBuffer()->getData()).push_back(z);
+    (*scene->getBuffer()->getData()).push_back(type);
+    //(*scene->getBuffer()->getData()).push_back(g);
+    //(*scene->getBuffer()->getData()).push_back(b);
+    
+    (*scene->getBuffer()->getData()).push_back(ao);
+}
+
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)
 {
     /*(*scene->getColorBuffer()->getData()).push_back(r);
@@ -78,43 +94,48 @@ void Cube::bufferizeIndice(VBOScene* scene, unsigned short indice)
 
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color, float* ao)
 {
+    int a = 2;
+}
+
+void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao)
+{
     if(x1==x2)
     {
-        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b, ao[0]);
+        bufferizeVertex(scene, x1, y1, z1, type, ao[0]);
         //bufferizeIndice(scene, 0);
-        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b, ao[1]);
+        bufferizeVertex(scene, x1, y1, z2, type, ao[1]);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b, ao[2]);
+        bufferizeVertex(scene, x1, y2, z1, type, ao[2]);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x1, y2, z2, color.r, color.g, color.b, ao[3]);
+        bufferizeVertex(scene, x1, y2, z2, type, ao[3]);
         //bufferizeIndice(scene, 3);
     }
     else if(y1==y2)
     {
-        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b, ao[0]);
+        bufferizeVertex(scene, x1, y1, z1, type, ao[0]);
         //bufferizeIndice(scene, 0);
-        bufferizeVertex(scene, x1, y1, z2, color.r, color.g, color.b, ao[1]);
+        bufferizeVertex(scene, x1, y1, z2, type, ao[1]);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b, ao[2]);
+        bufferizeVertex(scene, x2, y1, z1, type, ao[2]);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x2, y1, z2, color.r, color.g, color.b, ao[3]);
+        bufferizeVertex(scene, x2, y1, z2, type, ao[3]);
         //bufferizeIndice(scene, 3);
     }
     else if(z1==z2)
     {
-        bufferizeVertex(scene, x1, y1, z1, color.r, color.g, color.b, ao[0]);
+        bufferizeVertex(scene, x1, y1, z1, type, ao[0]);
         //bufferizeIndice(scene, 0);
-        bufferizeVertex(scene, x1, y2, z1, color.r, color.g, color.b, ao[1]);
+        bufferizeVertex(scene, x1, y2, z1, type, ao[1]);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x2, y1, z1, color.r, color.g, color.b, ao[2]);
+        bufferizeVertex(scene, x2, y1, z1, type, ao[2]);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 2);
         //bufferizeIndice(scene, 1);
-        bufferizeVertex(scene, x2, y2, z1, color.r, color.g, color.b, ao[3]);
+        bufferizeVertex(scene, x2, y2, z1, type, ao[3]);
         //bufferizeIndice(scene, 3);
     }
 }
