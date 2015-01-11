@@ -58,14 +58,13 @@ int World::cubeCount()
     return res;
 }
 
-unsigned char World::getPointedCube(int x, int y, int z)
+OctreeEntry<unsigned char>* World::getPointedCube(int x, int y, int z)
 {
     for(int i=0; i < chunks.size() ; i++)
     {
         if( chunks[i]->contains(x, y, z) )
         {
-            unsigned char type = chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size);
-            return type;
+            return chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size);
         }
     }
     return 0;

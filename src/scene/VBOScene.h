@@ -32,8 +32,8 @@ class VBOScene : public Scene
     public:
         VBOScene(GLFWwindow* window) : Scene(window)
         {
-            glGenVertexArrays(1, &VertexArrayID);
-            glBindVertexArray(VertexArrayID);
+            //glGenVertexArrays(1, &VertexArrayID);
+            //glBindVertexArray(VertexArrayID);
 
             programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
             

@@ -71,7 +71,7 @@ void OctreeEntry<T>::setCube(int x, int y, int z, int size, unsigned char type)
 }
 
 template<typename T>
-T OctreeEntry<T>::getAbs(int x, int y, int z, int size)
+OctreeEntry<T>* OctreeEntry<T>::getAbs(int x, int y, int z, int size)
 {
     if(this->entries == NULL)
         return 0;
@@ -79,7 +79,7 @@ T OctreeEntry<T>::getAbs(int x, int y, int z, int size)
     if(size==1)
     {
         TemplateDebug::debug();
-        return this->entries[x+y*4+z*2]->leaf;
+        return this->entries[x+y*4+z*2];
     }
     
     for(int i = 0; i < 2; i++)
@@ -103,6 +103,5 @@ T OctreeEntry<T>::getAbs(int x, int y, int z, int size)
                 return this->get(i,j,k)->getAbs(offset_x,offset_y,offset_z, size/2);
         }
     }
-    return -1;
-    //return this->entries[x+y*4+z*2];
+    return 0;
 }

@@ -42,10 +42,25 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
         float yy = dy * i + mouse3D.y;
         float zz = dz * i + mouse3D.z;
         
-        unsigned char type = world->getPointedCube(xx, yy, zz);
+        OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
+        if(octreeEntry == NULL)
+            continue;
+        octreeEntry = world->getPointedCube(xx, yy, zz);
+        unsigned char type = octreeEntry->getLeaf();
         if(type > 0)
         {
+            octreeEntry->setLeaf(0);
+            
+            buffer->getData()->clear();
+            indices->getData()->clear();
+            
+            world->bufferize(this);
+            
+            glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
+            
             std::cout << "OK" << endl;
+            break;
         }
     }
     
