@@ -22,6 +22,7 @@ class Octree : public OctreeEntry<T>
     int size;
     
     public:
+    static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
     Octree() : OctreeEntry<T>()
     {
         depth = 5;

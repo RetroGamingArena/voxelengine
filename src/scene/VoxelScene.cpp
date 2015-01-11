@@ -28,11 +28,9 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
 {
     Scene::onMouseMotion(xpos, ypos);
     
-    glm::vec3 pos = glm::vec3(xpos, ypos, 0.0f);
-    glm::vec4 viewportdata = glm::vec4(0.0f, 0.0f, 1024.0f, 768.0f);
+    glm::vec3 mouse3D = camera->unproject(xpos, ypos);
     
     glm::vec3 position = camera->getPosition();
-    glm::vec3 mouse3D = glm::unProject(pos, camera->getView()*camera->getModel(), camera->getProjection(), viewportdata);
     
     float dx = (mouse3D.x - position.x) * 1000;
     float dy = (mouse3D.y - position.y) * 1000;

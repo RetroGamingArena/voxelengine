@@ -73,3 +73,11 @@ void Camera::computeMatricesFromInputs()
     // For the next frame, the "last time" will be "now"
     lastTime = currentTime;
 }
+
+glm::vec3 Camera::unproject(int x, int y)
+{
+    glm::vec3 pos = glm::vec3(x, y, 0.0f);
+    glm::vec4 viewportdata = glm::vec4(0.0f, 0.0f, 1024.0f, 768.0f);
+    
+    return glm::unProject(pos, view*model, projection, viewportdata);
+}

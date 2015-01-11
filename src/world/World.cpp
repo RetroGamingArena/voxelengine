@@ -12,6 +12,16 @@ int World::size=0;
 
 void World::bufferize(VBOScene* scene)
 {
+    /*for(int x = 0; x < 1024; x++)
+        for(int y = 0; y < 768; y++)
+        {
+            glm::vec3 mouse3D = scene->getCamera()->unproject(x, y);
+            unsigned char type = getPointedCube(mouse3D.x, mouse3D.y, mouse3D.z);
+            if (type > 0)
+            {
+                
+            }
+        }*/
     for(int i=0; i < chunks.size() ; i++)
     {
         chunks[i]->bufferize(scene);

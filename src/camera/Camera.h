@@ -61,6 +61,7 @@ class Camera
         glm::mat4 getProjection(){return projection;};
         glm::mat4 getModel(){return model;};
         glm::mat4 getView(){return view;};
+        glm::vec3 unproject(int x, int y);
 };
 
 #endif /* defined(__Voxelengine__Camera__) */
