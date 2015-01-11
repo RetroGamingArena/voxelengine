@@ -17,7 +17,6 @@
 class Camera
 {
     glm::mat4 projection;
-    glm::mat4 view;
     glm::mat4 model;
     glm::mat4 MVP;
     
@@ -30,6 +29,7 @@ class Camera
     float mouseSpeed = 0.005f;
     
     protected:
+        glm::mat4 view;
         double oldX;
         double oldY;
     

@@ -40,6 +40,9 @@ class PerlinGenerator : public WorldGenerator
             
             destSize = 224;
             
+            //int seed = rand()*100.0/RAND_MAX - (int)(rand()*100.0/RAND_MAX);
+            //module.SetSeed(seed);
+            
             heightMapBuilder.SetSourceModule (module);
             heightMapBuilder.SetDestNoiseMap (heightMap);
             heightMapBuilder.SetDestSize (destSize, destSize);

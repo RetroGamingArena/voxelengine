@@ -8,7 +8,7 @@
 
 #include "World.h"
 
-int World::size=2;
+int World::size=0;
 
 void World::bufferize(VBOScene* scene)
 {
@@ -26,4 +26,14 @@ int World::cubeCount()
         //res += chunks[i]->getCubes().size();
     }
     return res;
+}
+
+glm::vec3 World::getPointedCube()
+{
+    for(int i=0; i < chunks.size() ; i++)
+    {
+        //chunks[i]->
+    }
+    
+    return glm::vec3(0,0,0);
 }

@@ -22,9 +22,8 @@
 
 class Scene
 {
-    Camera* camera;
-    
     protected:
+        Camera* camera;
         GLfloat* lightpos;//[] = {.5, 1., 1., 0.};
         GLFWwindow* window;
         GLuint matrixID;
@@ -47,6 +46,7 @@ class Scene
         UI* getUI(){return ui;}
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}
+        void onMouseMotion(double xpos, double ypos);
         virtual void render() = 0;
         virtual void init() = 0;
 };

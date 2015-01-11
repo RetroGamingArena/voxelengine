@@ -7,3 +7,8 @@
 //
 
 #include "Scene.h"
+
+void Scene::onMouseMotion(double xpos, double ypos)
+{
+    camera->onMouseMotion(xpos, ypos);
+}

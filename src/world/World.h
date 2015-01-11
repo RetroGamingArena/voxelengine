@@ -44,8 +44,10 @@ class World
                 }
         }
         vector<Chunk*> getChunks(){return chunks;}
+    
         void bufferize(VBOScene* scene);
         int cubeCount();
+        glm::vec3 getPointedCube();
 };
 
 #endif /* defined(__Voxelengine__World__) */

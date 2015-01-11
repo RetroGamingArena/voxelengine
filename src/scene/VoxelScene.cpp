@@ -21,3 +21,8 @@ void VoxelScene::init()
     
     bindBuffer();
 }
+
+void VoxelScene::onMouseMotion(double xpos, double ypos)
+{
+    Scene::onMouseMotion(xpos, ypos);
+}

@@ -25,6 +25,7 @@ class VoxelScene : public VBOScene
         }
         int getVertexCount();
         void init();
+        void onMouseMotion(double xpos, double ypos);
 };
 
 #endif /* defined(__Voxelengine__VoxelScene__) */

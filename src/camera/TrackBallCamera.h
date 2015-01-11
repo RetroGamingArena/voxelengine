@@ -38,14 +38,20 @@ class TrackBallCamera : public Camera
         TrackBallCamera() : Camera()
         {
             _hold = false; //au départ on part du principe que le bouton n'est pas maintenu
-            _angleY = 3.14/2;
-            _angleZ = 3.14/2;
-            _distance = 20; //distance initiale de la caméra avec le centre de la scène
+            _angleY = 3.14/6;
+            _angleZ = 3.14/4;
+            _distance = 100; //distance initiale de la caméra avec le centre de la scène
             _motionSensivity = 0.3;
             _scrollSensivity = 1;
             
             oldX=0;
             oldY=0;
+            
+            view       = glm::lookAt(
+                                     getPosition(),           // Camera is here
+                                     getCenter(), // and looks here : at the same position, plus "direction"
+                                     getUp()                  // Head is up (set to 0,-1,0 to look upside-down)
+                                     );
         }
 };
 
