@@ -46,7 +46,7 @@ class Scene
         UI* getUI(){return ui;}
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}
-        void onMouseMotion(double xpos, double ypos);
+        virtual void onMouseMotion(double xpos, double ypos);
         virtual void render() = 0;
         virtual void init() = 0;
 };

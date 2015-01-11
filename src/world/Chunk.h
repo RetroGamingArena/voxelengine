@@ -42,10 +42,10 @@ class Chunk
             this->o = new Octree<unsigned char>();
             o->setSize(Chunk::size);
         }
-        //vector<Cube*> getCubes(){return cubes;}
+        Octree<unsigned char>* getOctree(){return o;};
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
-        //bool isCubeVisible(int index);
+        bool contains(int x, int y, int z);
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

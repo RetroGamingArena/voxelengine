@@ -57,6 +57,10 @@ class Camera
     
         void computeMatricesFromInputs();
         glm::mat4 getMVP();
+    
+        glm::mat4 getProjection(){return projection;};
+        glm::mat4 getModel(){return model;};
+        glm::mat4 getView(){return view;};
 };
 
 #endif /* defined(__Voxelengine__Camera__) */

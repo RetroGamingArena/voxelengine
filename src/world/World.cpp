@@ -28,12 +28,15 @@ int World::cubeCount()
     return res;
 }
 
-glm::vec3 World::getPointedCube()
+unsigned char World::getPointedCube(int x, int y, int z)
 {
     for(int i=0; i < chunks.size() ; i++)
     {
-        //chunks[i]->
+        if( chunks[i]->contains(x, y, z) )
+        {
+            unsigned char type = chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size);
+            return type;
+        }
     }
-    
-    return glm::vec3(0,0,0);
+    return 0;
 }

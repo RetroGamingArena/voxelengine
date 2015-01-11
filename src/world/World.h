@@ -47,7 +47,7 @@ class World
     
         void bufferize(VBOScene* scene);
         int cubeCount();
-        glm::vec3 getPointedCube();
+        unsigned char getPointedCube(int x, int y, int z);
 };
 
 #endif /* defined(__Voxelengine__World__) */

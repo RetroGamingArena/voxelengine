@@ -57,7 +57,7 @@ Engine* Engine::getInstance()
 void Engine::cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
 {
     Engine* engine = getInstance();
-    engine->getScene()->getCamera()->onMouseMotion(xpos, ypos);
+    engine->getScene()->onMouseMotion(xpos, ypos);
 }
 
 void Engine::mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
