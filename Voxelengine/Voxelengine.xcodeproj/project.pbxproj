@@ -26,6 +26,8 @@
 		646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172E91A5B2A650008EBA0 /* Label.cpp */; };
 		646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172F01A5B458C0008EBA0 /* lodepng.cpp */; };
 		646172F41A5B45E30008EBA0 /* font.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 646172EE1A5B38B20008EBA0 /* font.png */; };
+		647650621A6461920005B3AA /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650601A6461920005B3AA /* LoadingScene.cpp */; };
+		647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650631A64636C0005B3AA /* LoadingUI.cpp */; };
 		64E590C81A61AB1300F65FC8 /* Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E590C61A61AAFE00F65FC8 /* Info.plist */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
@@ -115,6 +117,10 @@
 		646172EE1A5B38B20008EBA0 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
 		646172F01A5B458C0008EBA0 /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
 		646172F11A5B458C0008EBA0 /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
+		647650601A6461920005B3AA /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingScene.cpp; path = scene/LoadingScene.cpp; sourceTree = "<group>"; };
+		647650611A6461920005B3AA /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = scene/LoadingScene.h; sourceTree = "<group>"; };
+		647650631A64636C0005B3AA /* LoadingUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingUI.cpp; path = UI/LoadingUI.cpp; sourceTree = "<group>"; };
+		647650641A64636C0005B3AA /* LoadingUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingUI.h; path = UI/LoadingUI.h; sourceTree = "<group>"; };
 		64E590C61A61AAFE00F65FC8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
@@ -427,6 +433,8 @@
 				646172381A5A8D760008EBA0 /* UI.h */,
 				6461723A1A5A8DC00008EBA0 /* DebugUI.cpp */,
 				6461723B1A5A8DC00008EBA0 /* DebugUI.h */,
+				647650631A64636C0005B3AA /* LoadingUI.cpp */,
+				647650641A64636C0005B3AA /* LoadingUI.h */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -518,6 +526,8 @@
 				64E85D5E1A4F785C0042EE5A /* VoxelScene.h */,
 				64E85D641A508DC00042EE5A /* VBOScene.cpp */,
 				64E85D651A508DC00042EE5A /* VBOScene.h */,
+				647650601A6461920005B3AA /* LoadingScene.cpp */,
+				647650611A6461920005B3AA /* LoadingScene.h */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -912,6 +922,7 @@
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */,
 				642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */,
+				647650621A6461920005B3AA /* LoadingScene.cpp in Sources */,
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
@@ -921,6 +932,7 @@
 				646172E81A5B29C50008EBA0 /* Control.cpp in Sources */,
 				646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */,
 				6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */,
+				647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,10 +26,11 @@ class Scene
         Camera* camera;
         GLfloat* lightpos;//[] = {.5, 1., 1., 0.};
         GLFWwindow* window;
-        GLuint matrixID;
+    
         UI* ui;
     
     public:
+        static GLuint matrixID;
         Scene(GLFWwindow* window)
         {
             this->window = window;
@@ -41,7 +42,7 @@ class Scene
             lightpos[2] = 16;
             lightpos[3] = 0.;
             
-            ui = new DebugUI();
+            //ui = new DebugUI();
         }
         UI* getUI(){return ui;}
         Camera* getCamera(){return camera;}

@@ -9,7 +9,7 @@
 #include "World.h"
 #include "Octree.h"
 
-int World::size=0;
+int World::size=2;
 
 void World::bufferize(VBOScene* scene)
 {
@@ -17,8 +17,8 @@ void World::bufferize(VBOScene* scene)
     
     glm::vec3 position = scene->getCamera()->getPosition();
     
-    for(int x = 0; x < 1024; x++)
-        for(int y = 0; y < 768; y++)
+    for(int x = 0; x < 1024; x=x+2)
+        for(int y = 0; y < 768; y=y+2)
         {
             
             glm::vec3 mouse3D = scene->getCamera()->unproject(x, y);
@@ -27,16 +27,20 @@ void World::bufferize(VBOScene* scene)
             float dy = (mouse3D.y - position.y) * 1000;
             float dz = (mouse3D.z - position.z) * 1000;
             
-            for(int i = 0; i < 70; i++)
+            for(int i = 0; i < 57; i++)
             {
                 float xx = dx * i + mouse3D.x;
                 float yy = dy * i + mouse3D.y;
                 float zz = dz * i + mouse3D.z;
                 
-                unsigned char type = getPointedCube(xx, yy, zz);
-                if(type > 0)
+                OctreeEntry<unsigned char>* octreeEntry = getPointedCube(xx, yy, zz);
+                if( octreeEntry == NULL)
+                    continue;
+                unsigned char type = octreeEntry->getLeaf();
+                if(type > 0 && !octreeEntry->isDrawn())
                 {
-                    Octree<unsigned char>::bufferizeEntry(scene, type, xx, yy, zz, ao);
+                    Octree<unsigned char>::bufferizeEntry(scene, type, (int)xx, (int)yy, (int)zz, ao);
+                    octreeEntry->setDrawn(true);
                     break;
                 }
             }

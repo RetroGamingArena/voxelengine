@@ -56,7 +56,7 @@ class UI
         std::vector<Control*> controls;
     
     public:
-        void render();
+        virtual void render();
         UI()
         {
             buffer = new GlobalBuffer();

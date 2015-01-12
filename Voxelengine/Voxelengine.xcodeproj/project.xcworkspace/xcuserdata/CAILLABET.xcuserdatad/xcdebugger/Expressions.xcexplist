@@ -9,6 +9,9 @@
          contextName = "OctreeEntry&lt;unsigned char&gt;::getAbs(int, int, int):OctreeEntry.cpp">
       </ContextState>
       <ContextState
+         contextName = "Chunk::contains(int, int, int):Chunk.cpp">
+      </ContextState>
+      <ContextState
          contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
       <ContextState
@@ -25,6 +28,9 @@
       <ContextState
          contextName = "VoxelScene::onMouseMotion(double, double):VoxelScene.cpp">
          <PersistentStrings>
+            <PersistentString
+               value = "(int)yy">
+            </PersistentString>
             <PersistentString
                value = " (start.x/mouse3D.x)">
             </PersistentString>

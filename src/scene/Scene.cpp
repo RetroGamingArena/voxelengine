@@ -8,6 +8,8 @@
 
 #include "Scene.h"
 
+GLuint Scene::matrixID = 0;
+
 void Scene::onMouseMotion(double xpos, double ypos)
 {
     camera->onMouseMotion(xpos, ypos);

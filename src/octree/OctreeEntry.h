@@ -17,6 +17,8 @@
 template<typename T>
 class OctreeEntry
 {
+    bool drawn;
+    
     protected:
         OctreeEntry<T>** entries;
         T leaf;
@@ -26,10 +28,13 @@ class OctreeEntry
         OctreeEntry()
         {
             entries = 0;
+            drawn = false;
         }
         void split();
         T getLeaf(){return leaf;};
         void setLeaf(T leaf){this->leaf=leaf;};
+        bool isDrawn(){return drawn;};
+        void setDrawn(bool drawn){this->drawn=drawn;};
         OctreeEntry<T>** getEntries(){return entries;};
         OctreeEntry<T>* get(int x, int y, int z);
         OctreeEntry<T>* getAbs(int x, int y, int z, int size);

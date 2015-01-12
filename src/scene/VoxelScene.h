@@ -16,16 +16,18 @@
 
 class VoxelScene : public VBOScene
 {
-    World* world;
+    //World* world;
     
     public:
         VoxelScene(GLFWwindow* window) : VBOScene(window)
         {
-            world = new World();
+            //world = new World();
+            ui = new DebugUI();
         }
-        int getVertexCount();
+        //int getVertexCount();
         void init();
         void onMouseMotion(double xpos, double ypos);
+        void render();
 };
 
 #endif /* defined(__Voxelengine__VoxelScene__) */

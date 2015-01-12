@@ -9,6 +9,7 @@
 #include <cstdlib>
 
 #include "engine.h"
+#include "../scene/LoadingScene.h"
 #include "../scene/VoxelScene.h"
 #include "../camera/TrackBallCamera.h"
 
@@ -39,11 +40,16 @@ Engine::Engine()
     if (glewInit() != GLEW_OK)
         exit(EXIT_FAILURE);
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    glClearColor(0.5f, 0.9f, 1.0f, 0.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
+    
+    VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
+    Scene::matrixID = glGetUniformLocation(VBOScene::programID, "MVP");
+
     //camera = new TrackBallCamera();
-    scene = new VoxelScene(window);
+    scene = new LoadingScene(window);
+    //scene = new VoxelScene(window);
     scene->init();
 }
 
@@ -93,8 +99,11 @@ int Engine::run()
             FPS = nbFrames;
             Label* label = (Label*)scene->getUI()->getControls()[0];
             char caption [25];
-            sprintf (caption, "Minequest - FPS:  %i t", nbFrames);
-            label->setCaption(caption);
+            if(dynamic_cast<DebugUI*>(scene->getUI()) != 0)
+            {
+                sprintf (caption, "Minequest - FPS:  %i t", nbFrames);
+                label->setCaption(caption);
+            }
             nbFrames = 0;
             lastTime += 1.0;
         }

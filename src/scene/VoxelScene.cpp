@@ -9,26 +9,29 @@
 #include <iostream>
 
 #include "VoxelScene.h"
+#include "../engine/engine.h"
 
-int VoxelScene::getVertexCount()
+/*int VoxelScene::getVertexCount()
 {
     return world->cubeCount()*6*6;
-}
+}*/
 
 void VoxelScene::init()
 {
     VBOScene::init();
     
-    world->bufferize(this);
+    Engine::getInstance()->getWorld()->bufferize(this);
     
     bindBuffer();
 }
 
 void VoxelScene::onMouseMotion(double xpos, double ypos)
 {
+    World* world =  Engine::getInstance()->getWorld();
+    
     Scene::onMouseMotion(xpos, ypos);
     
-    glm::vec3 mouse3D = camera->unproject(xpos, ypos);
+    glm::vec3 mouse3D = camera->unproject(xpos, 768-ypos);
     
     glm::vec3 position = camera->getPosition();
     
@@ -45,10 +48,11 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
         OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
         if(octreeEntry == NULL)
             continue;
-        octreeEntry = world->getPointedCube(xx, yy, zz);
         unsigned char type = octreeEntry->getLeaf();
         if(type > 0)
         {
+            //OctreeEntry<unsigned char>* test = world->getChunks()[0]->getOctree()->getAbs((int)xx, (int)yy, (int)zz, 32);
+            
             octreeEntry->setLeaf(0);
             
             buffer->getData()->clear();
@@ -59,7 +63,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
             glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
             glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
             
-            std::cout << "OK" << endl;
+            std::cout << ".";
             break;
         }
     }
@@ -67,4 +71,10 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
     //glm::vec3 mouse3D = world->getPointedCube(xpos, ypos);
     
     //std::cout << mouse3D.x << " " << mouse3D.y << " " << mouse3D.z << endl;
+}
+
+void VoxelScene::render()
+{
+    VBOScene::render();
+    glClearColor(0.5f, 0.9f, 1.0f, 0.0f);
 }

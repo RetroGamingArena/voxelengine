@@ -15,6 +15,7 @@
 
 #include "Scene.h"
 #include "Camera.h"
+#include "World.h"
 
 class Engine
 {
@@ -23,6 +24,7 @@ class Engine
     GLFWwindow* window;
     
     Scene* scene;
+    World* world;
     
     static Engine *instance;
     
@@ -38,7 +40,11 @@ class Engine
     
     public:
         static Engine* getInstance();
+        GLFWwindow* getWindow(){return window;}
         Scene* getScene(){return scene;}
+        World* getWorld(){return world;}
+        void setWorld(World* world){this->world=world;}
+        void setScene(Scene* scene){this->scene=scene;}
         int run();
 };
 

@@ -22,7 +22,7 @@ class VBOScene : public Scene
 {
     protected:
         GLuint VertexArrayID;
-        GLuint programID;
+    
     
         GLuint bufferID;
         GLuint elementbuffer;
@@ -30,21 +30,18 @@ class VBOScene : public Scene
         IndiceBuffer* indices;
 
     public:
+        static GLuint programID;
         VBOScene(GLFWwindow* window) : Scene(window)
         {
             //glGenVertexArrays(1, &VertexArrayID);
             //glBindVertexArray(VertexArrayID);
-
-            programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
-            
-            matrixID = glGetUniformLocation(programID, "MVP");
         }
         GlobalBuffer* getBuffer(){return buffer;}
         IndiceBuffer* getIndices(){return indices;}
         void bindBuffer();
         void render();
         void init();
-        virtual int getVertexCount() = 0;
+        //virtual int getVertexCount() = 0;
 };
 
 #endif /* defined(__Voxelengine__VBOScene__) */
