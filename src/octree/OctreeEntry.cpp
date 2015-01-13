@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 RGA. All rights reserved.
 //
 
+#include <iostream>
+
 #include "OctreeEntry.h"
 
 /*template<typename T>
@@ -104,4 +106,14 @@ OctreeEntry<T>* OctreeEntry<T>::getAbs(int x, int y, int z, int size)
         }
     }
     return 0;
+}
+
+template<typename T>
+void OctreeEntry<T>::invalidate()
+{
+    this->drawn = 0;
+    if( entries != NULL )
+        for(int i = 0 ; i < 8; i++)
+            if(entries[i] != NULL)
+                entries[i]->invalidate();
 }

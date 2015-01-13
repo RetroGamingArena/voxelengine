@@ -40,6 +40,7 @@ class OctreeEntry
         OctreeEntry<T>* getAbs(int x, int y, int z, int size);
         void setLevel(int level){this->level=level;};
         void setCube(int x, int y, int z, int size, unsigned char type);
+        void invalidate();
 };
 
 #endif /* defined(__Voxelengine__OctreeEntry__) */

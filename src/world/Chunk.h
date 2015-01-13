@@ -45,7 +45,7 @@ class Chunk
         Octree<unsigned char>* getOctree(){return o;};
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
-        bool contains(int x, int y, int z);
+        bool contains(float x, float y, float z);
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */

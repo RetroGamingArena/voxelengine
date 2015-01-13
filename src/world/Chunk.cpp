@@ -87,9 +87,14 @@ void Chunk::generate(WorldGenerator* generator)
     return true;
 }*/
 
-bool Chunk::contains(int x, int y, int z)
+bool Chunk::contains(float x, float y, float z)
 {
-    return ( this->p  <= x && x < (this->p + size) &&
-             this->q  <= y && y < (this->q + size) &&
-             this->r  <= z && z < (this->r + size) );
+    bool res = ( this->p  <= x && x < (this->p + size) &&
+                this->q  <= y && y < (this->q + size) &&
+                this->r  <= z && z < (this->r + size) );
+    if(res == true)
+    {
+        int a = 2;
+    }
+    return res;
 }

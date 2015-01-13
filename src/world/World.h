@@ -47,7 +47,7 @@ class World
     
         void bufferize(VBOScene* scene);
         int cubeCount();
-        OctreeEntry<unsigned char>* getPointedCube(int x, int y, int z);
+        OctreeEntry<unsigned char>* getPointedCube(float x, float y, float z);
 };
 
 #endif /* defined(__Voxelengine__World__) */
