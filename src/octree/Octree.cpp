@@ -169,24 +169,24 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 Cube::bufferizeIndice(scene, 2);
                 Cube::bufferizeIndice(scene, 3);*/
                 
-                if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
+                //if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
                 {
                   //   ao[0] = 0.5; //first
                   //  ao[3] = -0.5; //first
                 }
-                if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
+                //if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
                 {
                     //ao[0] = 0.5;
                     //ao[1] = 1; //right
                     //ao[2] = 0;
                     //ao[3] = 0.5;
                 }
-                if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
+                //if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
                 {
                    //  ao[2] = 0.5;
                    // ao[1] = -0.5; //left
                 }
-                if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
+                //if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
                 {
                    //  ao[0] = -0.5; //first
                   //  ao[3] = 0.5; //last

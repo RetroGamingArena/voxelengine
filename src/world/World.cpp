@@ -9,11 +9,11 @@
 #include "World.h"
 #include "Octree.h"
 
-int World::size=2;
+int World::size=0;
 
 void World::bufferize(VBOScene* scene)
 {
-    /*float* ao = new float[4];
+    float* ao = new float[4];
     
     glm::vec3 position = scene->getCamera()->getPosition();
     
@@ -25,11 +25,11 @@ void World::bufferize(VBOScene* scene)
     
             glm::vec3 mouse3D = scene->getCamera()->unproject(x, y);
             
-            float dx = (mouse3D.x - position.x);// * 1000;
-            float dy = (mouse3D.y - position.y);// * 1000;
-            float dz = (mouse3D.z - position.z);// * 1000;
+            float dx = (mouse3D.x - position.x) * 1000;
+            float dy = (mouse3D.y - position.y) * 1000;
+            float dz = (mouse3D.z - position.z) * 1000;
             
-            for(int i = 0; i < 80000; i=i+1000)
+            for(int i = 0; i < 80; i=i+1)
             {
                 float xx = dx * i + mouse3D.x;
                 float yy = dy * i + mouse3D.y;
@@ -48,12 +48,12 @@ void World::bufferize(VBOScene* scene)
                     break;
                 }
             }
-        }*/
+        }
     
-    for(int i=0; i < chunks.size() ; i++)
+    /*for(int i=0; i < chunks.size() ; i++)
     {
         chunks[i]->bufferize(scene);
-    }
+    }*/
 }
 
 int World::cubeCount()
