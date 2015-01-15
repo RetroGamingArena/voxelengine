@@ -17,6 +17,8 @@ Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
+    processor = new IterativeProcessor();
+    
     nbFrames = 0;
     windowWidth = 1024;
     windowHeight = 768;

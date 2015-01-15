@@ -17,6 +17,9 @@
 #include "Camera.h"
 #include "World.h"
 
+#include "../world/processor/WorldProcessor.h"
+#include "../world/processor/IterativeProcessor.h"
+
 class Engine
 {
     int windowWidth;
@@ -27,7 +30,8 @@ class Engine
     World* world;
     
     static Engine *instance;
-    
+    IterativeProcessor* processor;
+
     int nbFrames;
     double lastTime;
     double FPS;
@@ -39,6 +43,7 @@ class Engine
     static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
     
     public:
+        WorldProcessor* getProcessor(){return processor;}
         static Engine* getInstance();
         GLFWwindow* getWindow(){return window;}
         Scene* getScene(){return scene;}

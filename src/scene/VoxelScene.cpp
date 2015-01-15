@@ -17,7 +17,8 @@ void VoxelScene::init()
 {
     VBOScene::init();
     
-    Engine::getInstance()->getWorld()->bufferize(this);
+    Engine::getInstance()->getProcessor()->bufferize(this, Engine::getInstance()->getWorld());
+    //Engine::getInstance()->getWorld()->bufferize(this);
     
     bindBuffer();
 }
@@ -36,7 +37,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
     float dy = (mouse3D.y - position.y) * 1000;
     float dz = (mouse3D.z - position.z) * 1000;
     
-    if(thread == NULL)
+    /*if(thread == NULL)
     {
         buffer->getData()->clear();
         indices->getData()->clear();
@@ -50,7 +51,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
         mutex->unlock();
         thread = NULL;
-    }
+    }*/
     
     for(int i = 0; i < 80; i++)
     {
@@ -90,7 +91,8 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
 
 void VoxelScene::bufferize(VoxelScene* voxelScene)
 {
-    Engine::getInstance()->getWorld()->bufferize(voxelScene);
+    Engine::getInstance()->getProcessor()->bufferize(voxelScene, Engine::getInstance()->getWorld());
+    //Engine::getInstance()->getWorld()->bufferize(voxelScene);
     mutex->unlock();
 }
 

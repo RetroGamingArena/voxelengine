@@ -14,12 +14,9 @@
 #include <mutex>
 
 #include "VBOScene.h"
-#include "../world/World.h"
 
 class VoxelScene : public VBOScene
 {
-    //World* world;
-    
     std::thread* thread;
     static std::mutex* mutex;
     
@@ -29,7 +26,6 @@ class VoxelScene : public VBOScene
             ui = new DebugUI();
             thread = NULL;
         }
-        //int getVertexCount();
         void init();
         void onMouseMotion(double xpos, double ypos);
         void render();

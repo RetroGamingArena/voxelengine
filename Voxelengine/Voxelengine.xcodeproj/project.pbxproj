@@ -28,6 +28,10 @@
 		646172F41A5B45E30008EBA0 /* font.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 646172EE1A5B38B20008EBA0 /* font.png */; };
 		647650621A6461920005B3AA /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650601A6461920005B3AA /* LoadingScene.cpp */; };
 		647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650631A64636C0005B3AA /* LoadingUI.cpp */; };
+		648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635E61A6820EA002E09FB /* WorldProcessor.cpp */; };
+		648635EB1A682CA6002E09FB /* IterativeProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635E91A682CA6002E09FB /* IterativeProcessor.cpp */; };
+		648635EE1A6843AE002E09FB /* RayCasterProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635EC1A6843AE002E09FB /* RayCasterProcessor.cpp */; };
+		648635F11A68448A002E09FB /* GPUProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635EF1A68448A002E09FB /* GPUProcessor.cpp */; };
 		64E590C81A61AB1300F65FC8 /* Info.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64E590C61A61AAFE00F65FC8 /* Info.plist */; };
 		64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4D1A4F65FF0042EE5A /* engine.cpp */; };
 		64E85D511A4F65FF0042EE5A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D4F1A4F65FF0042EE5A /* main.cpp */; };
@@ -121,6 +125,14 @@
 		647650611A6461920005B3AA /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = scene/LoadingScene.h; sourceTree = "<group>"; };
 		647650631A64636C0005B3AA /* LoadingUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingUI.cpp; path = UI/LoadingUI.cpp; sourceTree = "<group>"; };
 		647650641A64636C0005B3AA /* LoadingUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingUI.h; path = UI/LoadingUI.h; sourceTree = "<group>"; };
+		648635E61A6820EA002E09FB /* WorldProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WorldProcessor.cpp; path = world/processor/WorldProcessor.cpp; sourceTree = "<group>"; };
+		648635E71A6820EA002E09FB /* WorldProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WorldProcessor.h; path = world/processor/WorldProcessor.h; sourceTree = "<group>"; };
+		648635E91A682CA6002E09FB /* IterativeProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IterativeProcessor.cpp; path = world/processor/IterativeProcessor.cpp; sourceTree = "<group>"; };
+		648635EA1A682CA6002E09FB /* IterativeProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IterativeProcessor.h; path = world/processor/IterativeProcessor.h; sourceTree = "<group>"; };
+		648635EC1A6843AE002E09FB /* RayCasterProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RayCasterProcessor.cpp; path = world/processor/RayCasterProcessor.cpp; sourceTree = "<group>"; };
+		648635ED1A6843AE002E09FB /* RayCasterProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RayCasterProcessor.h; path = world/processor/RayCasterProcessor.h; sourceTree = "<group>"; };
+		648635EF1A68448A002E09FB /* GPUProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GPUProcessor.cpp; path = world/processor/GPUProcessor.cpp; sourceTree = "<group>"; };
+		648635F01A68448A002E09FB /* GPUProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUProcessor.h; path = world/processor/GPUProcessor.h; sourceTree = "<group>"; };
 		64E590C61A61AAFE00F65FC8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64E85D411A4F65C30042EE5A /* Voxelengine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Voxelengine; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E85D4D1A4F65FF0042EE5A /* engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engine.cpp; sourceTree = "<group>"; };
@@ -468,6 +480,21 @@
 			path = lodepng;
 			sourceTree = "<group>";
 		};
+		648635E51A681E32002E09FB /* processor */ = {
+			isa = PBXGroup;
+			children = (
+				648635E61A6820EA002E09FB /* WorldProcessor.cpp */,
+				648635E71A6820EA002E09FB /* WorldProcessor.h */,
+				648635E91A682CA6002E09FB /* IterativeProcessor.cpp */,
+				648635EA1A682CA6002E09FB /* IterativeProcessor.h */,
+				648635EC1A6843AE002E09FB /* RayCasterProcessor.cpp */,
+				648635ED1A6843AE002E09FB /* RayCasterProcessor.h */,
+				648635EF1A68448A002E09FB /* GPUProcessor.cpp */,
+				648635F01A68448A002E09FB /* GPUProcessor.h */,
+			);
+			name = processor;
+			sourceTree = "<group>";
+		};
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +562,7 @@
 		64E85D601A4F78630042EE5A /* world */ = {
 			isa = PBXGroup;
 			children = (
+				648635E51A681E32002E09FB /* processor */,
 				6458F6101A56D0450006BF88 /* generator */,
 				64E85D611A4F79710042EE5A /* World.cpp */,
 				64E85D621A4F79710042EE5A /* World.h */,
@@ -907,6 +935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648635EB1A682CA6002E09FB /* IterativeProcessor.cpp in Sources */,
 				642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */,
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
 				6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */,
@@ -914,6 +943,7 @@
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
 				642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */,
+				648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */,
 				646172391A5A8D760008EBA0 /* UI.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,
 				6458F6161A56D17A0006BF88 /* PerlinGenerator.cpp in Sources */,
@@ -932,6 +962,8 @@
 				646172E81A5B29C50008EBA0 /* Control.cpp in Sources */,
 				646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */,
 				6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */,
+				648635F11A68448A002E09FB /* GPUProcessor.cpp in Sources */,
+				648635EE1A6843AE002E09FB /* RayCasterProcessor.cpp in Sources */,
 				647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
 			);

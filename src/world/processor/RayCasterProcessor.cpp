@@ -1,26 +1,21 @@
 //
-//  World.cpp
+//  RayCasterProcessor.cpp
 //  Voxelengine
 //
-//  Created by Julien CAILLABET on 28/12/2014.
-//  Copyright (c) 2014 RGA. All rights reserved.
+//  Created by Julien CAILLABET on 15/01/2015.
+//  Copyright (c) 2015 RGA. All rights reserved.
 //
 
-#include "World.h"
-#include "Octree.h"
+#include "RayCasterProcessor.h"
 
-int World::size=0;
-
-void World::bufferize(VBOScene* scene)
+void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
 {
-    //processor->bufferize(scene, this);
-    
-    /*float* ao = new float[4];
+    float* ao = new float[4];
     
     glm::vec3 position = scene->getCamera()->getPosition();
     
-    for(int i=0; i < (size*2+1)*(size*2+1) ; i++)
-        this->chunks[i]->getOctree()->invalidate();
+    for(int i=0; i < (World::size*2+1)*(World::size*2+1) ; i++)
+        world->getChunks()[i]->getOctree()->invalidate();
     
     for(int x = 0; x < 1024; x=x+1)
         for(int y = 0; y < 768; y=y+1)
@@ -37,7 +32,7 @@ void World::bufferize(VBOScene* scene)
                 float yy = dy * i + mouse3D.y;
                 float zz = dz * i + mouse3D.z;
                 
-                OctreeEntry<unsigned char>* octreeEntry = getPointedCube(xx, yy, zz);
+                OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
                 if( octreeEntry == NULL)
                     continue;
                 if( octreeEntry->isDrawn() )
@@ -50,32 +45,5 @@ void World::bufferize(VBOScene* scene)
                     break;
                 }
             }
-        }*/
-    
-    /*for(int i=0; i < chunks.size() ; i++)
-    {
-        chunks[i]->bufferize(scene);
-    }*/
-}
-
-int World::cubeCount()
-{
-    int res = 0;
-    for(int i=0; i < chunks.size() ; i++)
-    {
-        //res += chunks[i]->getCubes().size();
-    }
-    return res;
-}
-
-OctreeEntry<unsigned char>* World::getPointedCube(float x, float y, float z)
-{
-    for(int i=0; i < chunks.size(); i++)
-    {
-        if( chunks[i]->contains(x, y, z) )
-        {
-            return chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size);
         }
-    }
-    return 0;
 }
