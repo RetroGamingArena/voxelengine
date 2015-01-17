@@ -31,6 +31,12 @@ class Scene
     
     public:
         static GLuint matrixID;
+        static GLuint mMatrixID;
+        static GLuint vMatrixID;
+        static GLuint pMatrixID;
+    
+        static GLuint cameraPositionVecID;
+    
         Scene(GLFWwindow* window)
         {
             this->window = window;
@@ -48,6 +54,7 @@ class Scene
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}
         virtual void onMouseMotion(double xpos, double ypos);
+        virtual void onMouseScroll(double xoffset, double yoffset);
         virtual void render() = 0;
         virtual void init() = 0;
 };

@@ -17,7 +17,7 @@ Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
-    processor = new IterativeProcessor();
+    processor = new RayCasterProcessor();
     
     nbFrames = 0;
     windowWidth = 1024;
@@ -49,6 +49,12 @@ Engine::Engine()
     VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
     Scene::matrixID = glGetUniformLocation(VBOScene::programID, "MVP");
 
+    Scene::mMatrixID = glGetUniformLocation(VBOScene::programID, "M");
+    Scene::vMatrixID = glGetUniformLocation(VBOScene::programID, "V");
+    Scene::pMatrixID = glGetUniformLocation(VBOScene::programID, "P");
+    
+    Scene::cameraPositionVecID = glGetUniformLocation(VBOScene::programID, "cameraPosition");
+    
     //camera = new TrackBallCamera();
     scene = new LoadingScene(window);
     //scene = new VoxelScene(window);
@@ -76,7 +82,7 @@ void Engine::mouseButtonCallback(GLFWwindow* window, int button, int action, int
 void Engine::scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
 {
     Engine* engine = getInstance();
-    engine->getScene()->getCamera()->onMouseWheel(xoffset, yoffset);
+    engine->getScene()->onMouseScroll(xoffset, yoffset);
 }
 
 int Engine::run()

@@ -43,6 +43,7 @@ class Cube
         void setType(unsigned char type){this->type = type;};
         void bufferize(VBOScene* scene, float x, float y, float z);
     
+        static void bufferizeCube(VBOScene* scene, unsigned char type, float p, float q, float r, int size);
         static void bufferizeIndice(VBOScene* scene, unsigned short indice);
         static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, glm::vec3 color, float* ao);
         static void bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao);

@@ -18,7 +18,7 @@
 #include "World.h"
 
 #include "../world/processor/WorldProcessor.h"
-#include "../world/processor/IterativeProcessor.h"
+#include "../world/processor/RayCasterProcessor.h"
 
 class Engine
 {
@@ -30,7 +30,7 @@ class Engine
     World* world;
     
     static Engine *instance;
-    IterativeProcessor* processor;
+    WorldProcessor* processor;
 
     int nbFrames;
     double lastTime;

@@ -17,10 +17,30 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
     for(int i=0; i < (World::size*2+1)*(World::size*2+1) ; i++)
         world->getChunks()[i]->getOctree()->invalidate();
     
+    glm::vec3 v2 = scene->getCamera()->unproject(0, 0);
+    glm::vec3 v1 = scene->getCamera()->unproject(1024.0, 0);
+    glm::vec3 v4 = scene->getCamera()->unproject(0, 768.0);
+    glm::vec3 v3 = scene->getCamera()->unproject(1024.0, 768.0);
+    
     for(int x = 0; x < 1024; x=x+1)
+    {
+        glm::vec3 vx1 = (v1-v2);
+        vx1 *= x;
+        vx1 /= 1024.0;
+        vx1 = vx1 + v2;
+        
+        glm::vec3 vx2 = (v3-v4);
+        vx2 *= x;
+        vx2 /= 1024.0;
+        vx2 = vx2 + v4;
+        
         for(int y = 0; y < 768; y=y+1)
         {
-            glm::vec3 mouse3D = scene->getCamera()->unproject(x, y);
+            glm::vec3 vxy = (vx2-vx1);
+            vxy *= y;
+            vxy /= 768.0;
+
+            glm::vec3 mouse3D = vx1+vxy;//scene->getCamera()->unproject(x, y);
             
             float dx = (mouse3D.x - position.x) * 1000;
             float dy = (mouse3D.y - position.y) * 1000;
@@ -46,4 +66,5 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
                 }
             }
         }
+    }
 }

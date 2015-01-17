@@ -42,6 +42,9 @@ class Chunk
             this->o = new Octree<unsigned char>();
             o->setSize(Chunk::size);
         }
+        float getP(){return p;};
+        float getQ(){return q;};
+        float getR(){return r;};
         Octree<unsigned char>* getOctree(){return o;};
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);

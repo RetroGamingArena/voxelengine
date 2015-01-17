@@ -10,7 +10,18 @@
 
 GLuint Scene::matrixID = 0;
 
+GLuint Scene::mMatrixID = 0;
+GLuint Scene::vMatrixID = 0;
+GLuint Scene::pMatrixID = 0;
+
+GLuint Scene::cameraPositionVecID = 0;
+
 void Scene::onMouseMotion(double xpos, double ypos)
 {
     camera->onMouseMotion(xpos, ypos);
+}
+
+void Scene::onMouseScroll(double xoffset, double yoffset)
+{
+    camera->onMouseWheel(xoffset, yoffset);
 }

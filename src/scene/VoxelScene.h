@@ -27,6 +27,7 @@ class VoxelScene : public VBOScene
             thread = NULL;
         }
         void init();
+        void onMouseScroll(double xoffset, double yoffset);
         void onMouseMotion(double xpos, double ypos);
         void render();
         static void bufferize(VoxelScene* voxelScene);

@@ -362,6 +362,7 @@ namespace glm
 		detail::tvec4<U> const & viewport
 	)
 	{
+        detail::tmat4x4<T> mvp =proj * model;
 		detail::tmat4x4<T> inverse = glm::inverse(proj * model);
 
 		detail::tvec4<T> tmp = detail::tvec4<T>(win, T(1));

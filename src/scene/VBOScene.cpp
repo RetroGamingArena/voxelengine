@@ -17,8 +17,17 @@ void VBOScene::render()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram(programID);
 
+    // Enable blending
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
     //3D
     glUniformMatrix4fv(matrixID, 1, GL_FALSE, &getCamera()->getMVP()[0][0]);
+    
+    glUniformMatrix4fv(mMatrixID, 1, GL_FALSE, &getCamera()->getModel()[0][0]);
+    glUniformMatrix4fv(vMatrixID, 1, GL_FALSE, &getCamera()->getView()[0][0]);
+    glUniformMatrix4fv(pMatrixID, 1, GL_FALSE, &getCamera()->getProjection()[0][0]);
+    glUniform3fv(cameraPositionVecID, 1, &getCamera()->getPosition()[0]);
     
     glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
     
@@ -37,7 +46,7 @@ void VBOScene::render()
     
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
-    glEnableVertexAttribArray(2);
+    glDisableVertexAttribArray(2);
     
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
