@@ -17,10 +17,10 @@ void VoxelScene::init()
 {
     VBOScene::init();
     
-    Engine::getInstance()->getProcessor()->bufferize(this, Engine::getInstance()->getWorld());
+    //Engine::getInstance()->getProcessor()->bufferize(this, Engine::getInstance()->getWorld());
     //Engine::getInstance()->getWorld()->bufferize(this);
     
-    bindBuffer();
+    //bindBuffer();
 }
 
 void VoxelScene::onMouseScroll(double xoffset, double yoffset)
@@ -120,4 +120,24 @@ void VoxelScene::render()
 {
     VBOScene::render();
     glClearColor(0.5f, 0.9f, 1.0f, 0.0f);
+    if( invalidated)
+    {
+        if(thread == NULL)
+        {
+            buffer->getData()->clear();
+            indices->getData()->clear();
+            thread = new std::thread(bufferize, this);
+            mutex->lock();
+        }
+        
+        if( thread != NULL && mutex->try_lock() )
+        {
+            glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
+            mutex->unlock();
+            thread = NULL;
+            bindBuffer();
+            invalidated = false;
+        }
+    }
 }

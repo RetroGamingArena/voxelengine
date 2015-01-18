@@ -29,6 +29,8 @@ class Scene
     
         UI* ui;
     
+        bool invalidated;
+    
     public:
         static GLuint matrixID;
         static GLuint mMatrixID;
@@ -50,6 +52,7 @@ class Scene
             lightpos[2] = 16;
             lightpos[3] = 0.;
             
+            invalidated = true;
             //ui = new DebugUI();
         }
         UI* getUI(){return ui;}
