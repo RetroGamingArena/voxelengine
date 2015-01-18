@@ -27,6 +27,7 @@ void VBOScene::render()
     glUniformMatrix4fv(mMatrixID, 1, GL_FALSE, &getCamera()->getModel()[0][0]);
     glUniformMatrix4fv(vMatrixID, 1, GL_FALSE, &getCamera()->getView()[0][0]);
     glUniformMatrix4fv(pMatrixID, 1, GL_FALSE, &getCamera()->getProjection()[0][0]);
+    glUniformMatrix4fv(cameraUnprojectionID, 1, GL_FALSE, &getCamera()->getUnprojection()[0][0]);
     glUniform3fv(cameraPositionVecID, 1, &getCamera()->getPosition()[0]);
     
     glLightfv(GL_LIGHT0, GL_POSITION, lightpos);

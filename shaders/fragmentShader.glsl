@@ -6,6 +6,7 @@ in float fragmentAo;
 in mat4 _M;
 in mat4 _V;
 in mat4 _P;
+in mat4x3 _cameraUnprojection;
 in vec3 _cameraPosition;
 
 out vec4 color;
@@ -30,11 +31,34 @@ void main()
     
     color = clamp(vec4(fragmentColor * fragmentAo, 1), vec4(0.0), vec4(1.0));//vec4(fragmentColor.rgb,1);//vec4(0, 1, 0, 1);
     
-    /*for(int i = 0; i < 100; i++)
+    vec3 vx1 = (_cameraUnprojection[0]-_cameraUnprojection[1]);
+    vx1 *= gl_FragCoord.x;
+    vx1 /= 1024.0;
+    vx1 = vx1 + _cameraUnprojection[1];
+    
+    /*glm::vec3 vx2 = (v3-v4);
+    vx2 *= x;
+    vx2 /= 1024.0;
+    vx2 = vx2 + v4;
+    
+    glm::vec3 vxy = (vx2-vx1);
+    vxy *= y;
+    vxy /= 768.0;*/
+    
+    /*vec3 vx2 = (_cameraUnprojection[2]-_cameraUnprojection[3]);
+    vx2 *= gl_FragCoord.x;
+    vx2 /= 1024.0;
+    vx2 = vx1 + _cameraUnprojection[3];
+    
+    vec3 vxy = (vx2-vx1);
+    vxy *= gl_FragCoord.y;
+    vxy /= 768.0;
+    
+    for(int i = 0; i < 200; i++)
     {
         vec3 dd = d * i + obj.xyz;
     
-        if(dd.x > 0.0 && dd.x < 32.0 && dd.y > 0.0 && dd.y < 32.0 && dd.z > 0.0 && dd.z < 32.0)
+        if( dd.x - 1 > gl_FragCoord.x && dd.x + 1 < gl_FragCoord.x )
         {
             color = vec4(mod(dd.x,2), 0, 0, 1);
             return;

@@ -36,6 +36,16 @@ void Camera::look()
     
     MVP = projection * view * model;
     
+    glm::vec3 v2 = unproject(0, 0);
+    glm::vec3 v1 = unproject(1024.0, 0);
+    glm::vec3 v4 = unproject(0, 768.0);
+    glm::vec3 v3 = unproject(1024.0, 768.0);
+    
+    unprojection[0] = v1;
+    unprojection[1] = v2;
+    unprojection[2] = v3;
+    unprojection[3] = v4;
+    
     // For the next frame, the "last time" will be "now"
     lastTime = currentTime;
 }

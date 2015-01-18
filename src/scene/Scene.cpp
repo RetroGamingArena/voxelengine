@@ -16,6 +16,8 @@ GLuint Scene::pMatrixID = 0;
 
 GLuint Scene::cameraPositionVecID = 0;
 
+GLuint Scene::cameraUnprojectionID = 0;
+
 void Scene::onMouseMotion(double xpos, double ypos)
 {
     camera->onMouseMotion(xpos, ypos);

@@ -18,7 +18,6 @@
 #include "World.h"
 
 #include "../world/processor/WorldProcessor.h"
-#include "../world/processor/RayCasterProcessor.h"
 
 class Engine
 {

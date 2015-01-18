@@ -35,6 +35,8 @@ class Scene
         static GLuint vMatrixID;
         static GLuint pMatrixID;
     
+        static GLuint cameraUnprojectionID;
+    
         static GLuint cameraPositionVecID;
     
         Scene(GLFWwindow* window)

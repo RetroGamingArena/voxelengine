@@ -13,6 +13,9 @@
 #include "../scene/VoxelScene.h"
 #include "../camera/TrackBallCamera.h"
 
+#include "../world/processor/RayCasterProcessor.h"
+#include "../world/processor/GPUProcessor.h"
+
 Engine* Engine::instance = NULL;
 
 Engine::Engine()
@@ -52,6 +55,8 @@ Engine::Engine()
     Scene::mMatrixID = glGetUniformLocation(VBOScene::programID, "M");
     Scene::vMatrixID = glGetUniformLocation(VBOScene::programID, "V");
     Scene::pMatrixID = glGetUniformLocation(VBOScene::programID, "P");
+    
+    Scene::cameraUnprojectionID = glGetUniformLocation(VBOScene::programID, "cameraUnprojection");
     
     Scene::cameraPositionVecID = glGetUniformLocation(VBOScene::programID, "cameraPosition");
     

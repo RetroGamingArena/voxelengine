@@ -20,6 +20,8 @@ class Camera
     glm::mat4 model;
     glm::mat4 MVP;
     
+    glm::mat4x3 unprojection;
+    
     glm::vec3 position = glm::vec3( 0, 0, 5 );
     float horizontalAngle = 3.14f;
     float verticalAngle = 0.0f;
@@ -58,6 +60,7 @@ class Camera
         void computeMatricesFromInputs();
         glm::mat4 getMVP();
     
+        glm::mat4x3 getUnprojection(){return unprojection;};
         glm::mat4 getProjection(){return projection;};
         glm::mat4 getModel(){return model;};
         glm::mat4 getView(){return view;};

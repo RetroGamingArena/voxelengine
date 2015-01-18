@@ -17,7 +17,9 @@ void GPUProcessor::bufferize(VBOScene* scene, World* world)
     glm::vec3 v4 = scene->getCamera()->unproject(0, 768.0);
     glm::vec3 v3 = scene->getCamera()->unproject(1024.0, 768.0);
     
-    for(int i=0; i < world->getChunks().size() ; i++)
+    //scene->getCamera()->
+    
+    for(int i=0; i < world->getChunks().size(); i++)
     {
         Chunk* chunk = world->getChunks()[i];
         Cube::bufferizeCube(scene, 1, chunk->getP(), chunk->getQ(), chunk->getR(), Chunk::size);

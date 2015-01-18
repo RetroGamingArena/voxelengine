@@ -9,6 +9,7 @@ out vec3 fragmentColor;
 out mat4 _M;
 out mat4 _P;
 out mat4 _V;
+out mat4x3 _cameraUnprojection;
 out vec3 _cameraPosition;
 out float fragmentAo;
 
@@ -17,6 +18,8 @@ uniform mat4 MVP;
 uniform mat4 M;
 uniform mat4 V;
 uniform mat4 P;
+
+uniform mat4x3 cameraUnprojection;
 
 uniform vec3 cameraPosition;
 
@@ -41,6 +44,6 @@ void main()
     _V=V;
     _P=P;
     _cameraPosition=cameraPosition;
-    
+    _cameraUnprojection=cameraUnprojection;
     //fragmentPosition = gl_Position;
 }
