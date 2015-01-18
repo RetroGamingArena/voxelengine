@@ -18,7 +18,7 @@ void main()
     
     mat4 inverse = inverse(_P*(_M*_V));
     vec4 tmp = vec4(gl_FragCoord.xy, 0.0, 1.0);
-    vec4 viewport = vec4(0.0, 0.0, 1024.0, 768.0);
+    vec4 viewport = vec4(0.0, 0.0, 1024.0, 1024.0);//768.0);
     
     tmp.x = (tmp.x - viewport.x) / viewport.z;
     tmp.y = (tmp.y - viewport.y) / viewport.w;

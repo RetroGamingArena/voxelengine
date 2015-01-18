@@ -26,6 +26,7 @@
 		646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172E91A5B2A650008EBA0 /* Label.cpp */; };
 		646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646172F01A5B458C0008EBA0 /* lodepng.cpp */; };
 		646172F41A5B45E30008EBA0 /* font.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 646172EE1A5B38B20008EBA0 /* font.png */; };
+		64687A421A6C2F3600C0CAC3 /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64687A411A6C2F2D00C0CAC3 /* icon.icns */; };
 		647650621A6461920005B3AA /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650601A6461920005B3AA /* LoadingScene.cpp */; };
 		647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650631A64636C0005B3AA /* LoadingUI.cpp */; };
 		648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635E61A6820EA002E09FB /* WorldProcessor.cpp */; };
@@ -54,17 +55,27 @@
 		646172F31A5B45CA0008EBA0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = textures;
+			dstPath = ../resources/textures;
 			dstSubfolderSpec = 1;
 			files = (
 				646172F41A5B45E30008EBA0 /* font.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		64687A3E1A6BF33000C0CAC3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ../Resources;
+			dstSubfolderSpec = 1;
+			files = (
+				64687A421A6C2F3600C0CAC3 /* icon.icns in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64E590C71A61AB0800F65FC8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = ..;
 			dstSubfolderSpec = 1;
 			files = (
 				64E590C81A61AB1300F65FC8 /* Info.plist in CopyFiles */,
@@ -74,7 +85,7 @@
 		64E85D3F1A4F65C30042EE5A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = shaders;
+			dstPath = ../Resources/shaders;
 			dstSubfolderSpec = 1;
 			files = (
 				6461723F1A5AEFE20008EBA0 /* uiFragmentShader.glsl in CopyFiles */,
@@ -121,6 +132,7 @@
 		646172EE1A5B38B20008EBA0 /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
 		646172F01A5B458C0008EBA0 /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
 		646172F11A5B458C0008EBA0 /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
+		64687A411A6C2F2D00C0CAC3 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		647650601A6461920005B3AA /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingScene.cpp; path = scene/LoadingScene.cpp; sourceTree = "<group>"; };
 		647650611A6461920005B3AA /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = scene/LoadingScene.h; sourceTree = "<group>"; };
 		647650631A64636C0005B3AA /* LoadingUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingUI.cpp; path = UI/LoadingUI.cpp; sourceTree = "<group>"; };
@@ -498,6 +510,7 @@
 		64E85D381A4F65C30042EE5A = {
 			isa = PBXGroup;
 			children = (
+				64687A411A6C2F2D00C0CAC3 /* icon.icns */,
 				64E590C61A61AAFE00F65FC8 /* Info.plist */,
 				646172ED1A5B38B20008EBA0 /* textures */,
 				6458F6171A56E5490006BF88 /* libnoise.dylib */,
@@ -889,6 +902,7 @@
 				64E85D3F1A4F65C30042EE5A /* CopyFiles */,
 				646172F31A5B45CA0008EBA0 /* CopyFiles */,
 				64E590C71A61AB0800F65FC8 /* CopyFiles */,
+				64687A3E1A6BF33000C0CAC3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

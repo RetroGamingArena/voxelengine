@@ -12,8 +12,8 @@ uniform mat4 MVP;
 
 void main()
 {    
-    vec2 vertexPosition_homoneneousspace = vertexPosition - vec2(400,300);
-    vertexPosition_homoneneousspace /= vec2(400,300);
+    vec2 vertexPosition_homoneneousspace = vertexPosition - vec2(400,400);
+    vertexPosition_homoneneousspace /= vec2(400,400);
     gl_Position =  vec4(vertexPosition_homoneneousspace,0,1);
     
     UV = vertexUV;
