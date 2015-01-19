@@ -39,7 +39,7 @@ class OctreeEntry
         OctreeEntry<T>* get(int x, int y, int z);
         OctreeEntry<T>* getAbs(int x, int y, int z, int size);
         void setLevel(int level){this->level=level;};
-        void setCube(int x, int y, int z, int size, unsigned char type);
+        void setCube(int x, int y, int z, int size, T type);
         void invalidate();
 };
 

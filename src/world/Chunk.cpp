@@ -55,7 +55,10 @@ void Chunk::generate(WorldGenerator* generator)
                     cube->setType(6); //snow
                 //cubes.push_back(cube);
                 //indexedCubes.insert(std::pair<int, Cube*>(Cube::getIndex(i, j, k), cube));
-                o->setCube(i,j,k, size, cube->getType());
+                
+                Voxel* voxel = new Voxel();
+                voxel->setLeaf(cube->getType());
+                o->setCube(i,j,k, size, voxel);//cube->getType());
             }
         }
 }

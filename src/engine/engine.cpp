@@ -15,12 +15,13 @@
 
 #include "../world/processor/RayCasterProcessor.h"
 #include "../world/processor/GPUProcessor.h"
+#include "../world/processor/IterativeProcessor.h"
 
 Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
-    processor = new RayCasterProcessor();
+    processor = new IterativeProcessor();
     
     nbFrames = 0;
     windowWidth = 1024;

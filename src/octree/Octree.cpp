@@ -130,7 +130,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
 
             if(isCubeVisible(abs_x, abs_y, abs_z))
             {
-                glm::vec3 color = CubeType::getColor(octreeEntry->getLeaf(), q);
+                glm::vec3 color = CubeType::getColor(octreeEntry->getLeaf()->getLeaf(), q);
         
                 int x = 0;
                 int y = 0;
@@ -158,7 +158,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 //ao[0] = -0.5;
                 //ao[1] = -0.5;
                 
-                bufferizeEntry(scene, octreeEntry->getLeaf(), p, q, r, ao);
+                bufferizeEntry(scene, octreeEntry->getLeaf()->getLeaf(), p, q, r, ao);
                 
                 /*Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, octreeEntry->getLeaf(), ao); //bottom
                 

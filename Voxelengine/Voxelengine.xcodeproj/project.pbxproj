@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3331A6C64CA0068DE31 /* Ray.cpp */; };
+		6418F3381A6DA8140068DE31 /* Voxel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3361A6DA8140068DE31 /* Voxel.cpp */; };
 		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
 		642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */; };
 		642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */; };
@@ -101,6 +102,8 @@
 /* Begin PBXFileReference section */
 		6418F3331A6C64CA0068DE31 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ray.cpp; path = collision/Ray.cpp; sourceTree = "<group>"; };
 		6418F3341A6C64CA0068DE31 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = collision/Ray.h; sourceTree = "<group>"; };
+		6418F3361A6DA8140068DE31 /* Voxel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Voxel.cpp; path = octree/Voxel.cpp; sourceTree = "<group>"; };
+		6418F3371A6DA8140068DE31 /* Voxel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Voxel.h; path = octree/Voxel.h; sourceTree = "<group>"; };
 		642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndiceBuffer.cpp; path = openGL/IndiceBuffer.cpp; sourceTree = "<group>"; };
 		642FC3C61A5C840E00DC8A94 /* IndiceBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndiceBuffer.h; path = openGL/IndiceBuffer.h; sourceTree = "<group>"; };
 		642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Octree.cpp; path = octree/Octree.cpp; sourceTree = "<group>"; };
@@ -433,6 +436,8 @@
 				642FC3CA1A5DAC7D00DC8A94 /* Octree.h */,
 				642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */,
 				642FC3CD1A5DCF9900DC8A94 /* OctreeEntry.h */,
+				6418F3361A6DA8140068DE31 /* Voxel.cpp */,
+				6418F3371A6DA8140068DE31 /* Voxel.h */,
 			);
 			name = octree;
 			sourceTree = "<group>";
@@ -979,6 +984,7 @@
 				6458F61B1A56E9130006BF88 /* noiseutils.cpp in Sources */,
 				64E85D5C1A4F77C00042EE5A /* Scene.cpp in Sources */,
 				646172EB1A5B2A650008EBA0 /* Label.cpp in Sources */,
+				6418F3381A6DA8140068DE31 /* Voxel.cpp in Sources */,
 				642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */,
 				647650621A6461920005B3AA /* LoadingScene.cpp in Sources */,
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,

@@ -18,20 +18,22 @@
 template<typename T>
 class Octree : public OctreeEntry<T>
 {
-    int depth;
     int size;
     
-    public:
-    static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
-    Octree() : OctreeEntry<T>()
-    {
-        depth = 5;
-    }
+    protected:
+        int depth;
     
-    void bufferize(VBOScene* scene, float x, float y, float z);
-    void bufferize(VBOScene* scene, OctreeEntry<T>* OctreeEntry, float p, float q, float r, int size);
-    void setSize(int size){this->size=size;};
-    bool isCubeVisible(int x, int y, int z);
+    public:
+        static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
+        Octree() : OctreeEntry<T>()
+        {
+            depth = 5;
+        }
+    
+        void bufferize(VBOScene* scene, float x, float y, float z);
+        void bufferize(VBOScene* scene, OctreeEntry<T>* OctreeEntry, float p, float q, float r, int size);
+        void setSize(int size){this->size=size;};
+        bool isCubeVisible(int x, int y, int z);
 };
 
 #endif /* defined(__Voxelengine__Octree__) */

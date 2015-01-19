@@ -29,7 +29,7 @@ OctreeEntry<T>* OctreeEntry<T>::get(int x, int y, int z)
 }
 
 template<typename T>
-void OctreeEntry<T>::setCube(int x, int y, int z, int size, unsigned char type)
+void OctreeEntry<T>::setCube(int x, int y, int z, int size, T type)
 {
     if(this->entries == NULL)
         this->split();
