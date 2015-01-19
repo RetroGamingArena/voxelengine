@@ -7,6 +7,7 @@
 //
 
 #include "RayCasterProcessor.h"
+#include "../../collision/Ray.h"
 
 void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
 {
@@ -40,30 +41,32 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
             vxy *= y;
             vxy /= 1024.0;//768.0;
 
-            glm::vec3 mouse3D = vx1+vxy;//scene->getCamera()->unproject(x, y);
+            glm::vec3 mouse3D = vx1+vxy;
+            Ray* ray = new Ray(position, mouse3D);
             
-            float dx = (mouse3D.x - position.x) * 1000;
-            float dy = (mouse3D.y - position.y) * 1000;
-            float dz = (mouse3D.z - position.z) * 1000;
+            int i = 0;
             
-            for(int i = 0; i < 160; i=i+1)
+            while(i < 160 )
             {
-                float xx = dx * i + mouse3D.x;
-                float yy = dy * i + mouse3D.y;
-                float zz = dz * i + mouse3D.z;
+                glm::vec3 d = ray->move(i);
                 
-                OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
+                OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(d.x, d.y, d.z);
                 if( octreeEntry == NULL)
+                {
+                    i++;
                     continue;
+                }
                 if( octreeEntry->isDrawn() )
                     break;
                 unsigned char type = octreeEntry->getLeaf();
                 if(type > 0)
                 {
-                    Octree<unsigned char>::bufferizeEntry(scene, type, (int)xx, (int)yy, (int)zz, ao);
+                    Octree<unsigned char>::bufferizeEntry(scene, type, (int)d.x, (int)d.y, (int)d.z, ao);
                     octreeEntry->setDrawn(true);
                     break;
                 }
+
+                i++;
             }
         }
     }

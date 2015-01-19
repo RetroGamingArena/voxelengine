@@ -68,6 +68,18 @@ int World::cubeCount()
     return res;
 }
 
+Chunk* World::getPointedChunk(float x, float y, float z)
+{
+    for(int i=0; i < chunks.size(); i++)
+    {
+        if( chunks[i]->contains(x, y, z) )
+        {
+            return chunks[i];
+        }
+    }
+    return 0;
+}
+
 OctreeEntry<unsigned char>* World::getPointedCube(float x, float y, float z)
 {
     for(int i=0; i < chunks.size(); i++)

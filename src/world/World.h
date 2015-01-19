@@ -47,6 +47,7 @@ class World
     
         void bufferize(VBOScene* scene);
         int cubeCount();
+        Chunk* getPointedChunk(float x, float y, float z);
         OctreeEntry<unsigned char>* getPointedCube(float x, float y, float z);
 };
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3331A6C64CA0068DE31 /* Ray.cpp */; };
 		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
 		642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */; };
 		642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3CC1A5DCF9900DC8A94 /* OctreeEntry.cpp */; };
@@ -98,6 +99,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6418F3331A6C64CA0068DE31 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ray.cpp; path = collision/Ray.cpp; sourceTree = "<group>"; };
+		6418F3341A6C64CA0068DE31 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = collision/Ray.h; sourceTree = "<group>"; };
 		642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndiceBuffer.cpp; path = openGL/IndiceBuffer.cpp; sourceTree = "<group>"; };
 		642FC3C61A5C840E00DC8A94 /* IndiceBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IndiceBuffer.h; path = openGL/IndiceBuffer.h; sourceTree = "<group>"; };
 		642FC3C91A5DAC7D00DC8A94 /* Octree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Octree.cpp; path = octree/Octree.cpp; sourceTree = "<group>"; };
@@ -414,6 +417,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6418F3321A6C61F00068DE31 /* collision */ = {
+			isa = PBXGroup;
+			children = (
+				6418F3331A6C64CA0068DE31 /* Ray.cpp */,
+				6418F3341A6C64CA0068DE31 /* Ray.h */,
+			);
+			name = collision;
+			sourceTree = "<group>";
+		};
 		642FC3C81A5DAC6100DC8A94 /* octree */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +547,7 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				6418F3321A6C61F00068DE31 /* collision */,
 				642FC3C81A5DAC6100DC8A94 /* octree */,
 				646172361A5A8CE60008EBA0 /* UI */,
 				64E85D6E1A50D6660042EE5A /* openGL */,
@@ -953,6 +966,7 @@
 				642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */,
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
 				6461723C1A5A8DC00008EBA0 /* DebugUI.cpp in Sources */,
+				6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
