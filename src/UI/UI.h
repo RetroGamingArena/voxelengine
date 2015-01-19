@@ -62,7 +62,7 @@ class UI
             buffer = new GlobalBuffer();
             
             view = glm::mat4(1.0f);
-            projection = glm::ortho(0, 1024, 1024, 0); //640, 480, 0);
+            projection = glm::ortho(0, 1024, 768, 0);
             model = glm::mat4(1.0f);
             MVP = projection * view * model;
             

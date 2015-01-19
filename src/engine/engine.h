@@ -47,6 +47,8 @@ class Engine
         GLFWwindow* getWindow(){return window;}
         Scene* getScene(){return scene;}
         World* getWorld(){return world;}
+        int getWindowWidth(){return windowWidth;}
+        int getWindowHeight(){return windowHeight;}
         void setWorld(World* world){this->world=world;}
         void setScene(Scene* scene){this->scene=scene;}
         int run();

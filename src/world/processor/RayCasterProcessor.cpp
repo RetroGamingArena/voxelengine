@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 RGA. All rights reserved.
 //
 
+#include "../../engine/engine.h"
 #include "RayCasterProcessor.h"
 #include "../../collision/Ray.h"
 
@@ -35,11 +36,11 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
         vx2 /= 1024.0;
         vx2 = vx2 + v4;
         
-        for(int y = 0; y < 1024; y=y+1)
+        for(int y = 0; y < 768; y=y+1)
         {
             glm::vec3 vxy = (vx2-vx1);
             vxy *= y;
-            vxy /= 1024.0;//768.0;
+            vxy /= Engine::getInstance()->getWindowHeight();
 
             glm::vec3 mouse3D = vx1+vxy;
             Ray* ray = new Ray(position, mouse3D);

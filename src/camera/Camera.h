@@ -38,7 +38,7 @@ class Camera
     public:
         Camera()
         {
-            projection = glm::perspective(70.0f, 4.0f / 4.0f, 0.001f, 200.0f);
+            projection = glm::perspective(70.0f, 4.0f / 3.0f, 0.001f, 200.0f);
             view       = glm::lookAt(
                                      glm::vec3(4,3,-3), // Camera is at (4,3,-3), in World Space
                                      glm::vec3(0,0,0), // and looks at the origin

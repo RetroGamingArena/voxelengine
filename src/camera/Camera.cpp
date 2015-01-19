@@ -26,7 +26,7 @@ void Camera::look()
     float FoV = initialFoV;// - 5 * glfwGetMouseWheel(); // Now GLFW 3 requires setting up a callback for this. It's a bit too complicated for this beginner's tutorial, so it's disabled instead.
     
     // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
-    projection = glm::perspective(FoV, 4.0f / 4.0f, 0.0009f, 200.0f);
+    projection = glm::perspective(FoV, 4.0f / 3.0f, 0.0009f, 200.0f);
     // Camera matrix
     view       = glm::lookAt(
                              getPosition(),           // Camera is here
@@ -39,7 +39,7 @@ void Camera::look()
     glm::vec3 v2 = unproject(0, 0);
     glm::vec3 v1 = unproject(1024.0, 0);
     glm::vec3 v4 = unproject(0, 768.0);
-    glm::vec3 v3 = unproject(1024.0, 1024.0);//768.0);
+    glm::vec3 v3 = unproject(1024.0, 768.0);
     
     unprojection[0] = v1;
     unprojection[1] = v2;
@@ -87,7 +87,7 @@ void Camera::computeMatricesFromInputs()
 glm::vec3 Camera::unproject(int x, int y)
 {
     glm::vec3 pos = glm::vec3(x, y, 0.0f);
-    glm::vec4 viewportdata = glm::vec4(0.0f, 0.0f, 1024.0f, 1024.0);//768.0f);
+    glm::vec4 viewportdata = glm::vec4(0.0f, 0.0f, 1024.0f, 768.0f);
     
     return glm::unProject(pos, view*model, projection, viewportdata);
 }

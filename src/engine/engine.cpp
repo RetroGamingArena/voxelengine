@@ -24,7 +24,7 @@ Engine::Engine()
     
     nbFrames = 0;
     windowWidth = 1024;
-    windowHeight = 1024;//768;
+    windowHeight = 768;
     if (!glfwInit())
         exit(EXIT_FAILURE);
     glfwWindowHint(GLFW_SAMPLES, 4);
