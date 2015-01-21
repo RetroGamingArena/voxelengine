@@ -118,20 +118,22 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
         {
             int abs_x = p;
             while (abs_x<0)
-                abs_x += 32; //temp
-            abs_x = abs_x % 32;
+                abs_x += this->size; //temp
+            abs_x = abs_x % this->size;
             
             int abs_y = q;
             while (abs_y<0)
-                abs_y += 32; //temp
-            abs_y = abs_y % 32;
+                abs_y += this->size; //temp
+            abs_y = abs_y % this->size;
         
             int abs_z = r;
             while (abs_z<0)
-                abs_z += 32; //temp
-            abs_z = abs_z % 32;
+                abs_z += this->size; //temp
+            abs_z = abs_z % this->size;
 
-            if(true)//isCubeVisible(abs_x, abs_y, abs_z))
+            //TemplateDebug::debug();
+            
+            if(isCubeVisible(abs_x, abs_y, abs_z))
             {
                 glm::vec3 color = CubeType::getColor(octreeEntry->getLeaf(), q);
         
@@ -261,12 +263,13 @@ bool Octree<T>::isCubeVisible(int x, int y, int z)
     
     //try
     {
-        bool test =    !(this->getAbs(x-1, y,   z, 32) != 0 //temp
-                      && this->getAbs(x+1, y,   z, 32) != 0
-                      && this->getAbs(x,   y-1, z, 32) != 0
-                      && this->getAbs(x,   y+1, z, 32) != 0
-                      && this->getAbs(x,   y,   z-1, 32) != 0
-                      && this->getAbs(x,   y,   z+1, 32) != 0);
+        //TemplateDebug::debug();
+        bool test =    !(this->getAbs(x-1, y,   z, size) != 0 //temp
+                      && this->getAbs(x+1, y,   z, size) != 0
+                      && this->getAbs(x,   y-1, z, size) != 0
+                      && this->getAbs(x,   y+1, z, size) != 0
+                      && this->getAbs(x,   y,   z-1, size) != 0
+                      && this->getAbs(x,   y,   z+1, size) != 0);
         return test;
     }
     /*catch(out_of_range e)
