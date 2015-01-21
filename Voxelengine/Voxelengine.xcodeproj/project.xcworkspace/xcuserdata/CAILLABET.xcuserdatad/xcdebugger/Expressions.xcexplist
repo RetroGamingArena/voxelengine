@@ -3,19 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "OctreeEntry&lt;unsigned char&gt;::getAbs(int, int, int, int):OctreeEntry.cpp">
+         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "this-&gt;entries[3]">
+               value = "Chunk::subsize">
             </PersistentString>
             <PersistentString
-               value = "this-&gt;entries">
-            </PersistentString>
-            <PersistentString
-               value = "x+y*4+z*2">
-            </PersistentString>
-            <PersistentString
-               value = "this-&gt;entries[0]">
+               value = "height*16.0/size*subsize">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -73,13 +67,13 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+            <PersistentString
                value = "getVertexCount()">
             </PersistentString>
             <PersistentString
                value = "sizeof(GLfloat)*9">
-            </PersistentString>
-            <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -125,10 +119,19 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
+         contextName = "OctreeEntry&lt;unsigned char&gt;::getAbs(int, int, int, int):OctreeEntry.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "Chunk::subsize">
+               value = "this-&gt;entries[3]">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;entries">
+            </PersistentString>
+            <PersistentString
+               value = "x+y*4+z*2">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;entries[0]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

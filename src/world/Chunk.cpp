@@ -38,21 +38,21 @@ void Chunk::generate(WorldGenerator* generator)
     for(float i = 0; i < size*subsize; i+=1)
         for(float k = 0; k < size*subsize; k+=1)
         {
-            float height = generator->getY(pp+i, rr+k);
+            float height = generator->getY(pp+i, rr+k)*size*subsize/2;
             
             for(int j = 0; j <= height; j++)
             {
                 Cube* cube = new Cube(i, j, k);
                 
-                if(j<16)
+                if(j<16*size*subsize/32)
                     cube->setType(2); //dirt
-                else if(j<18)
+                else if(j<18*size*subsize/32)
                     cube->setType(3); //sand
-                else if(j<20)
+                else if(j<20*size*subsize/32)
                     cube->setType(1); //grass
-                else if(j<25)
+                else if(j<25*size*subsize/32)
                     cube->setType(4); //dirt
-                else if(j<28)
+                else if(j<28*size*subsize/32)
                     cube->setType(5); //rock
                 else
                     cube->setType(6); //snow

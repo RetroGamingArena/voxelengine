@@ -17,5 +17,5 @@ float PerlinGenerator::getY(float x, float y)
         height = -1;
     if(height >= 1)
         height = 0.99999;
-    return (height+1)*16;
+    return (height+1);
 }
