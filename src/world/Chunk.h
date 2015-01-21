@@ -28,23 +28,29 @@ class Chunk
     float q;
     float r;
     
-    Octree<Voxel*>* o;
+    Octree<unsigned char>* o;
 
     public:
         static int size;
+        static int subsize;
         Chunk(float p, float q, float r)
         {
             this->p=p;
             this->q=q;
             this->r=r;
             
-            this->o = new Octree<Voxel*>();
-            o->setSize(Chunk::size);
+            this->o = new Octree<unsigned char>();
+            o->setSize(Chunk::size*Chunk::subsize);
+            o->setSubSize(Chunk::subsize);
+            
+            o->p=p;
+            o->q=q;
+            o->r=r;
         }
         float getP(){return p;};
         float getQ(){return q;};
         float getR(){return r;};
-        Octree<Voxel*>* getOctree(){return o;};
+        Octree<unsigned char>* getOctree(){return o;};
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
         bool contains(float x, float y, float z);

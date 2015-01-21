@@ -8,7 +8,10 @@
 
 #include "Chunk.h"
 
+#include <algorithm>
+
 int Chunk::size = 32;
+int Chunk::subsize = 2;
 
 void Chunk::bufferize(VBOScene* scene)
 {
@@ -32,8 +35,8 @@ void Chunk::generate(WorldGenerator* generator)
     float pp = p * Chunk::size * Cube::size;
     float rr = r * Chunk::size * Cube::size;
 
-    for(int i = 0; i < size; i++)
-        for(int k = 0; k < size; k++)
+    for(float i = 0; i < size*subsize; i+=1)
+        for(float k = 0; k < size*subsize; k+=1)
         {
             float height = generator->getY(pp+i, rr+k);
             
@@ -56,9 +59,9 @@ void Chunk::generate(WorldGenerator* generator)
                 //cubes.push_back(cube);
                 //indexedCubes.insert(std::pair<int, Cube*>(Cube::getIndex(i, j, k), cube));
                 
-                Voxel* voxel = new Voxel();
-                voxel->setLeaf(cube->getType());
-                o->setCube(i,j,k, size, voxel);//cube->getType());
+                //Voxel* voxel = new Voxel();
+                //voxel->setLeaf(cube->getType());
+                o->setCube(i,j,k, size*subsize, cube->getType());
             }
         }
 }

@@ -19,12 +19,17 @@ template<typename T>
 class Octree : public OctreeEntry<T>
 {
     int size;
-    
+    float subSize;
+
     protected:
         int depth;
     
     public:
-        static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
+    float p;
+    float q;
+    float r;
+    
+        void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
         Octree() : OctreeEntry<T>()
         {
             depth = 5;
@@ -33,6 +38,7 @@ class Octree : public OctreeEntry<T>
         void bufferize(VBOScene* scene, float x, float y, float z);
         void bufferize(VBOScene* scene, OctreeEntry<T>* OctreeEntry, float p, float q, float r, int size);
         void setSize(int size){this->size=size;};
+        void setSubSize(int subSize){this->subSize=subSize;};
         bool isCubeVisible(int x, int y, int z);
 };
 

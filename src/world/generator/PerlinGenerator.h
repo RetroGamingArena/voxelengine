@@ -38,7 +38,7 @@ class PerlinGenerator : public WorldGenerator
             lowerYBound = 1.0;
             upperYBound = 5.0;
             
-            destSize = 224;
+            destSize = 224 * 2;
             
             //int seed = rand()*100.0/RAND_MAX - (int)(rand()*100.0/RAND_MAX);
             //module.SetSeed(seed);

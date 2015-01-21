@@ -19,14 +19,14 @@ void Octree<T>::bufferize(VBOScene* scene, float p, float q, float r) //TODO oct
             int y = i/4;
             int z = (i%4)/2;
 
-            bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size);
+            bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
         }
 }
 
 template<typename T>
 void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)
 {
-    float size = 1;
+    float size = 1.0/subSize;
     
     int x = 0;
     int y = 0;
@@ -45,6 +45,9 @@ void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, flo
      Cube::bufferizeSquare(scene, x+p,      y+q, z+r, x+p,      y+q+size, z+r+size, color, ao); //side
      Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);*/
     
+    p = (p-this->p)/(subSize) + this->p;
+    q = (q-this->q)/(subSize) + this->q;
+    r = (r-this->r)/(subSize) + this->r;
     
     ao[0] = 0.5;
     ao[1] = 0.5;
@@ -128,9 +131,9 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 abs_z += 32; //temp
             abs_z = abs_z % 32;
 
-            if(isCubeVisible(abs_x, abs_y, abs_z))
+            if(true)//isCubeVisible(abs_x, abs_y, abs_z))
             {
-                glm::vec3 color = CubeType::getColor(octreeEntry->getLeaf()->getLeaf(), q);
+                glm::vec3 color = CubeType::getColor(octreeEntry->getLeaf(), q);
         
                 int x = 0;
                 int y = 0;
@@ -158,7 +161,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
                 //ao[0] = -0.5;
                 //ao[1] = -0.5;
                 
-                bufferizeEntry(scene, octreeEntry->getLeaf()->getLeaf(), p, q, r, ao);
+                bufferizeEntry(scene, octreeEntry->getLeaf(), p, q, r, ao);
                 
                 /*Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, octreeEntry->getLeaf(), ao); //bottom
                 
@@ -245,7 +248,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
             int y = i/4;
             int z = (i%4)/2;
             
-            bufferize(scene, octreeEntry->getEntries()[i], p+x*size/4, q+y*size/4, r+z*size/4, size / 2);
+            bufferize(scene, octreeEntry->getEntries()[i], p+x*size/2, q+y*size/2, r+z*size/2, size / 2);
         }
     }
 }
