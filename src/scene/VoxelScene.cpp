@@ -80,11 +80,11 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
         float yy = dy * i + mouse3D.y;
         float zz = dz * i + mouse3D.z;
         
-        OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
-        if(octreeEntry == NULL)
-            continue;
-        unsigned char type = octreeEntry->getLeaf();
-        if(type > 0)
+        //OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(xx, yy, zz);
+        //if(octreeEntry == NULL)
+        //    continue;
+        //unsigned char type = octreeEntry->getLeaf();
+        //if(type > 0)
         {
             //OctreeEntry<unsigned char>* test = world->getChunks()[0]->getOctree()->getAbs((int)xx, (int)yy, (int)zz, 32);
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64019A721A704C4300470F8A /* geometryShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64019A711A703F0200470F8A /* geometryShader.glsl */; };
 		6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3331A6C64CA0068DE31 /* Ray.cpp */; };
 		6418F3381A6DA8140068DE31 /* Voxel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3361A6DA8140068DE31 /* Voxel.cpp */; };
 		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
@@ -90,6 +91,7 @@
 			dstPath = ../Resources/shaders;
 			dstSubfolderSpec = 1;
 			files = (
+				64019A721A704C4300470F8A /* geometryShader.glsl in CopyFiles */,
 				6461723F1A5AEFE20008EBA0 /* uiFragmentShader.glsl in CopyFiles */,
 				646172401A5AEFE20008EBA0 /* uiVertexShader.glsl in CopyFiles */,
 				64E85D771A5168C80042EE5A /* fragmentShader.glsl in CopyFiles */,
@@ -100,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64019A711A703F0200470F8A /* geometryShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = geometryShader.glsl; path = ../shaders/geometryShader.glsl; sourceTree = "<group>"; };
 		6418F3331A6C64CA0068DE31 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ray.cpp; path = collision/Ray.cpp; sourceTree = "<group>"; };
 		6418F3341A6C64CA0068DE31 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = collision/Ray.h; sourceTree = "<group>"; };
 		6418F3361A6DA8140068DE31 /* Voxel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Voxel.cpp; path = octree/Voxel.cpp; sourceTree = "<group>"; };
@@ -630,6 +633,7 @@
 				64E85D761A5168B00042EE5A /* vertexShader.glsl */,
 				6461723D1A5AEFD90008EBA0 /* uiFragmentShader.glsl */,
 				6461723E1A5AEFD90008EBA0 /* uiVertexShader.glsl */,
+				64019A711A703F0200470F8A /* geometryShader.glsl */,
 			);
 			name = shaders;
 			sourceTree = "<group>";

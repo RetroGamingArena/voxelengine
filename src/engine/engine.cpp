@@ -45,12 +45,18 @@ Engine::Engine()
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
         exit(EXIT_FAILURE);
+    if(!GLEW_EXT_geometry_shader4)
+    {
+        fprintf(stderr, "No support for geometry shaders found\n");
+        exit(1);
+    }
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glEnable(GL_DEPTH_TEST);
+    glCreateShader(GL_GEOMETRY_SHADER);
     glDepthFunc(GL_LESS);
     
-    VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl" );
+    VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl", NULL);//"shaders/geometryShader.glsl");
     Scene::matrixID = glGetUniformLocation(VBOScene::programID, "MVP");
 
     Scene::mMatrixID = glGetUniformLocation(VBOScene::programID, "M");

@@ -84,7 +84,7 @@ class UI
             glGenBuffers(1, &fontVertexBufferID);
             glGenBuffers(1, &fontUVBufferID);
             
-            programID = ShaderLoader::load( "shaders/uiVertexShader.glsl", "shaders/uiFragmentShader.glsl" );
+            programID = ShaderLoader::load( "shaders/uiVertexShader.glsl", "shaders/uiFragmentShader.glsl", NULL);
             
             buffer->getData()->push_back(10);
             buffer->getData()->push_back(10);
