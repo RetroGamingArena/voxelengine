@@ -140,6 +140,11 @@ void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float 
     }
 }
 
+void Cube::bufferizePoint(VBOScene* scene, float x, float y, float z, float type, float ao)
+{
+    bufferizeVertex(scene, x, y, z, type, ao);
+}
+
 void Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2)
 {
 

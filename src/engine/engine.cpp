@@ -56,7 +56,7 @@ Engine::Engine()
     glCreateShader(GL_GEOMETRY_SHADER);
     glDepthFunc(GL_LESS);
     
-    VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl", NULL);//"shaders/geometryShader.glsl");
+    VBOScene::programID = ShaderLoader::load( "shaders/vertexShader.glsl", "shaders/fragmentShader.glsl", "shaders/geometryShader.glsl");
     Scene::matrixID = glGetUniformLocation(VBOScene::programID, "MVP");
 
     Scene::mMatrixID = glGetUniformLocation(VBOScene::programID, "M");

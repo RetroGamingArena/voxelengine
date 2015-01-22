@@ -629,11 +629,11 @@
 		64E85D721A5168070042EE5A /* shaders */ = {
 			isa = PBXGroup;
 			children = (
-				64E85D751A5168B00042EE5A /* fragmentShader.glsl */,
 				64E85D761A5168B00042EE5A /* vertexShader.glsl */,
+				64019A711A703F0200470F8A /* geometryShader.glsl */,
+				64E85D751A5168B00042EE5A /* fragmentShader.glsl */,
 				6461723D1A5AEFD90008EBA0 /* uiFragmentShader.glsl */,
 				6461723E1A5AEFD90008EBA0 /* uiVertexShader.glsl */,
-				64019A711A703F0200470F8A /* geometryShader.glsl */,
 			);
 			name = shaders;
 			sourceTree = "<group>";
