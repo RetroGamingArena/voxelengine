@@ -45,9 +45,15 @@ void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, flo
      Cube::bufferizeSquare(scene, x+p,      y+q, z+r, x+p,      y+q+size, z+r+size, color, ao); //side
      Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);*/
     
-    p = (p-this->p)/(subSize) + this->p;
+    //TemplateDebug::debug();
+    
+    p = (this->p*(this->size/this->subSize)) + (this->size/this->subSize)*p/(this->size);
+    q = (this->q*(this->size/this->subSize)) + (this->size/this->subSize)*q/(this->size);
+    r = (this->r*(this->size/this->subSize)) + (this->size/this->subSize)*r/(this->size);
+    
+    /*p = (p-this->p)/(subSize) + this->p;
     q = (q-this->q)/(subSize) + this->q;
-    r = (r-this->r)/(subSize) + this->r;
+    r = (r-this->r)/(subSize) + this->r;*/
     
     ao[0] = 0.5;
     ao[1] = 0.5;

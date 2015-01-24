@@ -9,7 +9,7 @@
 #include "World.h"
 #include "Octree.h"
 
-int World::size=0;
+int World::size=1;
 
 void World::bufferize(VBOScene* scene)
 {

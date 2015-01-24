@@ -7,12 +7,13 @@
 //
 
 #include "PerlinGenerator.h"
+#include "../World.h"
 #include "../Chunk.h"
 
 float PerlinGenerator::getY(float x, float y)
 {
-    int absBound = (destSize/Chunk::size)/2;
-    float height = heightMap.GetValue(x+absBound*Chunk::size, y+absBound*Chunk::size);
+    int absBound = World::size*Chunk::size*Chunk::subsize;//(destSize/(Chunk::size*Chunk::subsize))/2;
+    float height = heightMap.GetValue(x+absBound, y+absBound);
     if(height < -1)
         height = -1;
     if(height >= 1)

@@ -10,8 +10,8 @@
 
 #include <algorithm>
 
-int Chunk::size = 32;
-int Chunk::subsize = 4;
+int Chunk::size = 8;
+int Chunk::subsize = 8;
 
 void Chunk::bufferize(VBOScene* scene)
 {
@@ -27,14 +27,14 @@ void Chunk::bufferize(VBOScene* scene)
         }
     }*/
     
-    o->bufferize(scene, pp, qq, rr);
+    o->bufferize(scene, 0, 0, 0);//pp, qq, rr);
     delete o;
 }
 
 void Chunk::generate(WorldGenerator* generator)
 {
-    float pp = p * Chunk::size * Cube::size;
-    float rr = r * Chunk::size * Cube::size;
+    float pp = p * Chunk::size * Chunk::subsize * Cube::size;
+    float rr = r * Chunk::size * Chunk::subsize * Cube::size;
 
     for(float i = 0; i < size*subsize; i+=1)
         for(float k = 0; k < size*subsize; k+=1)

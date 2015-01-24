@@ -34,15 +34,10 @@ class Octree : public OctreeEntry<T>
         {
             depth = 5;
         }
+
         ~Octree()
         {
-            if( this->entries != NULL )
-                for(int i = 0; i < 8; i++)
-                {
-                    delete this->entries[i];
-                    this->entries[i] = NULL;
-                }
-            delete this->entries;
+            //OctreeEntry<T>::~OctreeEntry();
         }
     
         void bufferize(VBOScene* scene, float x, float y, float z);

@@ -32,7 +32,17 @@ class OctreeEntry
         }
         ~OctreeEntry()
         {
-        
+            if( this->entries != NULL )
+                for(int i = 0; i < 8; i++)
+                {
+                    if( this->entries[i] != NULL )
+                    {
+                        delete this->entries[i];
+                        //TemplateDebug::debug();
+                        this->entries[i] = NULL;
+                    }
+                }
+            delete[] this->entries;
         }
         void split();
         T getLeaf(){return leaf;};
