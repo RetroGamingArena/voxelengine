@@ -28,6 +28,7 @@ void Chunk::bufferize(VBOScene* scene)
     }*/
     
     o->bufferize(scene, pp, qq, rr);
+    delete o;
 }
 
 void Chunk::generate(WorldGenerator* generator)

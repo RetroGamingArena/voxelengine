@@ -12,7 +12,7 @@ uniform mat4 V;
 uniform mat4 P;
 
 out mat4 PVM = P * V * M;
-out vec3 vertexPosition;
+out vec4 vertexPosition;
 out vec3 fragmentColor;
 out float fragmentAo;
 
@@ -23,7 +23,7 @@ uniform vec3 cameraPosition;
 void main()
 {
     gl_Position = /*MVP*/ P * V * M * vec4(vertexPosition_modelspace,1);
-    fragmentAo = 1.0;//0.3 + (1.0 - ambiant ) * 0.7;
+    fragmentAo = 0.3 + (1.0 - ambiant ) * 0.7;
 
     fragmentColor = vec3(1.0,1.0,1.0);//noise1(1));
     if(vertexColorIndex == 1)
@@ -36,13 +36,14 @@ void main()
         fragmentColor = vec3(0.3,0.3,0.0);
     else if(vertexColorIndex == 5)
         fragmentColor = vec3(0.5,0.5,0.5);
-    
+    //_fragmentColor = fragmentColor;
+    //fragmentAo = ambiant;
     //fragmentPosition = vertexPosition_modelspace;
     //fragmentColor = vec3(1.0,1.0,mod(vertexPosition_modelspace.x,16)/16);
     //_cameraPosition=cameraPosition;
     //_cameraUnprojection=cameraUnprojection;
     //fragmentPosition = gl_Position;
-    vertexPosition = vertexPosition_modelspace;
+    vertexPosition = vec4(vertexPosition_modelspace,1);
     //fragmentColor =
     //fragmentAo =
 }

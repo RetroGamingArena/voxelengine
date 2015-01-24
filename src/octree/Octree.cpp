@@ -57,9 +57,9 @@ void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, flo
     //ao[0] = -0.5;
     //ao[1] = -0.5;
     
-    Cube::bufferizePoint(scene, p, q, r, type, 1.0);
+    //Cube::bufferizePoint(scene, p, q, r, type, 1.0);
     
-    /*Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
+    Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
     
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 1);
@@ -109,7 +109,7 @@ void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, flo
     Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 4);*/
+    Cube::bufferizeIndice(scene, 4);
 }
 
 template<typename T>
@@ -281,3 +281,4 @@ bool Octree<T>::isCubeVisible(int x, int y, int z)
     }*/
     return true;
 }
+

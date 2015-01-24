@@ -27,20 +27,20 @@ void VoxelScene::onMouseScroll(double xoffset, double yoffset)
 {
     Scene::onMouseScroll(xoffset, yoffset);
     
-    if(thread == NULL)
+    //if(thread == NULL)
      {
-         buffer->getData()->clear();
-         indices->getData()->clear();
-         thread = new std::thread(bufferize, this);
-         mutex->lock();
+         //buffer->getData()->clear();
+         //indices->getData()->clear();
+     //    thread = new std::thread(bufferize, this);
+     //    mutex->lock();
      }
      
-     if( thread != NULL && mutex->try_lock() )
+     //if( thread != NULL && mutex->try_lock() )
      {
-         glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
-         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
-         mutex->unlock();
-         thread = NULL;
+       //  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
+         //glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
+       //  mutex->unlock();
+       //  thread = NULL;
      }
 }
 
@@ -58,7 +58,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
     float dy = (mouse3D.y - position.y) * 1000;
     float dz = (mouse3D.z - position.z) * 1000;
     
-    if(thread == NULL)
+    /*if(thread == NULL)
     {
         buffer->getData()->clear();
         indices->getData()->clear();
@@ -72,7 +72,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
         mutex->unlock();
         thread = NULL;
-    }
+    }*/
     
     for(int i = 0; i < 80; i++)
     {
@@ -112,7 +112,7 @@ void VoxelScene::onMouseMotion(double xpos, double ypos)
 
 void VoxelScene::bufferize(VoxelScene* voxelScene)
 {
-    Engine::getInstance()->getProcessor()->bufferize(voxelScene, Engine::getInstance()->getWorld());
+    //Engine::getInstance()->getProcessor()->bufferize(voxelScene, Engine::getInstance()->getWorld());
     mutex->unlock();
 }
 
@@ -120,24 +120,24 @@ void VoxelScene::render()
 {
     VBOScene::render();
     glClearColor(0.5f, 0.9f, 1.0f, 0.0f);
-    if( invalidated)
+    //if( invalidated)
     {
-        if(thread == NULL)
+        //if(thread == NULL)
         {
-            buffer->getData()->clear();
-            indices->getData()->clear();
-            thread = new std::thread(bufferize, this);
-            mutex->lock();
+            //buffer->getData()->clear();
+            //indices->getData()->clear();
+            //thread = new std::thread(bufferize, this);
+            //mutex->lock();
         }
         
-        if( thread != NULL && mutex->try_lock() )
+        //if( thread != NULL && mutex->try_lock() )
         {
-            glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
-            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
-            mutex->unlock();
-            thread = NULL;
-            bindBuffer();
-            invalidated = false;
+            //glBufferData(GL_ARRAY_BUFFER, sizeof(GLubyte)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
+            //glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices->getData()->size() * sizeof(unsigned int), &(*indices->getData())[0] , GL_STATIC_DRAW);
+            //mutex->unlock();
+            //thread = NULL;
+            //bindBuffer();
+            //invalidated = false;
         }
     }
 }

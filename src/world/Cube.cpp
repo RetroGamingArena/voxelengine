@@ -164,7 +164,7 @@ void Cube::bufferizeCube(VBOScene* scene, unsigned char type, float p, float q, 
     
     Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
     
-    Cube::bufferizeIndice(scene, 0);
+    /*Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 1);
     Cube::bufferizeIndice(scene, 2);
     Cube::bufferizeIndice(scene, 1);
@@ -212,5 +212,5 @@ void Cube::bufferizeCube(VBOScene* scene, unsigned char type, float p, float q, 
     Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 4);
+    Cube::bufferizeIndice(scene, 4);*/
 }

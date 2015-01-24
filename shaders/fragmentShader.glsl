@@ -1,14 +1,14 @@
 #version 330 core
-in vec3 _fragmentColor;
+in vec3 fragmentColor;
 //in vec4 fragmentPosition;
-in float _fragmentAo;
+in float fragmentAo;
 
 out vec4 color;
 
 void main()
 {
-    float ao = _fragmentAo;
+    float ao = fragmentAo;
     ao = min(1.0, ao);
     
-    color = clamp(vec4(_fragmentColor * ao, 1), vec4(0.0), vec4(1.0));//vec4(fragmentColor.rgb,1);//vec4(0, 1, 0, 1);
+    color = clamp(vec4(fragmentColor * ao, 1), vec4(0.0), vec4(1.0));//vec4(fragmentColor.rgb,1);//vec4(0, 1, 0, 1);
 }

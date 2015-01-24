@@ -30,6 +30,10 @@ class OctreeEntry
             entries = 0;
             drawn = false;
         }
+        ~OctreeEntry()
+        {
+        
+        }
         void split();
         T getLeaf(){return leaf;};
         void setLeaf(T leaf){this->leaf=leaf;};
