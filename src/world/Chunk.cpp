@@ -10,8 +10,8 @@
 
 #include <algorithm>
 
-int Chunk::size = 8;
-int Chunk::subsize = 8;
+int Chunk::size = 2;
+int Chunk::subsize = 32;
 
 void Chunk::bufferize(VBOScene* scene)
 {

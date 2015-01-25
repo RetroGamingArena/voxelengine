@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
       <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::~OctreeEntry():OctreeEntry.h">
@@ -84,7 +84,10 @@
          contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int, unsigned char):OctreeEntry.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "x+y*2+z*4">
+               value = "this-&gt;entries[7]">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;entries[x+y*4+z*2]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -136,18 +139,18 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+            <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
                value = "getVertexCount()">
             </PersistentString>
-            <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
-            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

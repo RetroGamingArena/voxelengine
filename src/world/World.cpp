@@ -8,6 +8,8 @@
 
 #include "World.h"
 #include "Octree.h"
+#include "../thread/Task.h"
+#include "ChunkTask.h"
 
 int World::size=1;
 
@@ -90,4 +92,22 @@ OctreeEntry<unsigned char>* World::getPointedCube(float x, float y, float z)
         }
     }
     return 0;
+}
+
+Task* World::buildTask()
+{
+    if( mutex->try_lock() )
+    {
+        Chunk* chunk = chunks[chunkIndice];
+        ChunkTask* chunkTask = new ChunkTask(chunk, generator);
+        chunkIndice = (chunkIndice+1)%chunks.size();
+        mutex->unlock();
+        return chunkTask;
+    }
+    return NULL;
+}
+
+bool World::hasNext()
+{
+    return chunkIndice > chunks.size();
 }

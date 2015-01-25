@@ -52,6 +52,10 @@
 		64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D791A516C790042EE5A /* Chunk.cpp */; };
 		64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7C1A516EAA0042EE5A /* Cube.cpp */; };
 		64E85D811A518B130042EE5A /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E85D7F1A518B130042EE5A /* Buffer.cpp */; };
+		64F9D8B11A745CF100127C54 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8AF1A745CF100127C54 /* Thread.cpp */; };
+		64F9D8B41A745D0200127C54 /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B21A745D0200127C54 /* Pool.cpp */; };
+		64F9D8B71A7514F200127C54 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B51A7514F200127C54 /* Task.cpp */; };
+		64F9D8BA1A7521BF00127C54 /* ChunkTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B81A7521BF00127C54 /* ChunkTask.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -406,6 +410,14 @@
 		64E85E691A51C4C60042EE5A /* wrap.inl */ = {isa = PBXFileReference; lastKnownFileType = text; path = wrap.inl; sourceTree = "<group>"; };
 		64E85E6B1A51C4C60042EE5A /* xstream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = xstream.hpp; sourceTree = "<group>"; };
 		64F6EBD81A5F1DCD00039686 /* TemplateDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemplateDebug.h; sourceTree = "<group>"; };
+		64F9D8AF1A745CF100127C54 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Thread.cpp; path = thread/Thread.cpp; sourceTree = "<group>"; };
+		64F9D8B01A745CF100127C54 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Thread.h; path = thread/Thread.h; sourceTree = "<group>"; };
+		64F9D8B21A745D0200127C54 /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Pool.cpp; path = thread/Pool.cpp; sourceTree = "<group>"; };
+		64F9D8B31A745D0200127C54 /* Pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pool.h; path = thread/Pool.h; sourceTree = "<group>"; };
+		64F9D8B51A7514F200127C54 /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Task.cpp; path = thread/Task.cpp; sourceTree = "<group>"; };
+		64F9D8B61A7514F200127C54 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = thread/Task.h; sourceTree = "<group>"; };
+		64F9D8B81A7521BF00127C54 /* ChunkTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChunkTask.cpp; path = world/ChunkTask.cpp; sourceTree = "<group>"; };
+		64F9D8B91A7521BF00127C54 /* ChunkTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChunkTask.h; path = world/ChunkTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -555,6 +567,7 @@
 		64E85D4B1A4F65FF0042EE5A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				64F9D8AE1A74593E00127C54 /* thread */,
 				6418F3321A6C61F00068DE31 /* collision */,
 				642FC3C81A5DAC6100DC8A94 /* octree */,
 				646172361A5A8CE60008EBA0 /* UI */,
@@ -606,6 +619,8 @@
 				64E85D7D1A516EAA0042EE5A /* Cube.h */,
 				6458F61C1A5733000006BF88 /* CubeType.cpp */,
 				6458F61D1A5733000006BF88 /* CubeType.h */,
+				64F9D8B81A7521BF00127C54 /* ChunkTask.cpp */,
+				64F9D8B91A7521BF00127C54 /* ChunkTask.h */,
 			);
 			name = world;
 			sourceTree = "<group>";
@@ -912,6 +927,19 @@
 			path = virtrev;
 			sourceTree = "<group>";
 		};
+		64F9D8AE1A74593E00127C54 /* thread */ = {
+			isa = PBXGroup;
+			children = (
+				64F9D8AF1A745CF100127C54 /* Thread.cpp */,
+				64F9D8B01A745CF100127C54 /* Thread.h */,
+				64F9D8B21A745D0200127C54 /* Pool.cpp */,
+				64F9D8B31A745D0200127C54 /* Pool.h */,
+				64F9D8B51A7514F200127C54 /* Task.cpp */,
+				64F9D8B61A7514F200127C54 /* Task.h */,
+			);
+			name = thread;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -971,6 +999,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F9D8B71A7514F200127C54 /* Task.cpp in Sources */,
 				648635EB1A682CA6002E09FB /* IterativeProcessor.cpp in Sources */,
 				642FC3CE1A5DCF9900DC8A94 /* OctreeEntry.cpp in Sources */,
 				6458F60C1A5566D20006BF88 /* Camera.cpp in Sources */,
@@ -978,6 +1007,7 @@
 				6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */,
 				64E85D7E1A516EAA0042EE5A /* Cube.cpp in Sources */,
 				6458F60F1A5567190006BF88 /* TrackBallCamera.cpp in Sources */,
+				64F9D8B11A745CF100127C54 /* Thread.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
 				642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */,
 				648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */,
@@ -994,6 +1024,7 @@
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
+				64F9D8B41A745D0200127C54 /* Pool.cpp in Sources */,
 				64E85D511A4F65FF0042EE5A /* main.cpp in Sources */,
 				64E85D501A4F65FF0042EE5A /* engine.cpp in Sources */,
 				64E85D5F1A4F785C0042EE5A /* VoxelScene.cpp in Sources */,
@@ -1004,6 +1035,7 @@
 				648635EE1A6843AE002E09FB /* RayCasterProcessor.cpp in Sources */,
 				647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,
+				64F9D8BA1A7521BF00127C54 /* ChunkTask.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,13 +16,15 @@
 #include "../scene/VBOScene.h"
 #include "generator/WorldGenerator.h"
 #include "generator/PerlinGenerator.h"
+#include "../thread/Pool.h"
 
 using namespace std;
 
-class World
+class World : public Pool
 {
     vector<Chunk*> chunks;
     WorldGenerator* generator;
+    int chunkIndice;
     
     float lowerPBound;
     float upperPBound;
@@ -33,6 +35,7 @@ class World
         static int size;
         World()
         {
+            chunkIndice = 0;
             generator = new PerlinGenerator();
             
             for(int p=-size; p<=size; p++)
@@ -41,10 +44,15 @@ class World
                     Chunk* chunk = new Chunk(p,0,r);
                     chunk->generate(generator);
                     chunks.push_back(chunk);
+                    
+                    /*threadCount = 5;
+                    this->start();
+                    while(isRunning()){}*/
                 }
         }
+        Task* buildTask();
+        bool hasNext();
         vector<Chunk*> getChunks(){return chunks;}
-    
         void bufferize(VBOScene* scene);
         int cubeCount();
         Chunk* getPointedChunk(float x, float y, float z);
