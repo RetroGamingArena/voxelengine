@@ -51,7 +51,7 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
             {
                 glm::vec3 d = ray->move(i);
                 
-                OctreeEntry<unsigned char>* octreeEntry = world->getPointedCube(d.x, d.y, d.z);
+                OctreeEntry* octreeEntry = world->getPointedCube(d.x, d.y, d.z);
                 if( octreeEntry == NULL)
                 {
                     i++;

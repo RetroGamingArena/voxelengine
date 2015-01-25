@@ -82,7 +82,7 @@ Chunk* World::getPointedChunk(float x, float y, float z)
     return 0;
 }
 
-OctreeEntry<unsigned char>* World::getPointedCube(float x, float y, float z)
+OctreeEntry* World::getPointedCube(float x, float y, float z)
 {
     for(int i=0; i < chunks.size(); i++)
     {

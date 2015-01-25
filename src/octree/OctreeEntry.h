@@ -14,14 +14,13 @@
 #include "../scene/VBOScene.h"
 #include "../TemplateDebug.h"
 
-template<typename T>
 class OctreeEntry
 {
     bool drawn;
     
     protected:
-        OctreeEntry<T>** entries;
-        T leaf;
+        OctreeEntry** entries;
+        unsigned char leaf;
         int level=0;
     
     public:
@@ -45,15 +44,15 @@ class OctreeEntry
             delete[] this->entries;
         }
         void split();
-        T getLeaf(){return leaf;};
-        void setLeaf(T leaf){this->leaf=leaf;};
+        unsigned char getLeaf(){return leaf;};
+        void setLeaf(unsigned char leaf){this->leaf=leaf;};
         bool isDrawn(){return drawn;};
         void setDrawn(bool drawn){this->drawn=drawn;};
-        OctreeEntry<T>** getEntries(){return entries;};
-        OctreeEntry<T>* get(int x, int y, int z);
-        OctreeEntry<T>* getAbs(int x, int y, int z, int size);
+        OctreeEntry** getEntries(){return entries;};
+        OctreeEntry* get(int x, int y, int z);
+        OctreeEntry* getAbs(int x, int y, int z, int size);
         void setLevel(int level){this->level=level;};
-        void setCube(int x, int y, int z, int size, T type);
+        void setCube(int x, int y, int z, int size, unsigned char type);
         void invalidate();
 };
 

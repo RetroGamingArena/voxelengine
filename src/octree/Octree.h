@@ -13,10 +13,8 @@
 
 #include "../scene/VBOScene.h"
 #include "OctreeEntry.h"
-#include "OctreeEntry.cpp"
 
-template<typename T>
-class Octree : public OctreeEntry<T>
+class Octree : public OctreeEntry
 {
     int size;
     float subSize;
@@ -30,7 +28,7 @@ class Octree : public OctreeEntry<T>
     float r;
     
         void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
-        Octree() : OctreeEntry<T>()
+        Octree() : OctreeEntry()
         {
             depth = 5;
         }
@@ -41,7 +39,7 @@ class Octree : public OctreeEntry<T>
         }
     
         void bufferize(VBOScene* scene, float x, float y, float z);
-        void bufferize(VBOScene* scene, OctreeEntry<T>* OctreeEntry, float p, float q, float r, int size);
+        void bufferize(VBOScene* scene, OctreeEntry* OctreeEntry, float p, float q, float r, int size);
         void setSize(int size){this->size=size;};
         void setSubSize(int subSize){this->subSize=subSize;};
         bool isCubeVisible(int x, int y, int z);

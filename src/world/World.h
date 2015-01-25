@@ -56,7 +56,7 @@ class World : public Pool
         void bufferize(VBOScene* scene);
         int cubeCount();
         Chunk* getPointedChunk(float x, float y, float z);
-        OctreeEntry<unsigned char>* getPointedCube(float x, float y, float z);
+        OctreeEntry* getPointedCube(float x, float y, float z);
 };
 
 #endif /* defined(__Voxelengine__World__) */

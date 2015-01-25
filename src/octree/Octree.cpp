@@ -10,8 +10,7 @@
 #include "../world/Cube.h"
 #include "../world/CubeType.h"
 
-template<typename T>
-void Octree<T>::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree offset
+void Octree::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree offset
 {
         for(int i = 0; i < 8; i++)
         {
@@ -23,8 +22,7 @@ void Octree<T>::bufferize(VBOScene* scene, float p, float q, float r) //TODO oct
         }
 }
 
-template<typename T>
-void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)
+void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)
 {
     float size = 1.0/subSize;
     
@@ -118,8 +116,7 @@ void Octree<T>::bufferizeEntry(VBOScene* scene, unsigned char type, float p, flo
     Cube::bufferizeIndice(scene, 4);
 }
 
-template<typename T>
-void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p, float q, float r, int size)
+void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)
 {
     if(octreeEntry->getEntries() == NULL)
     {
@@ -264,8 +261,7 @@ void Octree<T>::bufferize(VBOScene* scene, OctreeEntry<T>* octreeEntry, float p,
     }
 }
 
-template<typename T>
-bool Octree<T>::isCubeVisible(int x, int y, int z)
+bool Octree::isCubeVisible(int x, int y, int z)
 {
     if( x==0 || y==0 || z==0 || x==(size-1) || y==(size-1) || z==(size-1) )
         return true;

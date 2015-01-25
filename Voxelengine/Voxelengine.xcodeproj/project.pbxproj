@@ -56,6 +56,7 @@
 		64F9D8B41A745D0200127C54 /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B21A745D0200127C54 /* Pool.cpp */; };
 		64F9D8B71A7514F200127C54 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B51A7514F200127C54 /* Task.cpp */; };
 		64F9D8BA1A7521BF00127C54 /* ChunkTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8B81A7521BF00127C54 /* ChunkTask.cpp */; };
+		64F9D8C31A75AA9000127C54 /* Leaf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64F9D8C11A75AA9000127C54 /* Leaf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -418,6 +419,8 @@
 		64F9D8B61A7514F200127C54 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = thread/Task.h; sourceTree = "<group>"; };
 		64F9D8B81A7521BF00127C54 /* ChunkTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChunkTask.cpp; path = world/ChunkTask.cpp; sourceTree = "<group>"; };
 		64F9D8B91A7521BF00127C54 /* ChunkTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChunkTask.h; path = world/ChunkTask.h; sourceTree = "<group>"; };
+		64F9D8C11A75AA9000127C54 /* Leaf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Leaf.cpp; path = octree/Leaf.cpp; sourceTree = "<group>"; };
+		64F9D8C21A75AA9000127C54 /* Leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Leaf.h; path = octree/Leaf.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +456,8 @@
 				642FC3CD1A5DCF9900DC8A94 /* OctreeEntry.h */,
 				6418F3361A6DA8140068DE31 /* Voxel.cpp */,
 				6418F3371A6DA8140068DE31 /* Voxel.h */,
+				64F9D8C11A75AA9000127C54 /* Leaf.cpp */,
+				64F9D8C21A75AA9000127C54 /* Leaf.h */,
 			);
 			name = octree;
 			sourceTree = "<group>";
@@ -1010,6 +1015,7 @@
 				64F9D8B11A745CF100127C54 /* Thread.cpp in Sources */,
 				646172351A59BE910008EBA0 /* GlobalBuffer.cpp in Sources */,
 				642FC3CB1A5DAC7D00DC8A94 /* Octree.cpp in Sources */,
+				64F9D8C31A75AA9000127C54 /* Leaf.cpp in Sources */,
 				648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */,
 				646172391A5A8D760008EBA0 /* UI.cpp in Sources */,
 				64E85D811A518B130042EE5A /* Buffer.cpp in Sources */,

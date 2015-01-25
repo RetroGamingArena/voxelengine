@@ -13,7 +13,7 @@
 
 #include "Octree.h"
 
-class Voxel : public Octree<unsigned char>
+class Voxel : public Octree
 {
     public:
         unsigned char value;

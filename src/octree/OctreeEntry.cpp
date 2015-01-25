@@ -10,26 +10,23 @@
 
 #include "OctreeEntry.h"
 
-template<typename T>
-void OctreeEntry<T>::split()
+void OctreeEntry::split()
 {
-    this->entries = new OctreeEntry<T>*[8];
+    this->entries = new OctreeEntry*[8];
     for(int i = 0; i < 8; i++)
     {
-        this->entries[i] = new OctreeEntry<T>();
+        this->entries[i] = new OctreeEntry();
         this->entries[i]->setLevel(level+1);
         this->entries[i]->leaf = 0;
     }
 }
 
-template<typename T>
-OctreeEntry<T>* OctreeEntry<T>::get(int x, int y, int z)
+OctreeEntry* OctreeEntry::get(int x, int y, int z)
 {
     return this->entries[x+y*4+z*2];
 }
 
-template<typename T>
-void OctreeEntry<T>::setCube(int x, int y, int z, int size, T type)
+void OctreeEntry::setCube(int x, int y, int z, int size, unsigned char type)
 {
     if(this->entries == NULL)
         this->split();
@@ -54,8 +51,7 @@ void OctreeEntry<T>::setCube(int x, int y, int z, int size, T type)
         this->get(i,j,k)->setCube(offset_x,offset_y,offset_z, size/2, type);
 }
 
-template<typename T>
-OctreeEntry<T>* OctreeEntry<T>::getAbs(int x, int y, int z, int size)
+OctreeEntry* OctreeEntry::getAbs(int x, int y, int z, int size)
 {
     if(this->entries == NULL)
         return 0;
@@ -77,8 +73,7 @@ OctreeEntry<T>* OctreeEntry<T>::getAbs(int x, int y, int z, int size)
         return this->get(ii,jj,kk)->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
-template<typename T>
-void OctreeEntry<T>::invalidate()
+void OctreeEntry::invalidate()
 {
     this->drawn = 0;
     if( entries != NULL )

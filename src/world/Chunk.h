@@ -17,7 +17,6 @@
 #include "generator/WorldGenerator.h"
 
 #include "../octree/Octree.h"
-#include "../octree/Octree.cpp"
 #include "../octree/Voxel.h"
 
 using namespace std;
@@ -28,7 +27,7 @@ class Chunk
     float q;
     float r;
     
-    Octree<unsigned char>* o;
+    Octree* o;
 
     public:
         static int size;
@@ -39,7 +38,7 @@ class Chunk
             this->q=q;
             this->r=r;
             
-            this->o = new Octree<unsigned char>();
+            this->o = new Octree();
             o->setSize(Chunk::size*Chunk::subsize);
             o->setSubSize(Chunk::subsize);
             
@@ -50,7 +49,7 @@ class Chunk
         float getP(){return p;};
         float getQ(){return q;};
         float getR(){return r;};
-        Octree<unsigned char>* getOctree(){return o;};
+        Octree* getOctree(){return o;};
         void bufferize(VBOScene* scene);
         void generate(WorldGenerator* generator);
         bool contains(float x, float y, float z);
