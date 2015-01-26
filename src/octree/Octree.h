@@ -12,9 +12,9 @@
 #include <stdio.h>
 
 #include "../scene/VBOScene.h"
-#include "OctreeEntry.h"
+#include "Node.h"
 
-class Octree : public OctreeEntry
+class Octree : public Node
 {
     int size;
     float subSize;
@@ -28,7 +28,7 @@ class Octree : public OctreeEntry
     float r;
     
         void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
-        Octree() : OctreeEntry()
+        Octree() : Node()
         {
             depth = 5;
         }

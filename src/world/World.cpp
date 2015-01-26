@@ -88,7 +88,7 @@ OctreeEntry* World::getPointedCube(float x, float y, float z)
     {
         if( chunks[i]->contains(x, y, z) )
         {
-            return chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size)->getEntries()[0];
+            return 0; //chunks[i]->getOctree()->getAbs(x,y,z, Chunk::size)->getEntries()[0];
         }
     }
     return 0;

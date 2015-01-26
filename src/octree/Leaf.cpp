@@ -7,3 +7,8 @@
 //
 
 #include "Leaf.h"
+
+void Leaf::invalidate()
+{
+    this->drawn = 0;
+}

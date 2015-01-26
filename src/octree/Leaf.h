@@ -11,9 +11,16 @@
 
 #include <stdio.h>
 
-class Leaf
-{
+#include "OctreeEntry.h"
 
+class Leaf : public OctreeEntry
+{
+    unsigned char leaf;
+    
+    public:
+        unsigned char getLeaf(){return leaf;};
+        void setLeaf(unsigned char leaf){this->leaf=leaf;};
+        void invalidate();
 };
 
 #endif /* defined(__Voxelengine__Leaf__) */

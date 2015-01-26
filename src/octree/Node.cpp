@@ -1,18 +1,15 @@
 //
-//  OctreeEntry.cpp
+//  Node.cpp
 //  Voxelengine
 //
-//  Created by Julien CAILLABET on 07/01/2015.
+//  Created by Julien CAILLABET on 26/01/2015.
 //  Copyright (c) 2015 RGA. All rights reserved.
 //
 
-#include <iostream>
-
-#include "OctreeEntry.h"
 #include "Node.h"
 #include "Leaf.h"
 
-/*void OctreeEntry::split()
+void Node::split()
 {
     this->entries = new OctreeEntry*[8];
     for(int i = 0; i < 8; i++)
@@ -23,16 +20,16 @@
     }
 }
 
-OctreeEntry* OctreeEntry::get(int x, int y, int z)
+OctreeEntry* Node::get(int x, int y, int z)
 {
     return this->entries[x+y*4+z*2];
 }
 
-void OctreeEntry::setCube(int x, int y, int z, int size, unsigned char type)
+void Node::setCube(int x, int y, int z, int size, unsigned char type)
 {
     if(this->entries == NULL)
         this->split();
-
+    
     if(size==1)
     {
         delete this->entries[x+y*4+z*2];
@@ -52,40 +49,47 @@ void OctreeEntry::setCube(int x, int y, int z, int size, unsigned char type)
     int offset_x = x - i * (size/2);
     int offset_y = y - j * (size/2);
     int offset_z = z - k * (size/2);
-                    
-    if(size==2)
-        this->get(i,j,k)->setCube(i,j,k, 1, type);
-    else
-        this->get(i,j,k)->setCube(offset_x,offset_y,offset_z, size/2, type);
+    
+    Node* node = dynamic_cast<Node*>(this->get(i,j,k));
+    
+    if(node != NULL)
+    {
+        if(size==2)
+            /*this->get(i,j,k)*/node->setCube(i,j,k, 1, type);
+        else
+            /*this->get(i,j,k)*/node->setCube(offset_x,offset_y,offset_z, size/2, type);
+    }
 }
 
-OctreeEntry* OctreeEntry::getAbs(int x, int y, int z, int size)
+OctreeEntry* Node::getAbs(int x, int y, int z, int size)
 {
     if(this->entries == NULL)
         return 0;
     
     if(size==1)
         return this->entries[x+y*4+z*2];
-
+    
     int ii = !!(x & size/2);
     int jj = !!(y & size/2);
     int kk = !!(z & size/2);
-
+    
     int offset_x = x - ii * (size/2);
     int offset_y = y - jj * (size/2);
     int offset_z = z - kk * (size/2);
     
+    Node* node = dynamic_cast<Node*>(this->get(ii,jj,kk));
+    
     if(size==2)
-        return this->get(ii,jj,kk)->getAbs(ii,jj,kk, 1);
+        return /*this->get(ii,jj,kk)*/node->getAbs(ii,jj,kk, 1);
     else
-        return this->get(ii,jj,kk)->getAbs(offset_x,offset_y,offset_z, size/2);
+        return /*this->get(ii,jj,kk)*/node->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
-void OctreeEntry::invalidate()
+void Node::invalidate()
 {
     this->drawn = 0;
     if( entries != NULL )
         for(int i = 0 ; i < 8; i++)
             if(entries[i] != NULL)
                 entries[i]->invalidate();
-}*/
+}
