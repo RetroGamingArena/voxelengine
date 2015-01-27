@@ -41,6 +41,7 @@ class Node : public OctreeEntry
     
         void split();
         OctreeEntry* get(int x, int y, int z);
+        OctreeEntry* addAndGet(int x, int y, int z);
         OctreeEntry* getAbs(int x, int y, int z, int size);
         void setCube(int x, int y, int z, int size, unsigned char type);
         virtual void invalidate();

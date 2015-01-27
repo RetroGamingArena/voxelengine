@@ -10,7 +10,7 @@
 
 #include <algorithm>
 
-int Chunk::size = 2;
+int Chunk::size = 4;
 int Chunk::subsize = 32;
 
 void Chunk::bufferize(VBOScene* scene)

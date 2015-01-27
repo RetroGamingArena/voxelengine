@@ -14,7 +14,8 @@ void Node::split()
     this->entries = new OctreeEntry*[8];
     for(int i = 0; i < 8; i++)
     {
-        this->entries[i] = new Node();
+        this->entries[i] = NULL;
+        //this->entries[i] = new Node();
         //this->entries[i]->setLevel(level+1);
         //this->entries[i]->leaf = 0;
     }
@@ -23,6 +24,13 @@ void Node::split()
 OctreeEntry* Node::get(int x, int y, int z)
 {
     return this->entries[x+y*4+z*2];
+}
+
+OctreeEntry* Node::addAndGet(int x, int y, int z)
+{
+    if( this->entries[x+y*4+z*2] == NULL)
+        this->entries[x+y*4+z*2] = new Node();
+    return get(x, y, z);
 }
 
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
@@ -50,7 +58,8 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     int offset_y = y - j * (size/2);
     int offset_z = z - k * (size/2);
     
-    Node* node = dynamic_cast<Node*>(this->get(i,j,k));
+    OctreeEntry* entry = this->addAndGet(i,j,k);
+    Node* node = dynamic_cast<Node*>(entry);
     
     if(node != NULL)
     {
@@ -79,9 +88,13 @@ OctreeEntry* Node::getAbs(int x, int y, int z, int size)
     
     Node* node = dynamic_cast<Node*>(this->get(ii,jj,kk));
     
+    if( node == NULL )
+        return NULL;
+    
     if(size==2)
+    {
         return /*this->get(ii,jj,kk)*/node->getAbs(ii,jj,kk, 1);
-    else
+    }else
         return /*this->get(ii,jj,kk)*/node->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
