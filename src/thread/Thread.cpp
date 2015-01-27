@@ -19,7 +19,10 @@ void Thread::start()
 void Thread::run(Thread* thread)
 {
     if( thread->task != NULL)
+    {
         thread->task->run();
+        thread->mutex->unlock();
+    }
 }
 
 bool Thread::isBusy()

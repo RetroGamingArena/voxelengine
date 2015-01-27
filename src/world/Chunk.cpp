@@ -43,26 +43,21 @@ void Chunk::generate(WorldGenerator* generator)
             
             for(int j = 0; j <= height; j++)
             {
-                Cube* cube = new Cube(i, j, k);
+                unsigned char type;
                 
                 if(j<16*size*subsize/32)
-                    cube->setType(2); //dirt
+                    type = 2; //dirt
                 else if(j<18*size*subsize/32)
-                    cube->setType(3); //sand
+                    type = 3; //sand
                 else if(j<20*size*subsize/32)
-                    cube->setType(1); //grass
+                    type = 1; //grass
                 else if(j<25*size*subsize/32)
-                    cube->setType(4); //dirt
+                    type = 4; //dirt
                 else if(j<28*size*subsize/32)
-                    cube->setType(5); //rock
+                    type = 5; //rock
                 else
-                    cube->setType(6); //snow
-                //cubes.push_back(cube);
-                //indexedCubes.insert(std::pair<int, Cube*>(Cube::getIndex(i, j, k), cube));
-                
-                //Voxel* voxel = new Voxel();
-                //voxel->setLeaf(cube->getType());
-                o->setCube(i,j,k, size*subsize, cube->getType());
+                    type = 6; //snow
+                o->setCube(i,j,k, size*subsize, type);
             }
         }
 }

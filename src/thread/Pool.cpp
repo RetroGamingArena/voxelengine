@@ -17,25 +17,46 @@ void Pool::registerThread(Thread* thread)
 
 void Pool::start()
 {
+    for(int i = 0; i < threadCount; i++)
+    {
+        Task* task = buildTask();
+        if(task != NULL)
+        {
+            Thread* thread = new Thread();
+            thread->setTask(task);
+            threads.push_back(thread);
+        }
+    }
+    for(int i = 0; i < threads.size(); i++)
+    {
+        Thread* thread = threads[i];
+        if(thread != NULL)
+            thread->start();
+    }
     work = new thread(Pool::run, this);
 }
 
 bool Pool::isRunning()
 {
+    for(int i = 0; i < threads.size(); i++)
+    {
+        if( threads[i] != NULL )
+            if( threads[i]->isBusy() )
+            {
+                return true;
+            }
+            else
+            {
+                delete threads[i];
+                threads.erase(threads.begin()+i);
+                threads.insert(threads.begin()+i, NULL);
+            }
+    }
     return false;
 }
 
 void Pool::run(Pool* pool)
 {
-    for(int i = 0; i < pool->threadCount; i++)
-    {
-        Thread* thread = new Thread();
-        Task* task = pool->buildTask();
-        thread->setTask(task);
-        pool->threads.push_back(thread);
-        thread->start();
-    }
-    
     while (pool->hasNext())
     {
         Task* task = pool->buildTask();

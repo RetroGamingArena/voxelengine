@@ -16,17 +16,17 @@
 
 class OctreeEntry
 {
-    protected:
-        bool drawn;
+    //protected:
+        //bool drawn;
         //OctreeEntry** entries;
     
-        int level=0;
+        //int level=0;
     
     public:
         OctreeEntry()
         {
             //entries = 0;
-            drawn = false;
+            //drawn = false;
         }
         ~OctreeEntry()
         {
@@ -44,12 +44,12 @@ class OctreeEntry
         }
         //void split();
     
-        bool isDrawn(){return drawn;};
-        void setDrawn(bool drawn){this->drawn=drawn;};
+        //bool isDrawn(){return drawn;};
+        //void setDrawn(bool drawn){this->drawn=drawn;};
         //OctreeEntry** getEntries(){return entries;};
         /*OctreeEntry* get(int x, int y, int z);
         OctreeEntry* getAbs(int x, int y, int z, int size);*/
-        void setLevel(int level){this->level=level;};
+        //void setLevel(int level){this->level=level;};
         /*void setCube(int x, int y, int z, int size, unsigned char type);*/
         virtual void invalidate() =0;
 };

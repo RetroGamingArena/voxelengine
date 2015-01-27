@@ -36,9 +36,9 @@ void LoadingScene::render()
 void LoadingScene::initWorld()
 {
     Engine::getInstance()->setWorld(new World());
-    while(Engine::getInstance()->getWorld()->hasNext())
+    while(Engine::getInstance()->getWorld()->hasNext() && Engine::getInstance()->getWorld()->isRunning())
     {
-    
+        
     }
     /*VoxelScene* voxenScene = new VoxelScene(Engine::getInstance()->getWindow());
     voxenScene->init();

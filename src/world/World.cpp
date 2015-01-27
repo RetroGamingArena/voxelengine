@@ -96,11 +96,11 @@ OctreeEntry* World::getPointedCube(float x, float y, float z)
 
 Task* World::buildTask()
 {
-    if( mutex->try_lock() )
+    if( mutex->try_lock() && hasNext())
     {
         Chunk* chunk = chunks[chunkIndice];
         ChunkTask* chunkTask = new ChunkTask(chunk, generator);
-        chunkIndice = (chunkIndice+1)%chunks.size();
+        chunkIndice = chunkIndice+1;
         mutex->unlock();
         return chunkTask;
     }
@@ -109,5 +109,5 @@ Task* World::buildTask()
 
 bool World::hasNext()
 {
-    return chunkIndice > chunks.size();
+    return chunkIndice < chunks.size();
 }

@@ -12,6 +12,7 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
 {    
     for(int i=0; i < world->getChunks().size() ; i++)
     {
-        world->getChunks()[i]->bufferize(scene);
+        if( world->getChunks()[i]->getOctree()->getEntries() != NULL )
+            world->getChunks()[i]->bufferize(scene);
     }
 }

@@ -15,7 +15,7 @@ void Node::split()
     for(int i = 0; i < 8; i++)
     {
         this->entries[i] = new Node();
-        this->entries[i]->setLevel(level+1);
+        //this->entries[i]->setLevel(level+1);
         //this->entries[i]->leaf = 0;
     }
 }
@@ -87,7 +87,7 @@ OctreeEntry* Node::getAbs(int x, int y, int z, int size)
 
 void Node::invalidate()
 {
-    this->drawn = 0;
+    //this->drawn = 0;
     if( entries != NULL )
         for(int i = 0 ; i < 8; i++)
             if(entries[i] != NULL)

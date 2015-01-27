@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
       <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::~OctreeEntry():OctreeEntry.h">
@@ -29,6 +29,9 @@
                value = " (start.x/mouse3D.x)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "LoadingScene::render():LoadingScene.cpp">
       </ContextState>
       <ContextState
          contextName = "Chunk::generate(WorldGenerator*):Chunk.cpp">
@@ -74,6 +77,14 @@
             </PersistentString>
             <PersistentString
                value = "scene-&gt;getVertexbuffer()-&gt;getVector()[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "World::hasNext():World.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "chunkIndice &gt; chunks.size()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -139,18 +150,21 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
+               value = "getVertexCount()">
             </PersistentString>
             <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
-               value = "getVertexCount()">
+               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+         contextName = "ChunkTask::ChunkTask(Chunk*, WorldGenerator*):ChunkTask.h">
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

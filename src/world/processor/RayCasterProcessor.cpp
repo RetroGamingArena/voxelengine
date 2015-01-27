@@ -57,8 +57,8 @@ void RayCasterProcessor::bufferize(VBOScene* scene, World* world)
                     i++;
                     continue;
                 }
-                if( octreeEntry->isDrawn() )
-                    break;
+                //if( octreeEntry->isDrawn() )
+                //    break;
                 unsigned char type = 0;//octreeEntry->getLeaf();
                 if(type > 0)
                 {
