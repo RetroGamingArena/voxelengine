@@ -33,22 +33,31 @@ OctreeEntry* Node::addAndGet(int x, int y, int z)
     return get(x, y, z);
 }
 
+bool Node::isCompressible()
+{
+    if(entries == NULL)
+        return false;
+    if(entries[0] == NULL)
+        return false;
+    Leaf* leaf = dynamic_cast<Leaf*>(entries[0]);
+    if(leaf == NULL)
+        return false;
+    unsigned char type = leaf->getLeaf();
+    for(int i = 1; i < 8; i++)
+    {
+        leaf = dynamic_cast<Leaf*>(entries[i]);
+        if(leaf == NULL)
+            return false;
+        if(leaf->getLeaf() != type)
+            return false;
+    }
+    return true;
+}
+
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
 {
     if(this->entries == NULL)
         this->split();
-    
-    if(size==1)
-    {
-        delete this->entries[x+y*4+z*2];
-        
-        Leaf* leaf = new Leaf();
-        leaf->setLeaf(type);
-        this->entries[x+y*4+z*2] = leaf;
-        
-        //this->entries[x+y*4+z*2]->leaf = type;
-        return;
-    }
     
     int i = !!(x & size/2);
     int j = !!(y & size/2);
@@ -58,15 +67,19 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     int offset_y = y - j * (size/2);
     int offset_z = z - k * (size/2);
     
-    OctreeEntry* entry = this->addAndGet(i,j,k);
-    Node* node = dynamic_cast<Node*>(entry);
-    
-    if(node != NULL)
+    if(size==2)
     {
-        if(size==2)
-            /*this->get(i,j,k)*/node->setCube(i,j,k, 1, type);
-        else
-            /*this->get(i,j,k)*/node->setCube(offset_x,offset_y,offset_z, size/2, type);
+        Leaf* leaf = new Leaf();
+        leaf->setLeaf(type);
+        //  delete this->entries[x+y*4+z*2];
+        this->entries[x+y*4+z*2] = leaf;
+    }
+    else
+    {
+        OctreeEntry* entry = this->addAndGet(i,j,k);
+        Node* node = dynamic_cast<Node*>(entry);
+            
+        node->setCube(offset_x,offset_y,offset_z, size/2, type);
     }
 }
 
@@ -93,9 +106,9 @@ OctreeEntry* Node::getAbs(int x, int y, int z, int size)
     
     if(size==2)
     {
-        return /*this->get(ii,jj,kk)*/node->getAbs(ii,jj,kk, 1);
+        return node->getAbs(ii,jj,kk, 1);
     }else
-        return /*this->get(ii,jj,kk)*/node->getAbs(offset_x,offset_y,offset_z, size/2);
+        return node->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
 void Node::invalidate()

@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
             <Locations>
@@ -566,11 +566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -598,11 +598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -614,23 +614,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "Chunk::contains(float x, float y, float z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -646,11 +630,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -662,11 +646,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "Chunk::contains(float x, float y, float z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/Chunk.cpp"
+            timestampString = "444084853.546137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -742,11 +742,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -758,11 +758,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -790,11 +790,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76">
+            startingLineNumber = "86"
+            endingLineNumber = "86">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -852,11 +852,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74">
+            startingLineNumber = "84"
+            endingLineNumber = "84">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -896,11 +896,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443750909.627626"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "Chunk::generate(WorldGenerator* generator)"
             landmarkType = "5">
          </BreakpointContent>
@@ -912,11 +912,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79">
+            startingLineNumber = "89"
+            endingLineNumber = "89">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -926,11 +926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -942,11 +942,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -958,11 +958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -974,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1398,11 +1398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71">
+            startingLineNumber = "81"
+            endingLineNumber = "81">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1620,11 +1620,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1732,11 +1732,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1828,11 +1828,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443648198.39099"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "VBOScene::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2112,11 +2112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2304,11 +2304,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "Chunk::contains(float x, float y, float z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2686,11 +2686,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443750909.627626"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "Chunk::generate(WorldGenerator* generator)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2878,11 +2878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443997994.663873"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70">
+            startingLineNumber = "80"
+            endingLineNumber = "80">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2940,11 +2940,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443750909.627626"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "Chunk::generate(WorldGenerator* generator)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2956,11 +2956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443750909.627626"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "Chunk::generate(WorldGenerator* generator)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2972,11 +2972,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.cpp"
-            timestampString = "443750909.627626"
+            timestampString = "444084853.546137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "Chunk::generate(WorldGenerator* generator)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2988,7 +2988,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "443995619.402812"
+            timestampString = "444092924.334981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "281"
@@ -3052,7 +3052,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "443649495.152345"
+            timestampString = "444094184.071029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -3706,27 +3706,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444056818.058784"
+            timestampString = "444092559.803284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/octree/Node.cpp"
-            timestampString = "444056818.058784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3744,6 +3728,230 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "Node::addAndGet(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444092559.803284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444066909.438408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "Node::isCompressible()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444067195.426524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "Node::isCompressible()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444067196.991737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "Node::isCompressible()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444082288.611874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "Node::isCompressible()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/Chunk.cpp"
+            timestampString = "444084850.301635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "Chunk::generate(WorldGenerator* generator)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444092559.803284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444087307.312358"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/Chunk.cpp"
+            timestampString = "444090066.117966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "Chunk::generate(WorldGenerator* generator)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Octree.cpp"
+            timestampString = "444092924.334981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Octree.cpp"
+            timestampString = "444092924.334981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Octree.cpp"
+            timestampString = "444093029.551531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/scene/VBOScene.cpp"
+            timestampString = "444094184.071029"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "VBOScene::render()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/scene/LoadingScene.cpp"
+            timestampString = "444095496.843305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

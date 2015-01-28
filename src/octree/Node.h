@@ -44,7 +44,8 @@ class Node : public OctreeEntry
         OctreeEntry* addAndGet(int x, int y, int z);
         OctreeEntry* getAbs(int x, int y, int z, int size);
         void setCube(int x, int y, int z, int size, unsigned char type);
-        virtual void invalidate();
+        void invalidate();
+        bool isCompressible();
 };
 
 #endif /* defined(__Voxelengine__Node__) */

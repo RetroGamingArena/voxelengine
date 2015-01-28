@@ -11,7 +11,7 @@
 #include "../thread/Task.h"
 #include "ChunkTask.h"
 
-int World::size=0;
+int World::size=1;
 
 void World::bufferize(VBOScene* scene)
 {

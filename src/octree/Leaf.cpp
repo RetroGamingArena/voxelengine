@@ -10,5 +10,5 @@
 
 void Leaf::invalidate()
 {
-    this->drawn = 0;
+    //this->drawn = 0;
 }

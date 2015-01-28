@@ -43,7 +43,8 @@ void VBOScene::render()
     glVertexAttribPointer( 2, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*)(sizeof(GLfloat) * 4));
     
     //glDrawArrays(GL_POINTS, 0, buffer->getData()->size());
-    glDrawElements(GL_TRIANGLES, indices->getData()->size(), GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
+    int size = indices->getData()->size();
+    glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
     
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
