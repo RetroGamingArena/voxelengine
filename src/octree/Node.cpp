@@ -7,7 +7,6 @@
 //
 
 #include "Node.h"
-#include "Leaf.h"
 
 void Node::split()
 {
@@ -83,13 +82,13 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     }
 }
 
-OctreeEntry* Node::getAbs(int x, int y, int z, int size)
+Leaf* Node::getAbs(int x, int y, int z, int size)
 {
     if(this->entries == NULL)
         return 0;
     
-    if(size==1)
-        return this->entries[x+y*4+z*2];
+    //if(size==1)
+    //    return this->entries[x+y*4+z*2];
     
     int ii = !!(x & size/2);
     int jj = !!(y & size/2);
@@ -102,7 +101,10 @@ OctreeEntry* Node::getAbs(int x, int y, int z, int size)
     Node* node = dynamic_cast<Node*>(this->get(ii,jj,kk));
     
     if( node == NULL )
-        return NULL;
+    {
+        Leaf* leaf = dynamic_cast<Leaf*>(this->get(ii,jj,kk));
+        return leaf;
+    }
     
     if(size==2)
     {

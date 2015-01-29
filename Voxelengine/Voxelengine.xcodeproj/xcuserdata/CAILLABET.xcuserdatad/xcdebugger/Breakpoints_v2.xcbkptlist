@@ -2984,11 +2984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3686,7 +3686,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444056818.058784"
+            timestampString = "444264862.965914"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "Node::addAndGet(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264862.965914"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -3702,11 +3734,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444092559.803284"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3718,43 +3750,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444056818.058784"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "Node::addAndGet(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/octree/Node.cpp"
-            timestampString = "444092559.803284"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/octree/Node.cpp"
-            timestampString = "444066909.438408"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "Node::isCompressible()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3766,23 +3766,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444067195.426524"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "Node::isCompressible()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/octree/Node.cpp"
-            timestampString = "444067196.991737"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -3798,11 +3782,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444082288.611874"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "Node::isCompressible()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264862.965914"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "Node::isCompressible()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3830,11 +3830,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444092559.803284"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3846,11 +3846,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Node.cpp"
-            timestampString = "444087307.312358"
+            timestampString = "444264862.965914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "Node::setCube(int x, int y, int z, int size, unsigned char type)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3878,11 +3878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3894,11 +3894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307">
+            startingLineNumber = "309"
+            endingLineNumber = "309">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4052,11 +4052,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4068,11 +4068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4100,11 +4100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4116,11 +4116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263019.409672"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4132,11 +4132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263148.748009"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4148,11 +4148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263149.294327"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4164,12 +4164,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444263529.702561"
+            timestampString = "444265014.674869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264862.965914"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "Node::getAbs(int x, int y, int z, int size)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264958.920041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "Node::getAbs(int x, int y, int z, int size)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264958.920041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "Node::getAbs(int x, int y, int z, int size)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Node.cpp"
+            timestampString = "444264945.346409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "Node::getAbs(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -151,7 +151,7 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
 
                 //TemplateDebug::debug();
             
-                //if(isCubeVisible(abs_x, abs_y, abs_z))
+                if(isCubeVisible(abs_x, abs_y, abs_z))
                 {
                     glm::vec3 color = CubeType::getColor(leaf->getLeaf(), q);
                     
@@ -279,11 +279,13 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
 
 bool Octree::isCubeVisible(int x, int y, int z)
 {
-    if( x==0 || y==0 || z==0 || x==(size-1) || y==(size-1) || z==(size-1) )
+    OctreeEntry* test = this->getAbs(x, y,   z, size);
+    
+    if( x==0 || z==0 || x==(size-1) || y==(size-1) || z==(size-1) )
         return true;
     
-    //if( y==0 && x>0 && z>0 && x<(size-1) && z<(size-1) )
-    //    return false;
+    if( y==0 && x>0 && z>0 && x<(size-1) && z<(size-1) )
+        return false;
     
     //try
     {
