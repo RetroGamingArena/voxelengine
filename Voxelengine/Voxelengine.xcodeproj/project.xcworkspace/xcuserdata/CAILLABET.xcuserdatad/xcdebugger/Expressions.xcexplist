@@ -6,7 +6,7 @@
          contextName = "OctreeEntry&lt;unsigned char&gt;::~OctreeEntry():OctreeEntry.h">
       </ContextState>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
       <ContextState
          contextName = "Octree&lt;unsigned char&gt;::bufferizeEntry(VBOScene*, unsigned char, float, float, float, float*):Octree.cpp">
@@ -97,6 +97,14 @@
          contextName = "Chunk::contains(int, int, int):Chunk.cpp">
       </ContextState>
       <ContextState
+         contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float, float, float*):Cube.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "fmod(x2, Chunk::size)*Chunk::subsize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int, unsigned char):OctreeEntry.cpp">
          <PersistentStrings>
             <PersistentString
@@ -155,13 +163,13 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
+               value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
                value = "getVertexCount()">
             </PersistentString>
             <PersistentString
-               value = "sizeof(GLfloat)*9">
+               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -177,7 +185,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+         contextName = "Octree::bufferizeEntry(VBOScene*, unsigned char, float, float, float, float*):Octree.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "p">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Cube::bufferizeVertex(VBOScene*, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, float):Cube.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "(float)(sz &lt;&lt; 16)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

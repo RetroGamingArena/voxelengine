@@ -71,7 +71,7 @@ void Cube::bufferizeVertex(VBOScene* scene, float x, float y, float z, float typ
     (*scene->getBuffer()->getData()).push_back(x);
     (*scene->getBuffer()->getData()).push_back(y);
     (*scene->getBuffer()->getData()).push_back(z);
-    (*scene->getBuffer()->getData()).push_back(type);
+    //(*scene->getBuffer()->getData()).push_back(type);
     //(*scene->getBuffer()->getData()).push_back(g);
     //(*scene->getBuffer()->getData()).push_back(b);
     

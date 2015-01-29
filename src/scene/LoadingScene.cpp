@@ -26,7 +26,9 @@ void LoadingScene::render()
     {
         VoxelScene* voxelScene = new VoxelScene(Engine::getInstance()->getWindow());
         voxelScene->init();
+        
         Engine::getInstance()->getProcessor()->bufferize(voxelScene, Engine::getInstance()->getWorld());
+        
         voxelScene->bindBuffer();
         Engine::getInstance()->setScene(voxelScene);
         mutex->unlock();

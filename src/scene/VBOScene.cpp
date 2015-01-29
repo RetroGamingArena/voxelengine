@@ -37,19 +37,27 @@ void VBOScene::render()
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     glEnableVertexAttribArray(2);
-
-    glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*)0 );
-    glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*)(sizeof(GLfloat) * 3));
-    glVertexAttribPointer( 2, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*)(sizeof(GLfloat) * 4));
+    glEnableVertexAttribArray(3);
+    
+    glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, (void*)0 );
+    //glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (void*)(sizeof(GLfloat) * 3));
+    glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, (void*)(sizeof(GLfloat) * 3));
+    
+    glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, (void*)0 ); //0, NULL);
+    glVertexAttribDivisor( 2, 1);
+    glVertexAttribPointer( 3, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 4, (void*)(sizeof(GLfloat) * 3)); //0, NULL);
+    glVertexAttribDivisor( 3, 1);
     
     //glDrawArrays(GL_POINTS, 0, buffer->getData()->size());
     int size = indices->getData()->size();
-    glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
+    //glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
+    glDrawElementsInstanced(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0, (buffer->getData()->size()-31)/4 );           // element array buffer offset
     
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(2);
-    
+    glDisableVertexAttribArray(3);
+
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
     //2D
