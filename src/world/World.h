@@ -42,14 +42,14 @@ class World : public Pool
                 for(int r=-size; r<=size; r++)
                 {
                     Chunk* chunk = new Chunk(p,0,r);
-                    chunk->generate(generator);
+                    //chunk->generate(generator);
                     chunks.push_back(chunk);
-                    
-                    /*threadCount = 5;
-                    this->start();
-                    while(isRunning()){}*/
                 }
-            int a = 2;
+            
+            threadCount = 5;
+            this->start();
+            while(isRunning()){}
+            int a =2;
         }
         Task* buildTask();
         bool hasNext();
