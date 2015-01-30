@@ -53,6 +53,7 @@ class OctreeEntry
         /*void setCube(int x, int y, int z, int size, unsigned char type);*/
         virtual void invalidate() = 0;
         virtual bool isCompressible() = 0;
+        virtual void setCube(int x, int y, int z, int size, unsigned char type) = 0;
 };
 
 #endif /* defined(__Voxelengine__OctreeEntry__) */

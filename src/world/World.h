@@ -49,6 +49,7 @@ class World : public Pool
                     this->start();
                     while(isRunning()){}*/
                 }
+            int a = 2;
         }
         Task* buildTask();
         bool hasNext();

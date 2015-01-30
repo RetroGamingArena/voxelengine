@@ -42,7 +42,7 @@ class Node : public OctreeEntry
     
         void split();
         OctreeEntry* get(int x, int y, int z);
-        OctreeEntry* addAndGet(int x, int y, int z);
+        OctreeEntry* addAndGet(int x, int y, int z, bool leaf);
         Leaf* getAbs(int x, int y, int z, int size);
         void setCube(int x, int y, int z, int size, unsigned char type);
         void invalidate();

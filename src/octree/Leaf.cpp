@@ -12,3 +12,8 @@ void Leaf::invalidate()
 {
     //this->drawn = 0;
 }
+
+void Leaf::setCube(int x, int y, int z, int size, unsigned char type)
+{
+    this->leaf = type;
+}

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 RGA. All rights reserved.
 //
 
+#include <math.h>
+
 #include "Node.h"
 
 void Node::split()
@@ -25,11 +27,25 @@ OctreeEntry* Node::get(int x, int y, int z)
     return this->entries[x+y*4+z*2];
 }
 
-OctreeEntry* Node::addAndGet(int x, int y, int z)
+OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
 {
+    OctreeEntry* entry;
+
     if( this->entries[x+y*4+z*2] == NULL)
-        this->entries[x+y*4+z*2] = new Node();
-    return get(x, y, z);
+    {
+        if(leaf)
+        {
+            Leaf* leaf = new Leaf();
+            entry = leaf;
+        }
+        else
+        {
+            entry = new Node();
+        }
+        this->entries[x+y*4+z*2] = entry;
+    }
+    
+    return this->entries[x+y*4+z*2];//get(x, y, z);
 }
 
 bool Node::isCompressible()
@@ -58,28 +74,20 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     if(this->entries == NULL)
         this->split();
     
-    int i = !!(x & size/2);
-    int j = !!(y & size/2);
-    int k = !!(z & size/2);
+    int subsize = size >> 1;
     
-    int offset_x = x - i * (size/2);
-    int offset_y = y - j * (size/2);
-    int offset_z = z - k * (size/2);
+    int i = !!(x & subsize);
+    int j = !!(y & subsize);
+    int k = !!(z & subsize);
     
-    if(size==2)
-    {
-        Leaf* leaf = new Leaf();
-        leaf->setLeaf(type);
-        //  delete this->entries[x+y*4+z*2];
-        this->entries[x+y*4+z*2] = leaf;
-    }
-    else
-    {
-        OctreeEntry* entry = this->addAndGet(i,j,k);
-        Node* node = dynamic_cast<Node*>(entry);
-            
-        node->setCube(offset_x,offset_y,offset_z, size/2, type);
-    }
+    int _log = log2(subsize);
+    
+    int offset_x = x - (i << _log);
+    int offset_y = y - (j << _log);
+    int offset_z = z - (k << _log);
+    
+    OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
+    entry->setCube(offset_x,offset_y,offset_z, size/2, type);
 }
 
 Leaf* Node::getAbs(int x, int y, int z, int size)

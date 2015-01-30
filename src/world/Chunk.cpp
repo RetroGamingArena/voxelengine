@@ -35,15 +35,6 @@ void Chunk::generate(WorldGenerator* generator)
 {
     float pp = p * Chunk::size * Chunk::subsize * Cube::size;
     float rr = r * Chunk::size * Chunk::subsize * Cube::size;
-
-    /*o->setCube(0,0,0, size*subsize, 1);
-    o->setCube(0,0,1, size*subsize, 1);
-    o->setCube(0,1,0, size*subsize, 1);
-    o->setCube(0,1,1, size*subsize, 1);
-    o->setCube(1,0,0, size*subsize, 1);
-    o->setCube(1,0,1, size*subsize, 1);
-    o->setCube(1,1,0, size*subsize, 1);
-    o->setCube(1,1,1, size*subsize, 1);*/
     
     for(float i = 0; i < size*subsize; i+=1)
         for(float k = 0; k < size*subsize; k+=1)

@@ -22,6 +22,7 @@ class Leaf : public OctreeEntry
         void setLeaf(unsigned char leaf){this->leaf=leaf;};
         void invalidate();
         bool isCompressible(){ return false; };
+        void setCube(int x, int y, int z, int size, unsigned char type);
 };
 
 #endif /* defined(__Voxelengine__Leaf__) */
