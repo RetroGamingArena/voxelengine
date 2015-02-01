@@ -11,16 +11,21 @@
 #include "../world/CubeType.h"
 #include "../octree/Leaf.h"
 
+int Octree::size = 0;
+float Octree::subSize = 0;
+
 void Octree::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree offset
 {
-        for(int i = 0; i < 8; i++)
-        {
-            int x = (i%4)%2;
-            int y = i/4;
-            int z = (i%4)/2;
+    for(int i = 0; i < 8; i++)
+    {
+        int x = (i%4)%2;
+        int y = i/4;
+        int z = (i%4)/2;
 
-            bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
-        }
+            //bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
+        if(this->entries[i] != NULL)
+            this->entries[i]->bufferize(scene, this->p*size+x*size/2.0, this->q*size+y*size/2.0, this->r*size+z*size/2.0, size/2.0);
+    }
 }
 
 void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)
@@ -46,9 +51,9 @@ void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float 
     
     //TemplateDebug::debug();
     
-    p = (this->p*(this->size/this->subSize)) + (this->size/this->subSize)*p/(this->size);
+    /*p = (this->psize/subSize)) + (this->size/subSize)*p/(size);
     q = (this->q*(this->size/this->subSize)) + (this->size/this->subSize)*q/(this->size);
-    r = (this->r*(this->size/this->subSize)) + (this->size/this->subSize)*r/(this->size);
+    r = (this->r*(this->size/this->subSize)) + (this->size/this->subSize)*r/(this->size);*/
     
     /*p = (p-this->p)/(subSize) + this->p;
     q = (q-this->q)/(subSize) + this->q;
@@ -127,8 +132,6 @@ void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float 
 
 void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)
 {
-    //Node* node = dynamic_cast<Node*>(octreeEntry);//octreeEntry;
-    
     Leaf* leaf = dynamic_cast<Leaf*>(octreeEntry);
     if(leaf != NULL)
     {
@@ -149,8 +152,6 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
                         abs_z += this->size; //temp
                     abs_z = abs_z % this->size;
 
-                //TemplateDebug::debug();
-            
                 if(isCubeVisible(abs_x, abs_y, abs_z))
                 {
                     glm::vec3 color = CubeType::getColor(leaf->getLeaf(), q);
@@ -160,108 +161,23 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
                     int z = 0;
             
                     float* ao = new float[4];
-                    /*ao[0] = 0;
-                     ao[1] = 0;
-                     ao[2] = 0;
-                     ao[3] = 0;
-                
-                
-                     ao[0] = 0.5;
-                     ao[1] = 0.5;
-                     ao[2] = 0;
-                     ao[3] = 0;
-                     Cube::bufferizeSquare(scene, x+p,      y+q, z+r, x+p,      y+q+size, z+r+size, color, ao); //side
-                     Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);*/
-        
+                    
                     ao[0] = 0.5;
                     ao[1] = 0.5;
                     ao[2] = 0.5;
                     ao[3] = 0.5;
                 
-                    //ao[0] = -0.5;
-                    //ao[1] = -0.5;
-                
                     bufferizeEntry(scene, leaf->getLeaf(), p, q, r, ao);
                 
-                    /*Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, octreeEntry->getLeaf(), ao); //bottom
-                
-                     Cube::bufferizeIndice(scene, 0);
-                     Cube::bufferizeIndice(scene, 1);
-                     Cube::bufferizeIndice(scene, 2);
-                     Cube::bufferizeIndice(scene, 1);
-                     Cube::bufferizeIndice(scene, 2);
-                     Cube::bufferizeIndice(scene, 3);*/
-                
-                    //if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
-                    {
-                        //   ao[0] = 0.5; //first
-                        //  ao[3] = -0.5; //first
-                    }
-                    //if( this->getAbs(abs_x-1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
-                    {
-                        //ao[0] = 0.5;
-                        //ao[1] = 1; //right
-                        //ao[2] = 0;
-                        //ao[3] = 0.5;
-                    }
-                    //if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z-1, 32) != 0 )
-                    {
-                        //  ao[2] = 0.5;
-                        // ao[1] = -0.5; //left
-                    }
-                    //if( this->getAbs(abs_x+1, abs_y+1,   abs_z, 32) != 0 && this->getAbs(abs_x, abs_y+1,   abs_z+1, 32) != 0 )
-                    {
-                        //  ao[0] = -0.5; //first
-                        //  ao[3] = 0.5; //last
-                    }
-                
-                ao[0] = 0;
-                ao[1] = 0;
-                ao[2] = 0;
-                ao[3] = 0;
-                
-                /*Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, octreeEntry->getLeaf(), ao); //top
-
-                Cube::bufferizeIndice(scene, 4);
-                Cube::bufferizeIndice(scene, 5);
-                Cube::bufferizeIndice(scene, 6);
-                Cube::bufferizeIndice(scene, 5);
-                Cube::bufferizeIndice(scene, 6);
-                Cube::bufferizeIndice(scene, 7);
-                
-
-                Cube::bufferizeIndice(scene, 0);
-                Cube::bufferizeIndice(scene, 1);
-                Cube::bufferizeIndice(scene, 4);
-                Cube::bufferizeIndice(scene, 1);
-                Cube::bufferizeIndice(scene, 4);
-                Cube::bufferizeIndice(scene, 5);
-                
-                Cube::bufferizeIndice(scene, 1);
-                Cube::bufferizeIndice(scene, 3);
-                Cube::bufferizeIndice(scene, 5);
-                Cube::bufferizeIndice(scene, 3);
-                Cube::bufferizeIndice(scene, 5);
-                Cube::bufferizeIndice(scene, 7);
-                
-                Cube::bufferizeIndice(scene, 3);
-                Cube::bufferizeIndice(scene, 2);
-                Cube::bufferizeIndice(scene, 7);
-                Cube::bufferizeIndice(scene, 2);
-                Cube::bufferizeIndice(scene, 7);
-                Cube::bufferizeIndice(scene, 6);
-                
-                Cube::bufferizeIndice(scene, 2);
-                Cube::bufferizeIndice(scene, 0);
-                Cube::bufferizeIndice(scene, 6);
-                Cube::bufferizeIndice(scene, 0);
-                Cube::bufferizeIndice(scene, 6);
-                Cube::bufferizeIndice(scene, 4);*/
+                    ao[0] = 0;
+                    ao[1] = 0;
+                    ao[2] = 0;
+                    ao[3] = 0;
                  }
             }
         }
 
-        Node* node = dynamic_cast<Node*>(octreeEntry);//octreeEntry;
+        Node* node = dynamic_cast<Node*>(octreeEntry);
         if(node != NULL)
         {
             if(node->getEntries() != NULL)

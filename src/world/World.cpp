@@ -10,6 +10,7 @@
 #include "Octree.h"
 #include "../thread/Task.h"
 #include "ChunkTask.h"
+#include <iostream>
 
 int World::size=1;
 
@@ -110,4 +111,83 @@ Task* World::buildTask()
 bool World::hasNext()
 {
     return chunkIndice < chunks.size();
+}
+
+unsigned char World::getCube(int x, int y, int z)
+{
+    int abs_x = x+size*Chunk::size*Chunk::subsize;
+     
+    int abs_y = y+size*Chunk::size*Chunk::subsize;
+     
+    int abs_z = z+size*Chunk::size*Chunk::subsize;
+    
+    int p = abs_x / (Chunk::size*Chunk::subsize);
+    int q = abs_y / (Chunk::size*Chunk::subsize);
+    int r = abs_z / (Chunk::size*Chunk::subsize);
+    
+    Chunk* chunk = chunks[ (p)*( (size)*2+1) + r ];
+    
+    //if( (p)*( (size)*2+1) + r != 0)
+    //    std::cout << (p)*( (size)*2+1) + r << std::endl;
+    
+    int sx = x % (Chunk::size*Chunk::subsize);
+    int sy = y % (Chunk::size*Chunk::subsize);
+    int sz = z * (Chunk::size*Chunk::subsize);
+    
+    if(chunk != NULL)
+    {
+        if(chunk != NULL)
+        {
+            Leaf* leaf = chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
+            if(leaf != NULL)
+                return leaf->getLeaf();
+        }
+        else
+        {
+            int a = 2;
+            return 0;
+        }
+    }
+    
+    return 0;
+}
+
+bool World::isCubeVisible(int x, int y, int z)
+{
+    //OctreeEntry* test = this->getAbs(x, y,   z, size);
+    
+    int absSize = Chunk::size*Chunk::subsize*size;
+    
+    /*int abs_x = x;
+    while (abs_x<0)
+    abs_x += this->size; //temp
+    abs_x = abs_x % this->size;
+     
+    int abs_y = y;
+    while (abs_y<0)
+    abs_y += this->size; //temp
+    abs_y = abs_y % this->size;
+     
+    int abs_z = z;
+    while (abs_z<0)
+    abs_z += this->size; //temp
+    abs_z = abs_z % this->size;*/
+    
+    /*int p = x % (Chunk::size*Chunk::subsize);
+    int q = y % (Chunk::size*Chunk::subsize);
+    int r = z % (Chunk::size*Chunk::subsize);*/
+    
+    if( x==-absSize || z==-absSize || x==(absSize+Chunk::size*Chunk::subsize-1) || y==(absSize+Chunk::size*Chunk::subsize-1) || z==(absSize+Chunk::size*Chunk::subsize-1) )
+        return true;
+    
+    if( y==0 && x>-absSize && z>-absSize && x<(absSize+Chunk::size*Chunk::subsize-1) && z<(absSize+Chunk::size*Chunk::subsize-1) )
+        return false;
+
+        bool test =    !(this->getCube(x-1, y,   z) != 0 //temp
+                         && this->getCube(x+1, y,   z) != 0
+                         && this->getCube(x,   y-1, z) != 0
+                         && this->getCube(x,   y+1, z) != 0
+                         && this->getCube(x,   y,   z-1) != 0
+                         && this->getCube(x,   y,   z+1) != 0);
+    return true;//test;
 }

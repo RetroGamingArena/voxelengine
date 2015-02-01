@@ -49,7 +49,6 @@ class World : public Pool
             threadCount = 5;
             this->start();
             while(isRunning()){}
-            int a =2;
         }
         Task* buildTask();
         bool hasNext();
@@ -58,6 +57,8 @@ class World : public Pool
         int cubeCount();
         Chunk* getPointedChunk(float x, float y, float z);
         OctreeEntry* getPointedCube(float x, float y, float z);
+        bool isCubeVisible(int x, int y, int z);
+        unsigned char getCube(int x, int y, int z);
 };
 
 #endif /* defined(__Voxelengine__World__) */

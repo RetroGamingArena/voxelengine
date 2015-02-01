@@ -14,6 +14,8 @@
 #include "OctreeEntry.h"
 #include "Leaf.h"
 
+class Octree;
+
 class Node : public OctreeEntry
 {
     protected:
@@ -47,6 +49,7 @@ class Node : public OctreeEntry
         void setCube(int x, int y, int z, int size, unsigned char type);
         void invalidate();
         bool isCompressible();
+        void bufferize(VBOScene* scene, float p, float q, float r, int size);
 };
 
 #endif /* defined(__Voxelengine__Node__) */

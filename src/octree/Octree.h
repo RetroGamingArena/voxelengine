@@ -14,20 +14,22 @@
 #include "../scene/VBOScene.h"
 #include "Node.h"
 
+class Node;
+class OctreeEntry;
+
 class Octree : public Node
 {
-    int size;
-    float subSize;
-
     protected:
         int depth;
     
     public:
+    static int size;
+    static float subSize;
     float p;
     float q;
     float r;
     
-        void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
+        static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
         Octree() : Node()
         {
             depth = 5;

@@ -10,8 +10,8 @@
 
 #include <algorithm>
 
-int Chunk::size = 8;
-int Chunk::subsize = 16;
+int Chunk::size = 16;
+int Chunk::subsize = 4;
 
 void Chunk::bufferize(VBOScene* scene)
 {
@@ -19,15 +19,7 @@ void Chunk::bufferize(VBOScene* scene)
     float qq = q * Chunk::size * Cube::size;
     float rr = r * Chunk::size * Cube::size;
     
-    /*for(int i=0; i < cubes.size() ; i++)
-    {
-        if( cubes[i] != NULL && cubes[i]->getType() > 0 && isCubeVisible(Cube::getIndex(cubes[i]->getX(), cubes[i]->getY(), cubes[i]->getZ() )))
-        {
-            cubes[i]->bufferize(scene, pp, qq, rr);
-        }
-    }*/
-    
-    o->bufferize(scene, 0, 0, 0);//pp, qq, rr);
+    o->bufferize(scene, 0, 0, 0);
     delete o;
 }
 

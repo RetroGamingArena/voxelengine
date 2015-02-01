@@ -16,9 +16,6 @@ void Node::split()
     for(int i = 0; i < 8; i++)
     {
         this->entries[i] = NULL;
-        //this->entries[i] = new Node();
-        //this->entries[i]->setLevel(level+1);
-        //this->entries[i]->leaf = 0;
     }
 }
 
@@ -119,6 +116,20 @@ Leaf* Node::getAbs(int x, int y, int z, int size)
         return node->getAbs(ii,jj,kk, 1);
     }else
         return node->getAbs(offset_x,offset_y,offset_z, size/2);
+}
+
+void Node::bufferize(VBOScene* scene, float p, float q, float r, int size)
+{
+    for(int i = 0; i < 8; i++)
+    {
+        int x = (i%4)%2;
+        int y = i/4;
+        int z = (i%4)/2;
+        
+        //bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
+        if(this->entries[i] != NULL)
+            this->entries[i]->bufferize(scene, p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
+    }
 }
 
 void Node::invalidate()

@@ -6,7 +6,7 @@
          contextName = "OctreeEntry&lt;unsigned char&gt;::~OctreeEntry():OctreeEntry.h">
       </ContextState>
       <ContextState
-         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
+         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
       </ContextState>
       <ContextState
          contextName = "Octree&lt;unsigned char&gt;::bufferizeEntry(VBOScene*, unsigned char, float, float, float, float*):Octree.cpp">
@@ -45,10 +45,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Node::getAbs(int, int, int, int):Node.cpp">
+         contextName = "IterativeProcessor::bufferize(VBOScene*, World*):IterativeProcessor.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Octree::bufferize(VBOScene*, float, float, float):Octree.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "this-&gt;get(ii,jj,kk)">
+               value = "p+x*size/2.0">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;p*size+p+x*size/2.0">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;p*size">
+            </PersistentString>
+            <PersistentString
+               value = "x*size/2.0">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -94,12 +106,38 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "World::getCube(int, int, int):World.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "(p-size)*( (size)*2+1) + r-size">
+            </PersistentString>
+            <PersistentString
+               value = "(p-size)*( (-size)*2+1) + r-size">
+            </PersistentString>
+            <PersistentString
+               value = "( (-size)*2+1)">
+            </PersistentString>
+            <PersistentString
+               value = "(p-size)*size + r-size">
+            </PersistentString>
+            <PersistentString
+               value = "(p+size)*( (size)*2+1) + r+size">
+            </PersistentString>
+            <PersistentString
+               value = "(p)*( (size)*2+1) + r ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "World::hasNext():World.cpp">
          <PersistentStrings>
             <PersistentString
                value = "chunkIndice &gt; chunks.size()">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Leaf::bufferize(VBOScene*, float, float, float, int):Leaf.cpp">
       </ContextState>
       <ContextState
          contextName = "Chunk::contains(int, int, int):Chunk.cpp">
@@ -171,13 +209,13 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
-            </PersistentString>
-            <PersistentString
                value = "sizeof(GLfloat)*9">
             </PersistentString>
             <PersistentString
                value = "getVertexCount()">
+            </PersistentString>
+            <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -209,7 +247,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VoxelScene::VoxelScene(GLFWwindow*):VoxelScene.h">
+         contextName = "Chunk::bufferizeCube(VBOScene*, int):Chunk.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

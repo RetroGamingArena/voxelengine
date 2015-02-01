@@ -23,6 +23,7 @@ class Leaf : public OctreeEntry
         void invalidate();
         bool isCompressible(){ return false; };
         void setCube(int x, int y, int z, int size, unsigned char type);
+        void bufferize(VBOScene* scene, float p, float q, float r, int size);
 };
 
 #endif /* defined(__Voxelengine__Leaf__) */
