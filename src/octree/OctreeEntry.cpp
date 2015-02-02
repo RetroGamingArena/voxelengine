@@ -11,3 +11,5 @@
 #include "OctreeEntry.h"
 #include "Node.h"
 #include "Leaf.h"
+
+int OctreeEntry::NODE = 1;

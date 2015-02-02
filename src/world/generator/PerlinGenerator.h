@@ -34,11 +34,11 @@ class PerlinGenerator : public WorldGenerator
         PerlinGenerator()
         {
             lowerXBound = 2.0;
-            upperXBound = 6.0;
+            upperXBound = 3.0;
             lowerYBound = 1.0;
-            upperYBound = 5.0;
+            upperYBound = 2,5;
             
-            destSize = 8*16*3;//224 * 8;
+            destSize = 16*16*3;//224 * 8;
             
             //int seed = rand()*100.0/RAND_MAX - (int)(rand()*100.0/RAND_MAX);
             //module.SetSeed(seed);

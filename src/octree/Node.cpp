@@ -49,27 +49,6 @@ OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
     return this->entries[x+y*4+z*2];//get(x, y, z);
 }
 
-bool Node::isCompressible()
-{
-    if(entries.size() == 0)
-        return false;
-    if(entries[0] == NULL)
-        return false;
-    Leaf* leaf = dynamic_cast<Leaf*>(entries[0]);
-    if(leaf == NULL)
-        return false;
-    unsigned char type = leaf->getLeaf();
-    for(int i = 1; i < 8; i++)
-    {
-        leaf = dynamic_cast<Leaf*>(entries[i]);
-        if(leaf == NULL)
-            return false;
-        if(leaf->getLeaf() != type)
-            return false;
-    }
-    return true;
-}
-
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
 {
     if(this->entries.size() == 0)
@@ -89,6 +68,17 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     
     OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
     entry->setCube(offset_x,offset_y,offset_z, size/2, type);
+    //if(entry->isCompressible())
+        //compress(i,j,k, type);
+}
+
+void Node::compress(int x, int y, int z, unsigned char type)
+{
+    OctreeEntry* entry = this->get(x,y,z);
+    Leaf* leaf = new Leaf();
+    leaf->setLeaf(type);
+    entries[x+y*4+z*2] = leaf;
+    delete entry;
 }
 
 unsigned char Node::getAbs(int x, int y, int z, int size)
@@ -136,4 +126,23 @@ void Node::invalidate()
         for(int i = 0 ; i < 8; i++)
             if(entries[i] != NULL)
                 entries[i]->invalidate();
+}
+
+bool Node::isCompressible()
+{
+    if(entries[0] == NULL)
+        return false;
+    int code = entries[0]->getCode();
+    if(code == NODE)
+        return false;
+    for( int i = 1 ; i < entries.size(); i++ )
+    {
+        if(entries[i]== NULL)
+            return false;
+        if(entries[0]->getCode() == NODE)
+            return false;
+        if(entries[i]->getCode() != code)
+            return false;
+    }
+    return true;
 }

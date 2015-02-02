@@ -16,7 +16,9 @@
 
 class OctreeEntry
 {
-    //protected:
+    protected:
+        static int NODE;
+        //static int LEAF;
         //bool drawn;
         //OctreeEntry** entries;
     
@@ -28,8 +30,8 @@ class OctreeEntry
             //entries = 0;
             //drawn = false;
         }
-        ~OctreeEntry()
-        {
+    virtual ~OctreeEntry() {};
+        //{
             /*if( this->entries != NULL )
                 for(int i = 0; i < 8; i++)
                 {
@@ -41,7 +43,7 @@ class OctreeEntry
                     }
                 }
             delete[] this->entries;*/
-        }
+        //}
         //void split();
     
         //bool isDrawn(){return drawn;};
@@ -56,6 +58,8 @@ class OctreeEntry
         virtual void setCube(int x, int y, int z, int size, unsigned char type) = 0;
         virtual void bufferize(VBOScene* scene, float p, float q, float r, int size) = 0;
         virtual unsigned char getAbs(int x, int y, int z, int size) = 0;
+        virtual int getCode() = 0;
+    
 };
 
 #endif /* defined(__Voxelengine__OctreeEntry__) */

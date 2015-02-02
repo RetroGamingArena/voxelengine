@@ -29,7 +29,7 @@ class Node : public OctreeEntry
         }
         ~Node()
         {
-            /*if( this->entries != NULL )
+            if( this->entries.size() > 0 )
                 for(int i = 0; i < 8; i++)
                 {
                     if( this->entries[i] != NULL )
@@ -38,7 +38,7 @@ class Node : public OctreeEntry
                         this->entries[i] = NULL;
                     }
                 }
-            delete[] this->entries;*/
+            entries.clear();
         }
          std::vector<OctreeEntry*> getEntries(){return entries;};
     
@@ -49,8 +49,10 @@ class Node : public OctreeEntry
         void setCube(int x, int y, int z, int size, unsigned char type);
         void invalidate();
         bool isCompressible();
+        void compress(int x, int y, int z, unsigned char type);
         void bufferize(VBOScene* scene, float p, float q, float r, int size);
         unsigned char getAbs(int x, int y, int z, int size);
+        int getCode(){return NODE;};
 };
 
 #endif /* defined(__Voxelengine__Node__) */

@@ -25,6 +25,7 @@ class Leaf : public OctreeEntry
         void setCube(int x, int y, int z, int size, unsigned char type);
         void bufferize(VBOScene* scene, float p, float q, float r, int size);
         unsigned char getAbs(int x, int y, int z, int size);
+        int getCode(){return leaf;};
 };
 
 #endif /* defined(__Voxelengine__Leaf__) */
