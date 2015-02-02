@@ -789,7 +789,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "Chunk::bufferize(VBOScene* scene)"
+            landmarkName = "Chunk::bufferize(GlobalBuffer* buffer)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1183,7 +1183,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1199,7 +1199,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1215,7 +1215,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1231,7 +1231,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "Chunk::bufferize(VBOScene* scene)"
+            landmarkName = "Chunk::bufferize(GlobalBuffer* buffer)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1247,7 +1247,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1263,7 +1263,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1279,7 +1279,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1320,11 +1320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.h"
-            timestampString = "443919672.065262"
+            timestampString = "444610535.715828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "Chunk(float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1421,7 +1421,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1800,11 +1800,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1847,22 +1847,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "442793530.931324"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "LoadingScene::render()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.h"
             timestampString = "442793022.637"
             startingColumnNumber = "9223372036854775807"
@@ -1880,11 +1864,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "442793530.931324"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1896,11 +1880,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1960,11 +1944,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "442794706.94302"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2614,11 +2598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "443752328.981293"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2948,11 +2932,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2999,25 +2983,9 @@
             timestampString = "444335581.766494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "Chunk::bufferize(VBOScene* scene)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/Chunk.cpp"
-            timestampString = "444335581.766494"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "Chunk::bufferize(VBOScene* scene)"
+            landmarkName = "Chunk::bufferize(GlobalBuffer* buffer)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3092,11 +3060,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3113,7 +3081,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "Chunk::bufferize(VBOScene* scene)"
+            landmarkName = "Chunk::bufferize(GlobalBuffer* buffer)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3204,11 +3172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3220,11 +3188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3236,11 +3204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3616,11 +3584,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3680,11 +3648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444252291.314231"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "LoadingScene::initWorld()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3952,11 +3920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444335425.598316"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3968,11 +3936,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444335517.132997"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -4021,7 +3989,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)"
+            landmarkName = "Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4069,7 +4037,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)"
+            landmarkName = "Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4165,7 +4133,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)"
+            landmarkName = "Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4245,7 +4213,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "Octree::bufferize(VBOScene* scene, float p, float q, float r)"
+            landmarkName = "Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4464,11 +4432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
-            timestampString = "444529074.421859"
+            timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "LoadingScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -4494,11 +4462,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Chunk.h"
-            timestampString = "444529290.723684"
+            timestampString = "444610535.715828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "Chunk(float p, float q, float r)"
             landmarkType = "5">
          </BreakpointContent>

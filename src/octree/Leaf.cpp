@@ -20,7 +20,7 @@ void Leaf::setCube(int x, int y, int z, int size, unsigned char type)
     this->leaf = type;
 }
 
-void Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)
+void Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)
 {
     {
         if(getLeaf() > 0)
@@ -40,7 +40,7 @@ void Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)
                 ao[2] = 0.5;
                 ao[3] = 0.5;
         
-                Octree::bufferizeEntry(scene, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, ao);
+                Octree::bufferizeEntry(buffer, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, ao);
                 
                 ao[0] = 0;
                 ao[1] = 0;

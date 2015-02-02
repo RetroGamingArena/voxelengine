@@ -105,7 +105,7 @@ unsigned char Node::getAbs(int x, int y, int z, int size)
         return entry->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
-void Node::bufferize(VBOScene* scene, float p, float q, float r, int size)
+void Node::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)
 {
     for(int i = 0; i < 8; i++)
     {
@@ -115,7 +115,7 @@ void Node::bufferize(VBOScene* scene, float p, float q, float r, int size)
         
         //bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
         if(this->entries[i] != NULL)
-            this->entries[i]->bufferize(scene, p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
+            this->entries[i]->bufferize(buffer, p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
     }
 }
 

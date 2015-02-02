@@ -11,15 +11,15 @@
 #include <algorithm>
 
 int Chunk::size = 16;
-int Chunk::subsize = 4;
+int Chunk::subsize = 8;
 
-void Chunk::bufferize(VBOScene* scene)
+void Chunk::bufferize(GlobalBuffer* buffer)
 {
     float pp = p * Chunk::size * Cube::size;
     float qq = q * Chunk::size * Cube::size;
     float rr = r * Chunk::size * Cube::size;
     
-    o->bufferize(scene, 0, 0, 0);
+    o->bufferize(buffer, 0, 0, 0);
     //delete o;
 }
 

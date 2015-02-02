@@ -19,8 +19,6 @@ void LoadingScene::render()
     {
         thread = new std::thread (initWorld);
         mutex->lock();
-        //thread->join();
-        //Engine::getInstance()->setScene(new VoxelScene(Engine::getInstance()->getWindow()));
     }
     if(mutex->try_lock())
     {
@@ -42,8 +40,5 @@ void LoadingScene::initWorld()
     {
         
     }
-    /*VoxelScene* voxenScene = new VoxelScene(Engine::getInstance()->getWindow());
-    voxenScene->init();
-    Engine::getInstance()->setScene(voxenScene);*/
     mutex->unlock();
 }

@@ -29,7 +29,7 @@ class Octree : public Node
     float q;
     float r;
     
-        static void bufferizeEntry(VBOScene* scene, unsigned char, float p, float q, float r, float* ao);
+        static void bufferizeEntry(GlobalBuffer* buffer, unsigned char, float p, float q, float r, float* ao);
         Octree() : Node()
         {
             depth = 5;
@@ -40,7 +40,7 @@ class Octree : public Node
             //OctreeEntry<T>::~OctreeEntry();
         }
     
-        void bufferize(VBOScene* scene, float x, float y, float z);
+        void bufferize(GlobalBuffer* buffer, float x, float y, float z);
         void bufferize(VBOScene* scene, OctreeEntry* OctreeEntry, float p, float q, float r, int size);
         void setSize(int size){this->size=size;};
         void setSubSize(int subSize){this->subSize=subSize;};

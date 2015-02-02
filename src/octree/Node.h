@@ -50,7 +50,7 @@ class Node : public OctreeEntry
         void invalidate();
         bool isCompressible();
         void compress(int x, int y, int z, unsigned char type);
-        void bufferize(VBOScene* scene, float p, float q, float r, int size);
+        void bufferize(GlobalBuffer* buffer, float p, float q, float r, int size);
         unsigned char getAbs(int x, int y, int z, int size);
         int getCode(){return NODE;};
 };

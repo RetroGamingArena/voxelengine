@@ -23,7 +23,7 @@ class Leaf : public OctreeEntry
         void invalidate();
         bool isCompressible(){ return false; };
         void setCube(int x, int y, int z, int size, unsigned char type);
-        void bufferize(VBOScene* scene, float p, float q, float r, int size);
+        void bufferize(GlobalBuffer* buffer, float p, float q, float r, int size);
         unsigned char getAbs(int x, int y, int z, int size);
         int getCode(){return leaf;};
 };

@@ -27,6 +27,7 @@ class Chunk
     float q;
     float r;
     
+    GlobalBuffer* buffer;
     Octree* o;
 
     public:
@@ -34,6 +35,8 @@ class Chunk
         static int subsize;
         Chunk(float p, float q, float r)
         {
+            this->buffer = new GlobalBuffer();
+            
             this->p=p;
             this->q=q;
             this->r=r;
@@ -50,7 +53,7 @@ class Chunk
         float getQ(){return q;};
         float getR(){return r;};
         Octree* getOctree(){return o;};
-        void bufferize(VBOScene* scene);
+        void bufferize(GlobalBuffer* scene);
         void generate(WorldGenerator* generator);
         bool contains(float x, float y, float z);
 };

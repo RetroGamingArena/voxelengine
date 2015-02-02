@@ -12,13 +12,16 @@
 #include <stdio.h>
 
 #include "WorldProcessor.h"
+#include "../../thread/Pool.h"
 
 class World;
 
-class IterativeProcessor : public WorldProcessor
+class IterativeProcessor : public WorldProcessor, public Pool
 {
     public:
         void bufferize(VBOScene* scene, World* world);
+        Task* buildTask();
+        bool hasNext();
 };
 
 #endif /* defined(__Voxelengine__IterativeProcessor__) */

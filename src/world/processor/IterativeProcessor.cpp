@@ -83,6 +83,17 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     for(int i=0; i < world->getChunks().size() ; i++)
     {
         if( world->getChunks()[i]->getOctree()->getEntries().size() > 0 )
-            world->getChunks()[i]->bufferize(scene);
+            world->getChunks()[i]->bufferize(scene->getBuffer());
+            //world->getChunks()[i]->bufferize();
     }
+}
+
+Task* IterativeProcessor::buildTask()
+{
+    return NULL;
+}
+
+bool IterativeProcessor::hasNext()
+{
+    return false;
 }

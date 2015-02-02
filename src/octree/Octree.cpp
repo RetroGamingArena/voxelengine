@@ -14,7 +14,7 @@
 int Octree::size = 0;
 float Octree::subSize = 0;
 
-void Octree::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree offset
+void Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r) //TODO octree offset
 {
     for(int i = 0; i < 8; i++)
     {
@@ -24,11 +24,11 @@ void Octree::bufferize(VBOScene* scene, float p, float q, float r) //TODO octree
 
             //bufferize(scene, this->entries[i], p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
         if(this->entries[i] != NULL)
-            this->entries[i]->bufferize(scene, this->p*size+x*size/2.0, this->q*size+y*size/2.0, this->r*size+z*size/2.0, size/2.0);
+            this->entries[i]->bufferize(buffer, this->p*size+x*size/2.0, this->q*size+y*size/2.0, this->r*size+z*size/2.0, size/2.0);
     }
 }
 
-void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)
+void Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao)
 {
     float size = 1.0/subSize;
     
@@ -69,70 +69,70 @@ void Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float 
     
     //Cube::bufferizePoint(scene, p, q, r, type, 1.0);
     
-    scene->getBuffer()->getData()->push_back(p);
-    scene->getBuffer()->getData()->push_back(q);
-    scene->getBuffer()->getData()->push_back(r);
+    buffer->getData()->push_back(p);
+    buffer->getData()->push_back(q);
+    buffer->getData()->push_back(r);
 
-    scene->getBuffer()->getData()->push_back(type);
+    buffer->getData()->push_back(type);
     
     return;
     
-    Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
+    /*Cube::bufferizeSquare(buffer, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
     
-    Cube::bufferizeIndice(scene, 0);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 3);
+    Cube::bufferizeIndice(buffer, 0);
+    Cube::bufferizeIndice(buffer, 1);
+    Cube::bufferizeIndice(buffer, 2);
+    Cube::bufferizeIndice(buffer, 1);
+    Cube::bufferizeIndice(buffer, 2);
+    Cube::bufferizeIndice(buffer, 3);
     
     ao[0] = 0;
     ao[1] = 0;
     ao[2] = 0;
     ao[3] = 0;
     
-    Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, type, ao); //top
+    Cube::bufferizeSquare(buffer, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, type, ao); //top
     
-    Cube::bufferizeIndice(scene, 4);
-    Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 7);
+    Cube::bufferizeIndice(buffer, 4);
+    Cube::bufferizeIndice(buffer, 5);
+    Cube::bufferizeIndice(buffer, 6);
+    Cube::bufferizeIndice(buffer, 5);
+    Cube::bufferizeIndice(buffer, 6);
+    Cube::bufferizeIndice(buffer, 7);
     
     
-    Cube::bufferizeIndice(scene, 0);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 4);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 4);
-    Cube::bufferizeIndice(scene, 5);
+    Cube::bufferizeIndice(buffer, 0);
+    Cube::bufferizeIndice(buffer, 1);
+    Cube::bufferizeIndice(buffer, 4);
+    Cube::bufferizeIndice(buffer, 1);
+    Cube::bufferizeIndice(buffer, 4);
+    Cube::bufferizeIndice(buffer, 5);
     
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 3);
-    Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 3);
-    Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 7);
+    Cube::bufferizeIndice(buffer, 1);
+    Cube::bufferizeIndice(buffer, 3);
+    Cube::bufferizeIndice(buffer, 5);
+    Cube::bufferizeIndice(buffer, 3);
+    Cube::bufferizeIndice(buffer, 5);
+    Cube::bufferizeIndice(buffer, 7);
     
-    Cube::bufferizeIndice(scene, 3);
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 7);
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 7);
-    Cube::bufferizeIndice(scene, 6);
+    Cube::bufferizeIndice(buffer, 3);
+    Cube::bufferizeIndice(buffer, 2);
+    Cube::bufferizeIndice(buffer, 7);
+    Cube::bufferizeIndice(buffer, 2);
+    Cube::bufferizeIndice(buffer, 7);
+    Cube::bufferizeIndice(buffer, 6);
     
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 0);
-    Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 0);
-    Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 4);
+    Cube::bufferizeIndice(buffer, 2);
+    Cube::bufferizeIndice(buffer, 0);
+    Cube::bufferizeIndice(buffer, 6);
+    Cube::bufferizeIndice(buffer, 0);
+    Cube::bufferizeIndice(buffer, 6);
+    Cube::bufferizeIndice(buffer, 4);*/
 }
 
 void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)
 {
-    Leaf* leaf = dynamic_cast<Leaf*>(octreeEntry);
+    /*Leaf* leaf = dynamic_cast<Leaf*>(octreeEntry);
     if(leaf != NULL)
     {
         if(leaf->getLeaf() > 0)
@@ -189,7 +189,7 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
             
                     bufferize(scene, node->getEntries()[i], p+x*size/2, q+y*size/2, r+z*size/2, size / 2);
                 }
-        }
+        }*/
     
 }
 
