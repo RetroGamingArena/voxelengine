@@ -10,6 +10,7 @@
 #define __Voxelengine__Node__
 
 #include <stdio.h>
+#include <vector>
 
 #include "OctreeEntry.h"
 #include "Leaf.h"
@@ -19,28 +20,27 @@ class Octree;
 class Node : public OctreeEntry
 {
     protected:
-        OctreeEntry** entries;
+    std::vector<OctreeEntry*> entries;
 
     public:
         Node()
         {
-            entries = 0;
+            split();
         }
         ~Node()
         {
-            if( this->entries != NULL )
+            /*if( this->entries != NULL )
                 for(int i = 0; i < 8; i++)
                 {
                     if( this->entries[i] != NULL )
                     {
                         delete this->entries[i];
-                        //TemplateDebug::debug();
                         this->entries[i] = NULL;
                     }
                 }
-            delete[] this->entries;
+            delete[] this->entries;*/
         }
-        OctreeEntry** getEntries(){return entries;};
+         std::vector<OctreeEntry*> getEntries(){return entries;};
     
         void split();
         OctreeEntry* get(int x, int y, int z);

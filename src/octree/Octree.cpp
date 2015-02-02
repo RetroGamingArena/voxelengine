@@ -180,7 +180,7 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
         Node* node = dynamic_cast<Node*>(octreeEntry);
         if(node != NULL)
         {
-            if(node->getEntries() != NULL)
+            if(node->getEntries().size() > 0)
                 for(int i = 0; i < 8; i++)
                 {
                     int x = (i%4)%2;

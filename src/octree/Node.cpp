@@ -12,16 +12,20 @@
 
 void Node::split()
 {
-    this->entries = new OctreeEntry*[8];
+    //this->entries = new OctreeEntry*[8];
     for(int i = 0; i < 8; i++)
     {
-        this->entries[i] = NULL;
+        this->entries.push_back(NULL);
     }
 }
 
 OctreeEntry* Node::get(int x, int y, int z)
 {
-    return this->entries[x+y*4+z*2];
+    int size = this->entries.size();
+    if(this->entries.size() > 0 )
+        return this->entries[x+y*4+z*2];
+    else
+        return 0;
 }
 
 OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
@@ -47,7 +51,7 @@ OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
 
 bool Node::isCompressible()
 {
-    if(entries == NULL)
+    if(entries.size() == 0)
         return false;
     if(entries[0] == NULL)
         return false;
@@ -68,7 +72,7 @@ bool Node::isCompressible()
 
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
 {
-    if(this->entries == NULL)
+    if(this->entries.size() == 0)
         this->split();
     
     int subsize = size >> 1;
@@ -89,7 +93,7 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
 
 Leaf* Node::getAbs(int x, int y, int z, int size)
 {
-    if(this->entries == NULL)
+    if(this->entries.size() == 0)
         return 0;
     
     //if(size==1)
@@ -102,8 +106,25 @@ Leaf* Node::getAbs(int x, int y, int z, int size)
     int offset_x = x - ii * (size/2);
     int offset_y = y - jj * (size/2);
     int offset_z = z - kk * (size/2);
+    Node* node;
+    try
+    {
+        /*OctreeEntry* octreeEntry1 = this->entries[0];
+        OctreeEntry* octreeEntry2 = this->entries[1];
+        OctreeEntry* octreeEntry3 = this->entries[2];
+        OctreeEntry* octreeEntry4 = this->entries[3];
+        OctreeEntry* octreeEntry5 = this->entries[4];
+        OctreeEntry* octreeEntry6 = this->entries[5];
+        OctreeEntry* octreeEntry7 = this->entries[6];
+        OctreeEntry* octreeEntry8 = this->entries[7];*/
+        
+        OctreeEntry* octreeEntry = this->get(ii,jj,kk);
+        Node* node = dynamic_cast<Node*>(octreeEntry);
+    } catch(std::exception e)
+    {
+        return 0;
+    }
     
-    Node* node = dynamic_cast<Node*>(this->get(ii,jj,kk));
     
     if( node == NULL )
     {
@@ -135,7 +156,7 @@ void Node::bufferize(VBOScene* scene, float p, float q, float r, int size)
 void Node::invalidate()
 {
     //this->drawn = 0;
-    if( entries != NULL )
+    if( entries.size() == 0 )
         for(int i = 0 ; i < 8; i++)
             if(entries[i] != NULL)
                 entries[i]->invalidate();

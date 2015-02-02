@@ -20,7 +20,7 @@ void Chunk::bufferize(VBOScene* scene)
     float rr = r * Chunk::size * Cube::size;
     
     o->bufferize(scene, 0, 0, 0);
-    delete o;
+    //delete o;
 }
 
 void Chunk::generate(WorldGenerator* generator)

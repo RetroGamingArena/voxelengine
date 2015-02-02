@@ -130,9 +130,9 @@ unsigned char World::getCube(int x, int y, int z)
     //if( (p)*( (size)*2+1) + r != 0)
     //    std::cout << (p)*( (size)*2+1) + r << std::endl;
     
-    int sx = x % (Chunk::size*Chunk::subsize);
-    int sy = y % (Chunk::size*Chunk::subsize);
-    int sz = z * (Chunk::size*Chunk::subsize);
+    int sx = abs_x % (Chunk::size*Chunk::subsize);
+    int sy = abs_y % (Chunk::size*Chunk::subsize);
+    int sz = abs_z % (Chunk::size*Chunk::subsize);
     
     if(chunk != NULL)
     {
@@ -183,11 +183,13 @@ bool World::isCubeVisible(int x, int y, int z)
     if( y==0 && x>-absSize && z>-absSize && x<(absSize+Chunk::size*Chunk::subsize-1) && z<(absSize+Chunk::size*Chunk::subsize-1) )
         return false;
 
+    return true;
+    
         bool test =    !(this->getCube(x-1, y,   z) != 0 //temp
                          && this->getCube(x+1, y,   z) != 0
                          && this->getCube(x,   y-1, z) != 0
                          && this->getCube(x,   y+1, z) != 0
                          && this->getCube(x,   y,   z-1) != 0
                          && this->getCube(x,   y,   z+1) != 0);
-    return true;//test;
+    return false;//test;
 }
