@@ -138,9 +138,10 @@ unsigned char World::getCube(int x, int y, int z)
     {
         if(chunk != NULL)
         {
-            Leaf* leaf = chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
-            if(leaf != NULL)
-                return leaf->getLeaf();
+            return chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
+            //Leaf* leaf = chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
+            //if(leaf != NULL)
+            //    return leaf->getLeaf();
         }
         else
         {
@@ -183,13 +184,11 @@ bool World::isCubeVisible(int x, int y, int z)
     if( y==0 && x>-absSize && z>-absSize && x<(absSize+Chunk::size*Chunk::subsize-1) && z<(absSize+Chunk::size*Chunk::subsize-1) )
         return false;
 
-    return true;
-    
         bool test =    !(this->getCube(x-1, y,   z) != 0 //temp
                          && this->getCube(x+1, y,   z) != 0
                          && this->getCube(x,   y-1, z) != 0
                          && this->getCube(x,   y+1, z) != 0
                          && this->getCube(x,   y,   z-1) != 0
                          && this->getCube(x,   y,   z+1) != 0);
-    return false;//test;
+    return test;
 }

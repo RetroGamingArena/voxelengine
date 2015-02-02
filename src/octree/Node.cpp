@@ -91,52 +91,28 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     entry->setCube(offset_x,offset_y,offset_z, size/2, type);
 }
 
-Leaf* Node::getAbs(int x, int y, int z, int size)
+unsigned char Node::getAbs(int x, int y, int z, int size)
 {
     if(this->entries.size() == 0)
+        this->split();
+    
+    int subsize = size >> 1;
+    
+    int i = !!(x & subsize);
+    int j = !!(y & subsize);
+    int k = !!(z & subsize);
+    
+    int _log = log2(subsize);
+    
+    int offset_x = x - (i << _log);
+    int offset_y = y - (j << _log);
+    int offset_z = z - (k << _log);
+    
+    OctreeEntry* entry = this->get(i,j,k);
+    if(entry == NULL)
         return 0;
-    
-    //if(size==1)
-    //    return this->entries[x+y*4+z*2];
-    
-    int ii = !!(x & size/2);
-    int jj = !!(y & size/2);
-    int kk = !!(z & size/2);
-    
-    int offset_x = x - ii * (size/2);
-    int offset_y = y - jj * (size/2);
-    int offset_z = z - kk * (size/2);
-    Node* node;
-    try
-    {
-        /*OctreeEntry* octreeEntry1 = this->entries[0];
-        OctreeEntry* octreeEntry2 = this->entries[1];
-        OctreeEntry* octreeEntry3 = this->entries[2];
-        OctreeEntry* octreeEntry4 = this->entries[3];
-        OctreeEntry* octreeEntry5 = this->entries[4];
-        OctreeEntry* octreeEntry6 = this->entries[5];
-        OctreeEntry* octreeEntry7 = this->entries[6];
-        OctreeEntry* octreeEntry8 = this->entries[7];*/
-        
-        OctreeEntry* octreeEntry = this->get(ii,jj,kk);
-        Node* node = dynamic_cast<Node*>(octreeEntry);
-    } catch(std::exception e)
-    {
-        return 0;
-    }
-    
-    
-    if( node == NULL )
-    {
-        Leaf* leaf = dynamic_cast<Leaf*>(this->get(ii,jj,kk));
-        return leaf;
-    }
-    
-    if(size==2)
-    {
-        return node->getAbs(ii,jj,kk, 1);
-    }else
-        return node->getAbs(offset_x,offset_y,offset_z, size/2);
+    else
+        return entry->getAbs(offset_x,offset_y,offset_z, size/2);
 }
 
 void Node::bufferize(VBOScene* scene, float p, float q, float r, int size)

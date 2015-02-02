@@ -22,27 +22,10 @@ void Leaf::setCube(int x, int y, int z, int size, unsigned char type)
 
 void Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)
 {
-    //Leaf* leaf = dynamic_cast<Leaf*>(octreeEntry);
-    //if(leaf != NULL)
     {
-        if(/*leaf->*/getLeaf() > 0)
+        if(getLeaf() > 0)
         {
-            /*int abs_x = p;
-            while (abs_x<0)
-                abs_x += this->size; //temp
-            abs_x = abs_x % this->size;
-            
-            int abs_y = q;
-            while (abs_y<0)
-                abs_y += this->size; //temp
-            abs_y = abs_y % this->size;
-            
-            int abs_z = r;
-            while (abs_z<0)
-                abs_z += this->size; //temp
-            abs_z = abs_z % this->size;*/
-            
-            if(Engine::getInstance()->getWorld()->isCubeVisible(p,q,r))//abs_x, abs_y, abs_z))
+            if(Engine::getInstance()->getWorld()->isCubeVisible(p,q,r))
             {
                 glm::vec3 color = CubeType::getColor(getLeaf(), q);
                 
@@ -66,4 +49,9 @@ void Leaf::bufferize(VBOScene* scene, float p, float q, float r, int size)
             }
         }
     }
+}
+
+unsigned char Leaf::getAbs(int x, int y, int z, int size)
+{
+    return this->getLeaf();
 }
