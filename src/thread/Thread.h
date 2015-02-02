@@ -23,7 +23,10 @@ class Thread
     static void run(Thread* thread);
     
     public:
-        Thread(){ mutex = new std::mutex; }
+        Thread()
+        {
+            mutex = new std::mutex;
+        }
         void setTask(Task* task){this->task = task;}
         void start();
         bool isBusy();

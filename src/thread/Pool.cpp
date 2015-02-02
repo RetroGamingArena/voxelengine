@@ -45,12 +45,12 @@ bool Pool::isRunning()
             {
                 return true;
             }
-            else
+            /*else
             {
                 delete threads[i];
                 threads.erase(threads.begin()+i);
                 threads.insert(threads.begin()+i, NULL);
-            }
+            }*/
     }
     return false;
 }
