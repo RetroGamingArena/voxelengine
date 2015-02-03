@@ -11,7 +11,7 @@
 #include <algorithm>
 
 int Chunk::size = 16;
-int Chunk::subsize = 8;
+int Chunk::subsize = 16;
 
 void Chunk::bufferize(GlobalBuffer* buffer)
 {

@@ -18,7 +18,13 @@ class World;
 
 class IterativeProcessor : public WorldProcessor, public Pool
 {
+    int chunkIndice;
+    
     public:
+        IterativeProcessor()
+        {
+            chunkIndice = 0;
+        }
         void bufferize(VBOScene* scene, World* world);
         Task* buildTask();
         bool hasNext();

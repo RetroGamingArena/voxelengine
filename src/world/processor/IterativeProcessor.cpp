@@ -7,6 +7,8 @@
 //
 
 #include "IterativeProcessor.h"
+#include "../../engine/engine.h"
+#include "ChunkProcessorTask.h"
 
 void IterativeProcessor::bufferize(VBOScene* scene, World* world)
 {
@@ -80,20 +82,42 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 4);
     
+    threadCount = 5;
+    this->start();
+    while(isRunning()){}
+    
     for(int i=0; i < world->getChunks().size() ; i++)
     {
-        if( world->getChunks()[i]->getOctree()->getEntries().size() > 0 )
-            world->getChunks()[i]->bufferize(scene->getBuffer());
-            //world->getChunks()[i]->bufferize();
+        Chunk* chunk = world->getChunks()[i];
+        scene->getBuffer()->getData()->insert(scene->getBuffer()->getData()->end(), chunk->getBuffer()->getData()->begin(), chunk->getBuffer()->getData()->end());
+        chunk->getBuffer()->getData()->clear();
     }
+    
+    /*for(int i=0; i < world->getChunks().size() ; i++)
+    {
+        if( world->getChunks()[i]->getOctree()->getEntries().size() > 0 )
+            world->getChunks()[i]->bufferize(world->getChunks()[i]->getBuffer());
+            //world->getChunks()[i]->bufferize();
+    }*/
+
 }
 
 Task* IterativeProcessor::buildTask()
 {
+    if( mutex->try_lock() && hasNext())
+    {
+        std::vector<Chunk*> chunks = Engine::getInstance()->getWorld()->getChunks();
+        Chunk* chunk = chunks[chunkIndice];
+        ChunkProcessorTask* chunkProcessorTask = new ChunkProcessorTask(chunk);
+        chunkIndice = chunkIndice+1;
+        mutex->unlock();
+        return chunkProcessorTask;
+    }
     return NULL;
 }
 
 bool IterativeProcessor::hasNext()
 {
-    return false;
+    World* world = Engine::getInstance()->getWorld();
+    return chunkIndice < world->getChunks().size();
 }

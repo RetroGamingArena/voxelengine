@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64019A721A704C4300470F8A /* geometryShader.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 64019A711A703F0200470F8A /* geometryShader.glsl */; };
+		640C5FDD1A803C1900AA83B6 /* ChunkProcessorTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 640C5FDB1A803C1900AA83B6 /* ChunkProcessorTask.cpp */; };
 		6418F3351A6C64CA0068DE31 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3331A6C64CA0068DE31 /* Ray.cpp */; };
 		6418F3381A6DA8140068DE31 /* Voxel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6418F3361A6DA8140068DE31 /* Voxel.cpp */; };
 		642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 642FC3C51A5C840E00DC8A94 /* IndiceBuffer.cpp */; };
@@ -109,6 +110,8 @@
 
 /* Begin PBXFileReference section */
 		64019A711A703F0200470F8A /* geometryShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = geometryShader.glsl; path = ../shaders/geometryShader.glsl; sourceTree = "<group>"; };
+		640C5FDB1A803C1900AA83B6 /* ChunkProcessorTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChunkProcessorTask.cpp; path = world/processor/ChunkProcessorTask.cpp; sourceTree = "<group>"; };
+		640C5FDC1A803C1900AA83B6 /* ChunkProcessorTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChunkProcessorTask.h; path = world/processor/ChunkProcessorTask.h; sourceTree = "<group>"; };
 		6418F3331A6C64CA0068DE31 /* Ray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ray.cpp; path = collision/Ray.cpp; sourceTree = "<group>"; };
 		6418F3341A6C64CA0068DE31 /* Ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ray.h; path = collision/Ray.h; sourceTree = "<group>"; };
 		6418F3361A6DA8140068DE31 /* Voxel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Voxel.cpp; path = octree/Voxel.cpp; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 				648635ED1A6843AE002E09FB /* RayCasterProcessor.h */,
 				648635EF1A68448A002E09FB /* GPUProcessor.cpp */,
 				648635F01A68448A002E09FB /* GPUProcessor.h */,
+				640C5FDB1A803C1900AA83B6 /* ChunkProcessorTask.cpp */,
+				640C5FDC1A803C1900AA83B6 /* ChunkProcessorTask.h */,
 			);
 			name = processor;
 			sourceTree = "<group>";
@@ -1044,6 +1049,7 @@
 				646172F21A5B458C0008EBA0 /* lodepng.cpp in Sources */,
 				6458F6131A56D1210006BF88 /* WorldGenerator.cpp in Sources */,
 				648635F11A68448A002E09FB /* GPUProcessor.cpp in Sources */,
+				640C5FDD1A803C1900AA83B6 /* ChunkProcessorTask.cpp in Sources */,
 				648635EE1A6843AE002E09FB /* RayCasterProcessor.cpp in Sources */,
 				647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */,
 				64E85D711A50D8C50042EE5A /* ShaderLoader.cpp in Sources */,

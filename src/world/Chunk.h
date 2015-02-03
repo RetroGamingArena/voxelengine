@@ -56,6 +56,7 @@ class Chunk
         void bufferize(GlobalBuffer* scene);
         void generate(WorldGenerator* generator);
         bool contains(float x, float y, float z);
+        GlobalBuffer* getBuffer(){return buffer;}
 };
 
 #endif /* defined(__Voxelengine__Chunk__) */
