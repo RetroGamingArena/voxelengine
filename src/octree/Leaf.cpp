@@ -40,7 +40,7 @@ void Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)
                 ao[2] = 0.5;
                 ao[3] = 0.5;
         
-                Octree::bufferizeEntry(buffer, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, ao);
+                Octree::bufferizeEntry(buffer, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, ao, size);
                 
                 ao[0] = 0;
                 ao[1] = 0;

@@ -662,22 +662,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444256996.32279"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "VBOScene::render()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/scene/VBOScene.cpp"
             timestampString = "442793793.986193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -710,11 +694,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -742,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78">
+            startingLineNumber = "82"
+            endingLineNumber = "82">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -756,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94">
+            startingLineNumber = "95"
+            endingLineNumber = "95">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -922,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -938,11 +922,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1146,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1290,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1336,11 +1320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1352,11 +1336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1432,11 +1416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1448,11 +1432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "Cube::bufferizeSquare(VBOScene* scene, float x1, float y1, float z1, float x2, float y2, float z2, float type, float* ao)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1544,11 +1528,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1640,11 +1624,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1736,11 +1720,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "VBOScene::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1960,11 +1944,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../shaders/vertexShader.glsl"
-            timestampString = "444260984.406884"
+            timestampString = "444660422.249861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "main()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2183,22 +2167,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/world/processor/IterativeProcessor.cpp"
-            timestampString = "444648268.02688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/scene/VoxelScene.cpp"
             timestampString = "443126169.293533"
             startingColumnNumber = "9223372036854775807"
@@ -2280,11 +2248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../shaders/vertexShader.glsl"
-            timestampString = "444260984.406884"
+            timestampString = "444652907.474273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19">
+            startingLineNumber = "20"
+            endingLineNumber = "20">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2761,7 +2729,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2777,7 +2745,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2836,11 +2804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2852,11 +2820,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2900,11 +2868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2916,11 +2884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444216238.989807"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "Cube::bufferizeCube(VBOScene* scene, unsigned char type, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2954,22 +2922,6 @@
             startingLineNumber = "121"
             endingLineNumber = "121"
             landmarkName = "VoxelScene::render()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/processor/IterativeProcessor.cpp"
-            timestampString = "444648268.02688"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3033,7 +2985,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3092,11 +3044,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3108,11 +3060,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3538,11 +3490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3554,11 +3506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225">
+            startingLineNumber = "175"
+            endingLineNumber = "175">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3568,11 +3520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3631,22 +3583,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/scene/LoadingScene.cpp"
             timestampString = "444607938.012183"
             startingColumnNumber = "9223372036854775807"
@@ -3664,11 +3600,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "VBOScene::bindBuffer()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3679,28 +3615,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/scene/VBOScene.cpp"
-            timestampString = "444261121.500379"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "VBOScene::render()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3712,11 +3632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3728,11 +3648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3744,11 +3664,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3760,11 +3680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3776,11 +3696,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3792,11 +3712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3808,11 +3728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444512491.825146"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4000,11 +3920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/Cube.cpp"
-            timestampString = "444495873.76318"
+            timestampString = "444691598.766185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "Cube::bufferizeCube(VBOScene* scene, unsigned char type, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4021,7 +3941,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "Octree::bufferizeEntry(VBOScene* scene, unsigned char type, float p, float q, float r, float* ao)"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4650,15 +4570,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/octree/Octree.cpp"
-            timestampString = "444563407.293188"
+            timestampString = "444679746.7588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4771,6 +4691,166 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/main.cpp"
+            timestampString = "444649294.76079"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "main(int argc, char **argv)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444649432.992438"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444649434.755563"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444649435.530804"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444649436.69451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444649595.814153"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Octree.cpp"
+            timestampString = "444679656.581209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/octree/Octree.cpp"
+            timestampString = "444684889.199541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444686798.743013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/processor/IterativeProcessor.cpp"
+            timestampString = "444692383.743178"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
             landmarkType = "5">
          </BreakpointContent>

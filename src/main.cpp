@@ -9,6 +9,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
+#include <vector>
 #include "engine/engine.h"
 
 Engine* engine = Engine::getInstance();

@@ -28,7 +28,7 @@ void Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r) //TODO o
     }
 }
 
-void Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao)
+void Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)
 {
     float size = 1.0/subSize;
     
@@ -75,59 +75,9 @@ void Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, f
 
     buffer->getData()->push_back(type);
     
+    buffer->getData()->push_back(width);
+    
     return;
-    
-    /*Cube::bufferizeSquare(buffer, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
-    
-    Cube::bufferizeIndice(buffer, 0);
-    Cube::bufferizeIndice(buffer, 1);
-    Cube::bufferizeIndice(buffer, 2);
-    Cube::bufferizeIndice(buffer, 1);
-    Cube::bufferizeIndice(buffer, 2);
-    Cube::bufferizeIndice(buffer, 3);
-    
-    ao[0] = 0;
-    ao[1] = 0;
-    ao[2] = 0;
-    ao[3] = 0;
-    
-    Cube::bufferizeSquare(buffer, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, type, ao); //top
-    
-    Cube::bufferizeIndice(buffer, 4);
-    Cube::bufferizeIndice(buffer, 5);
-    Cube::bufferizeIndice(buffer, 6);
-    Cube::bufferizeIndice(buffer, 5);
-    Cube::bufferizeIndice(buffer, 6);
-    Cube::bufferizeIndice(buffer, 7);
-    
-    
-    Cube::bufferizeIndice(buffer, 0);
-    Cube::bufferizeIndice(buffer, 1);
-    Cube::bufferizeIndice(buffer, 4);
-    Cube::bufferizeIndice(buffer, 1);
-    Cube::bufferizeIndice(buffer, 4);
-    Cube::bufferizeIndice(buffer, 5);
-    
-    Cube::bufferizeIndice(buffer, 1);
-    Cube::bufferizeIndice(buffer, 3);
-    Cube::bufferizeIndice(buffer, 5);
-    Cube::bufferizeIndice(buffer, 3);
-    Cube::bufferizeIndice(buffer, 5);
-    Cube::bufferizeIndice(buffer, 7);
-    
-    Cube::bufferizeIndice(buffer, 3);
-    Cube::bufferizeIndice(buffer, 2);
-    Cube::bufferizeIndice(buffer, 7);
-    Cube::bufferizeIndice(buffer, 2);
-    Cube::bufferizeIndice(buffer, 7);
-    Cube::bufferizeIndice(buffer, 6);
-    
-    Cube::bufferizeIndice(buffer, 2);
-    Cube::bufferizeIndice(buffer, 0);
-    Cube::bufferizeIndice(buffer, 6);
-    Cube::bufferizeIndice(buffer, 0);
-    Cube::bufferizeIndice(buffer, 6);
-    Cube::bufferizeIndice(buffer, 4);*/
 }
 
 void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)

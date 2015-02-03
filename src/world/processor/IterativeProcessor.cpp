@@ -16,9 +16,9 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     int y = 0;
     int z = 0;
     
-    int p = 1;
+    int p = 0;
     int q = 0;
-    int r = 1;
+    int r = 0;
     
     float size = 1.0 / Chunk::subsize;
     
@@ -92,14 +92,6 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
         scene->getBuffer()->getData()->insert(scene->getBuffer()->getData()->end(), chunk->getBuffer()->getData()->begin(), chunk->getBuffer()->getData()->end());
         chunk->getBuffer()->getData()->clear();
     }
-    
-    /*for(int i=0; i < world->getChunks().size() ; i++)
-    {
-        if( world->getChunks()[i]->getOctree()->getEntries().size() > 0 )
-            world->getChunks()[i]->bufferize(world->getChunks()[i]->getBuffer());
-            //world->getChunks()[i]->bufferize();
-    }*/
-
 }
 
 Task* IterativeProcessor::buildTask()

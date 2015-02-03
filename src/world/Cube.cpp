@@ -76,6 +76,7 @@ void Cube::bufferizeVertex(VBOScene* scene, float x, float y, float z, float typ
     //(*scene->getBuffer()->getData()).push_back(b);
     
     (*scene->getBuffer()->getData()).push_back(ao);
+    (*scene->getBuffer()->getData()).push_back(1);
 }
 
 void Cube::bufferizeSquareColor(VBOScene* scene, float r, float g, float b)

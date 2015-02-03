@@ -7,6 +7,7 @@ layout(location = 1) in float ambiant;
 
 layout(location = 2) in vec3 offset;
 layout(location = 3) in float vertexColorIndex;
+layout(location = 4) in float vertexWidth;
 
 uniform mat4 MVP;
 
@@ -25,7 +26,8 @@ uniform vec3 cameraPosition;
 
 void main()
 {
-    gl_Position = /*MVP*/ P * V * M * vec4(vertexPosition_modelspace+offset,1);
+    //float vertexWidth = 1;
+    gl_Position = /*MVP*/ P * V * M * vec4(vertexPosition_modelspace*vertexWidth+offset,1);
     fragmentAo = 0.3 + (1.0 - ambiant ) * 0.7;
 
     fragmentColor = vec3(1.0,1.0,1.0);//noise1(1));

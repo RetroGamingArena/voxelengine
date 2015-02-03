@@ -69,7 +69,7 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
     entry->setCube(offset_x,offset_y,offset_z, size/2, type);
     //if(entry->isCompressible())
-        //compress(i,j,k, type);
+    //    compress(i,j,k, type);
 }
 
 void Node::compress(int x, int y, int z, unsigned char type)
