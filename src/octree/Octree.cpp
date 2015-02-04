@@ -143,7 +143,7 @@ void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float
     
 }
 
-bool Octree::isCubeVisible(int x, int y, int z)
+bool Octree::isCubeVisible(int x, int y, int z, int size)
 {
     //OctreeEntry* test = this->getAbs(x, y,   z, size);
     

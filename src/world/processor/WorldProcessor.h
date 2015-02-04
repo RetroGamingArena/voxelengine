@@ -18,7 +18,7 @@ class WorldProcessor
 {
     public:
         virtual void bufferize(VBOScene* scene, World* world) = 0;
-        bool isCubeVisible(int x, int y, int z);
+        bool isCubeVisible(int x, int y, int z,int size);
 };
 
 #endif /* defined(__Voxelengine__WorldProcessor__) */

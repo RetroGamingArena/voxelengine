@@ -125,7 +125,11 @@ unsigned char World::getCube(int x, int y, int z)
     int q = abs_y / (Chunk::size*Chunk::subsize);
     int r = abs_z / (Chunk::size*Chunk::subsize);
     
-    Chunk* chunk = chunks[ (p)*( (size)*2+1) + r ];
+    Chunk* chunk;
+    if(size == 0)
+        chunk = chunks[0];
+    else
+        chunk = chunks[ (p)*( (size)*2+1) + r ];
     
     //if( (p)*( (size)*2+1) + r != 0)
     //    std::cout << (p)*( (size)*2+1) + r << std::endl;
@@ -153,42 +157,32 @@ unsigned char World::getCube(int x, int y, int z)
     return 0;
 }
 
-bool World::isCubeVisible(int x, int y, int z)
+bool World::isCubeVisible(int x, int y, int z, int size)
 {
-    //OctreeEntry* test = this->getAbs(x, y,   z, size);
+    int absSize = Chunk::size*Chunk::subsize*World::size;
     
-    int absSize = Chunk::size*Chunk::subsize*size;
-    
-    /*int abs_x = x;
-    while (abs_x<0)
-    abs_x += this->size; //temp
-    abs_x = abs_x % this->size;
-     
-    int abs_y = y;
-    while (abs_y<0)
-    abs_y += this->size; //temp
-    abs_y = abs_y % this->size;
-     
-    int abs_z = z;
-    while (abs_z<0)
-    abs_z += this->size; //temp
-    abs_z = abs_z % this->size;*/
-    
-    /*int p = x % (Chunk::size*Chunk::subsize);
-    int q = y % (Chunk::size*Chunk::subsize);
-    int r = z % (Chunk::size*Chunk::subsize);*/
-    
-    if( x==-absSize || z==-absSize || x==(absSize+Chunk::size*Chunk::subsize-1) || y==(absSize+Chunk::size*Chunk::subsize-1) || z==(absSize+Chunk::size*Chunk::subsize-1) )
+    if( x==-absSize || z==-absSize || (x+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || (y+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || z==(absSize+Chunk::size*Chunk::subsize-1) )
         return true;
     
-    if( y==0 && x>-absSize && z>-absSize && x<(absSize+Chunk::size*Chunk::subsize-1) && z<(absSize+Chunk::size*Chunk::subsize-1) )
+    if( y==0 && x>-absSize && z>-absSize && (x+size-1)<(absSize+Chunk::size*Chunk::subsize-1) && (z+size-1)<(absSize+Chunk::size*Chunk::subsize-1) )
         return false;
 
-        bool test =    !(this->getCube(x-1, y,   z) != 0 //temp
-                         && this->getCube(x+1, y,   z) != 0
-                         && this->getCube(x,   y-1, z) != 0
-                         && this->getCube(x,   y+1, z) != 0
-                         && this->getCube(x,   y,   z-1) != 0
-                         && this->getCube(x,   y,   z+1) != 0);
-    return test;
+    for(int i = 0; i < size; i++)
+        for(int j = 0; j < size; j++)
+        {
+            if(this->getCube(x-1, y+i,   z+j) != 0)
+                return true;
+            if(this->getCube(x+1, y+i,   z+j) != 0)
+                return true;
+            if(this->getCube(x+i, y-1,   z+j) != 0)
+                return true;
+            if(this->getCube(x+i, y+1,   z+j) != 0)
+                return true;
+            if(this->getCube(x+i, y+j,   z-1) != 0)
+                return true;
+            if(this->getCube(x+i, y+j,   z+1) != 0)
+                return true;
+        }
+    
+    return false;
 }

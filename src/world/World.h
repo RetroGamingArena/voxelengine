@@ -57,7 +57,7 @@ class World : public Pool
         int cubeCount();
         Chunk* getPointedChunk(float x, float y, float z);
         OctreeEntry* getPointedCube(float x, float y, float z);
-        bool isCubeVisible(int x, int y, int z);
+        bool isCubeVisible(int x, int y, int z,int size);
         unsigned char getCube(int x, int y, int z);
 };
 

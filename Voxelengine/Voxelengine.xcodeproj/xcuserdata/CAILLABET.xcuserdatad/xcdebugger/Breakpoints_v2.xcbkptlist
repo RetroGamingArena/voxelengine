@@ -2809,7 +2809,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3495,7 +3495,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3637,7 +3637,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
             endingLineNumber = "155"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3653,7 +3653,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3669,7 +3669,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3685,7 +3685,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3701,7 +3701,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3717,7 +3717,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3733,7 +3733,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "Octree::isCubeVisible(int x, int y, int z)"
+            landmarkName = "Octree::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3872,28 +3872,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3968,44 +3952,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575366.611746"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4080,11 +4032,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4096,11 +4048,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4112,11 +4064,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4144,7 +4096,103 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
+            timestampString = "444739182.256649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "World::getCube(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444739182.256649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "World::getCube(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444739182.256649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "World::getCube(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444739182.256649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "World::getCube(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444752076.974581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "World::isCubeVisible(int x, int y, int z, int size)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444739182.256649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "World::getCube(int x, int y, int z)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -4160,124 +4208,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
+            timestampString = "444752076.974581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "World::getCube(int x, int y, int z)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "World::isCubeVisible(int x, int y, int z)"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "World::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4304,11 +4240,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4320,11 +4256,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444524844.93243"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4336,11 +4272,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/world/World.cpp"
-            timestampString = "444575345.405491"
+            timestampString = "444739182.256649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "World::getCube(int x, int y, int z)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4852,6 +4788,38 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "IterativeProcessor::bufferize(VBOScene* scene, World* world)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444752076.974581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "World::isCubeVisible(int x, int y, int z, int size)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/world/World.cpp"
+            timestampString = "444752076.974581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "World::isCubeVisible(int x, int y, int z, int size)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

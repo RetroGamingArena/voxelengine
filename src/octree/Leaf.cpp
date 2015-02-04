@@ -25,7 +25,7 @@ void Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)
     {
         if(getLeaf() > 0)
         {
-            if(Engine::getInstance()->getWorld()->isCubeVisible(p,q,r))
+            if(Engine::getInstance()->getWorld()->isCubeVisible(p,q,r,size))
             {
                 glm::vec3 color = CubeType::getColor(getLeaf(), q);
                 
