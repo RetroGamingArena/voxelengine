@@ -170,17 +170,17 @@ bool World::isCubeVisible(int x, int y, int z, int size)
     for(int i = 0; i < size; i++)
         for(int j = 0; j < size; j++)
         {
-            if(this->getCube(x-1, y+i,   z+j) != 0)
+            if(this->getCube(x-1, y+i,   z+j) == 0)
                 return true;
-            if(this->getCube(x+1, y+i,   z+j) != 0)
+            if(this->getCube((x+size-1)+1, y+i,   z+j) == 0)
                 return true;
-            if(this->getCube(x+i, y-1,   z+j) != 0)
+            if(this->getCube(x+i, y-1,   z+j) == 0)
                 return true;
-            if(this->getCube(x+i, y+1,   z+j) != 0)
+            if(this->getCube(x+i, (y+size-1)+1,   z+j) == 0)
                 return true;
-            if(this->getCube(x+i, y+j,   z-1) != 0)
+            if(this->getCube(x+i, y+j,   z-1) == 0)
                 return true;
-            if(this->getCube(x+i, y+j,   z+1) != 0)
+            if(this->getCube(x+i, y+j,   (z+size-1)+1) == 0)
                 return true;
         }
     
