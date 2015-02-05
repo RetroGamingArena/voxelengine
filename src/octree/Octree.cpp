@@ -28,58 +28,6 @@ void Octree::bufferize(GlobalBuffer* buffer, float p, float q, float r) //TODO o
     }
 }
 
-void Octree::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float* ao, float width)
-{
-    float size = 1.0/subSize;
-    
-    int x = 0;
-    int y = 0;
-    int z = 0;
-    
-    /*ao[0] = 0;
-     ao[1] = 0;
-     ao[2] = 0;
-     ao[3] = 0;
-     
-     
-     ao[0] = 0.5;
-     ao[1] = 0.5;
-     ao[2] = 0;
-     ao[3] = 0;
-     Cube::bufferizeSquare(scene, x+p,      y+q, z+r, x+p,      y+q+size, z+r+size, color, ao); //side
-     Cube::bufferizeSquare(scene, x+p+size, y+q, z+r, x+p+size, y+q+size, z+r+size, color, ao);*/
-    
-    //TemplateDebug::debug();
-    
-    /*p = (this->psize/subSize)) + (this->size/subSize)*p/(size);
-    q = (this->q*(this->size/this->subSize)) + (this->size/this->subSize)*q/(this->size);
-    r = (this->r*(this->size/this->subSize)) + (this->size/this->subSize)*r/(this->size);*/
-    
-    /*p = (p-this->p)/(subSize) + this->p;
-    q = (q-this->q)/(subSize) + this->q;
-    r = (r-this->r)/(subSize) + this->r;*/
-    
-    ao[0] = 0.5;
-    ao[1] = 0.5;
-    ao[2] = 0.5;
-    ao[3] = 0.5;
-    
-    //ao[0] = -0.5;
-    //ao[1] = -0.5;
-    
-    //Cube::bufferizePoint(scene, p, q, r, type, 1.0);
-    
-    buffer->getData()->push_back(p);
-    buffer->getData()->push_back(q);
-    buffer->getData()->push_back(r);
-
-    buffer->getData()->push_back(type);
-    
-    buffer->getData()->push_back(width);
-    
-    return;
-}
-
 void Octree::bufferize(VBOScene* scene, OctreeEntry* octreeEntry, float p, float q, float r, int size)
 {
     /*Leaf* leaf = dynamic_cast<Leaf*>(octreeEntry);

@@ -36,8 +36,6 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 1);
     Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 2);
     Cube::bufferizeIndice(scene, 3);
     
     ao[0] = 0;
@@ -50,34 +48,24 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     Cube::bufferizeIndice(scene, 4);
     Cube::bufferizeIndice(scene, 5);
     Cube::bufferizeIndice(scene, 6);
-    Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 7);
     
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 1);
     Cube::bufferizeIndice(scene, 4);
-    Cube::bufferizeIndice(scene, 1);
-    Cube::bufferizeIndice(scene, 4);
     Cube::bufferizeIndice(scene, 5);
     
     Cube::bufferizeIndice(scene, 1);
     Cube::bufferizeIndice(scene, 3);
     Cube::bufferizeIndice(scene, 5);
-    Cube::bufferizeIndice(scene, 3);
-    Cube::bufferizeIndice(scene, 5);
     Cube::bufferizeIndice(scene, 7);
     
     Cube::bufferizeIndice(scene, 3);
     Cube::bufferizeIndice(scene, 2);
     Cube::bufferizeIndice(scene, 7);
-    Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 7);
     Cube::bufferizeIndice(scene, 6);
     
     Cube::bufferizeIndice(scene, 2);
-    Cube::bufferizeIndice(scene, 0);
-    Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 0);
     Cube::bufferizeIndice(scene, 6);
     Cube::bufferizeIndice(scene, 4);

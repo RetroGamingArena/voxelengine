@@ -29,7 +29,7 @@ class Octree : public Node
     float q;
     float r;
     
-        static void bufferizeEntry(GlobalBuffer* buffer, unsigned char, float p, float q, float r, float* ao, float width);
+        
         Octree() : Node()
         {
             depth = 5;

@@ -113,6 +113,23 @@ bool World::hasNext()
     return chunkIndice < chunks.size();
 }
 
+void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float width)
+{
+    float ao = 0;
+    
+    buffer->getData()->push_back(p);
+    buffer->getData()->push_back(q);
+    buffer->getData()->push_back(r);
+    
+    buffer->getData()->push_back(type);
+    
+    buffer->getData()->push_back(width);
+    
+    buffer->getData()->push_back(ao);
+    
+    return;
+}
+
 unsigned char World::getCube(int x, int y, int z)
 {
     int abs_x = x+size*Chunk::size*Chunk::subsize;
@@ -131,27 +148,13 @@ unsigned char World::getCube(int x, int y, int z)
     else
         chunk = chunks[ (p)*( (size)*2+1) + r ];
     
-    //if( (p)*( (size)*2+1) + r != 0)
-    //    std::cout << (p)*( (size)*2+1) + r << std::endl;
-    
     int sx = abs_x % (Chunk::size*Chunk::subsize);
     int sy = abs_y % (Chunk::size*Chunk::subsize);
     int sz = abs_z % (Chunk::size*Chunk::subsize);
     
     if(chunk != NULL)
     {
-        if(chunk != NULL)
-        {
-            return chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
-            //Leaf* leaf = chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
-            //if(leaf != NULL)
-            //    return leaf->getLeaf();
-        }
-        else
-        {
-            int a = 2;
-            return 0;
-        }
+        return chunk->getOctree()->getAbs(sx, sy, sz, Octree::size);
     }
     
     return 0;
@@ -161,7 +164,7 @@ bool World::isCubeVisible(int x, int y, int z, int size)
 {
     int absSize = Chunk::size*Chunk::subsize*World::size;
     
-    if( x==-absSize || z==-absSize || (x+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || (y+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || z==(absSize+Chunk::size*Chunk::subsize-1) )
+    if( x==-absSize || z==-absSize || (x+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || (y+size-1)==(absSize+Chunk::size*Chunk::subsize-1) || (z+size-1)==(absSize+Chunk::size*Chunk::subsize-1) )
         return true;
     
     if( y==0 && x>-absSize && z>-absSize && (x+size-1)<(absSize+Chunk::size*Chunk::subsize-1) && (z+size-1)<(absSize+Chunk::size*Chunk::subsize-1) )

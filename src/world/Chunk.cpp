@@ -11,7 +11,7 @@
 #include <algorithm>
 
 int Chunk::size = 16;
-int Chunk::subsize = 8;
+int Chunk::subsize = 16;
 
 void Chunk::bufferize(GlobalBuffer* buffer)
 {
@@ -54,33 +54,6 @@ void Chunk::generate(WorldGenerator* generator)
             }
         }
 }
-
-/*bool Chunk::isCubeVisible(int index)
-{
-    glm::vec3 coords = Cube::getCoords(index);
-    
-    int x = coords.x;
-    int y = coords.y;
-    int z = coords.z;
-    
-    if( x==0 || y==0 || z==0 || x==(size-1) || y==(size-1) || z==(size-1) )
-        return true;
-    
-    try
-    {
-        bool test = !(indexedCubes.at(Cube::getIndex(x-1, y,   z)) != 0 && indexedCubes.at(Cube::getIndex(x+1, y,   z)) != 0
-                      && indexedCubes.at(Cube::getIndex(x,   y-1, z)) != 0
-                      && indexedCubes.at(Cube::getIndex(x,   y+1, z)) != 0
-                      && indexedCubes.at(Cube::getIndex(x,   y,   z-1)) != 0
-                      && indexedCubes.at(Cube::getIndex(x,   y,   z+1)) != 0);
-        return test;
-    }
-    catch(out_of_range e)
-    {
-        return true;
-    }
-    return true;
-}*/
 
 bool Chunk::contains(float x, float y, float z)
 {

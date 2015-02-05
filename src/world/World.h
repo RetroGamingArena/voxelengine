@@ -33,6 +33,8 @@ class World : public Pool
     
     public:
         static int size;
+        static void bufferizeEntry(GlobalBuffer* buffer, unsigned char, float p, float q, float r, float width);
+
         World()
         {
             chunkIndice = 0;
