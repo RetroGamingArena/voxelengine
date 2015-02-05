@@ -26,6 +26,7 @@ class Leaf : public OctreeEntry
         void bufferize(GlobalBuffer* buffer, float p, float q, float r, int size);
         unsigned char getAbs(int x, int y, int z, int size);
         int getCode(){return leaf;};
+        void generate(WorldGenerator* generator, int x, int y, int z, int size);
 };
 
 #endif /* defined(__Voxelengine__Leaf__) */

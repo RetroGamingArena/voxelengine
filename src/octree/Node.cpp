@@ -21,7 +21,6 @@ void Node::split()
 
 OctreeEntry* Node::get(int x, int y, int z)
 {
-    int size = this->entries.size();
     if(this->entries.size() > 0 )
         return this->entries[x+y*4+z*2];
     else
@@ -46,7 +45,7 @@ OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
         this->entries[x+y*4+z*2] = entry;
     }
     
-    return this->entries[x+y*4+z*2];//get(x, y, z);
+    return this->entries[x+y*4+z*2];
 }
 
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
@@ -145,4 +144,24 @@ bool Node::isCompressible()
             return false;
     }
     return true;
+}
+
+void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
+{
+    if(this->entries.size() == 0)
+        this->split();
+    
+    for(int i = 0; i < 8; i++)
+    {
+        int x = (i%4)%2;
+        int y = i/4;
+        int z = (i%4)/2;
+        
+        if(this->entries[i] == NULL)
+            if(size == 1)
+                entries[i] = new Leaf();
+            else
+                entries[i] = new Node();
+        this->entries[i]->generate(generator, p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
+    }
 }

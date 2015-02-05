@@ -41,10 +41,8 @@ class Octree : public Node
         }
     
         void bufferize(GlobalBuffer* buffer, float x, float y, float z);
-        void bufferize(VBOScene* scene, OctreeEntry* OctreeEntry, float p, float q, float r, int size);
         void setSize(int size){this->size=size;};
         void setSubSize(int subSize){this->subSize=subSize;};
-        bool isCubeVisible(int x, int y, int z, int size);
 };
 
 #endif /* defined(__Voxelengine__Octree__) */

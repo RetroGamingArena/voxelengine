@@ -170,8 +170,8 @@ bool World::isCubeVisible(int x, int y, int z, int size)
     if( y==0 && x>-absSize && z>-absSize && (x+size-1)<(absSize+Chunk::size*Chunk::subsize-1) && (z+size-1)<(absSize+Chunk::size*Chunk::subsize-1) )
         return false;
 
-    for(int i = 0; i < size; i++)
-        for(int j = 0; j < size; j++)
+    for(int i = size-1; i >= 0; i--)
+        for(int j = size-1; j >= 0; j--)
         {
             if(this->getCube(x-1, y+i,   z+j) == 0)
                 return true;
