@@ -28,7 +28,7 @@ void Chunk::generate(WorldGenerator* generator)
     float pp = p * Chunk::size * Chunk::subsize * Cube::size;
     float rr = r * Chunk::size * Chunk::subsize * Cube::size;
     
-    //o->generate(generator, 0, 0, 0, Chunk::size * Chunk::subsize);
+    //o->generate(generator, pp, 0, rr, Chunk::size * Chunk::subsize);
     
     for(float i = 0; i < size*subsize; i+=1)
         for(float k = 0; k < size*subsize; k+=1)

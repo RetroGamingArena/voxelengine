@@ -40,7 +40,7 @@ void Leaf::generate(WorldGenerator* generator, int x, int y, int z, int size)
 {
     float height = generator->getY(x/*pp+i*/, z/*rr+k*/)*Chunk::size*Chunk::subsize/2;
     
-    if( z < height )
+    if( y > height )
     {
         setLeaf(0);
         return;

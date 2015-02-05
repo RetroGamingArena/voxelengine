@@ -130,6 +130,14 @@
          contextName = "Chunk::getOctree():Chunk.h">
       </ContextState>
       <ContextState
+         contextName = "Node::generate(WorldGenerator*, int, int, int, int):Node.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "this-&gt;entries[i]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Chunk::contains(int, int, int):Chunk.cpp">
       </ContextState>
       <ContextState
