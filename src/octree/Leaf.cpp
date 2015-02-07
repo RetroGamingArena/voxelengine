@@ -15,6 +15,16 @@ void Leaf::invalidate()
     //this->drawn = 0;
 }
 
+void Leaf::setCubes(int x, int y, int z, int size, unsigned char* type)
+{
+
+}
+
+OctreeEntry* Leaf::getOctreeEntryAbs(int x, int y, int z, int size)
+{
+    return this;
+}
+
 void Leaf::setCube(int x, int y, int z, int size, unsigned char type)
 {
     this->leaf = type;

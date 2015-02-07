@@ -29,10 +29,9 @@ OctreeEntry* Node::get(int x, int y, int z)
 
 OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
 {
-    OctreeEntry* entry;
-
     if( this->entries[x+y*4+z*2] == NULL)
     {
+        OctreeEntry* entry;
         if(leaf)
         {
             Leaf* leaf = new Leaf();
@@ -46,6 +45,47 @@ OctreeEntry* Node::addAndGet(int x, int y, int z, bool leaf)
     }
     
     return this->entries[x+y*4+z*2];
+}
+
+void Node::setCubes(int x, int y, int z, int size, unsigned char* types)
+{
+    if(this->entries.size() == 0)
+        this->split();
+    
+    int subsize = size >> 1;
+    
+    int i = !!(x & subsize);
+    int j = !!(y & subsize);
+    int k = !!(z & subsize);
+    
+    int _log = log2(subsize);
+    
+    int offset_x = x - (i << _log);
+    int offset_y = y - (j << _log);
+    int offset_z = z - (k << _log);
+    
+    if(size==4)
+    {
+        if( types[0] == types[1] && types[1] == types[2] && types[2] == types[3] && types[3] == types[4] && types[4] == types[5] && types[5] == types[6] && types[6] == types[7] )
+        {
+            entries[i+j*4+k*2] = new Leaf(types[0]);
+            return;
+        }
+    }
+    if(size == 2)
+    {
+        for(int i=0;i<8;i++)
+            entries[i] = new Leaf(types[i]);
+    }
+    else
+    {
+        OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
+        entry->setCubes(offset_x,offset_y,offset_z, size>>1, types);
+        if(entry->isCompressible())
+            compress(i,j,k, types[0]);
+    }
+    //if(entry->isCompressible())
+    //    compress(i,j,k, type);
 }
 
 void Node::setCube(int x, int y, int z, int size, unsigned char type)
@@ -66,7 +106,7 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
     int offset_z = z - (k << _log);
     
     OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
-    entry->setCube(offset_x,offset_y,offset_z, size/2, type);
+    entry->setCube(offset_x,offset_y,offset_z, size>>1, type);
     if(entry->isCompressible())
         compress(i,j,k, type);
 }
@@ -102,6 +142,32 @@ unsigned char Node::getAbs(int x, int y, int z, int size)
         return 0;
     else
         return entry->getAbs(offset_x,offset_y,offset_z, size/2);
+}
+
+OctreeEntry* Node::getOctreeEntryAbs(int x, int y, int z, int size)
+{
+    if(this->entries.size() == 0)
+        this->split();
+    
+    int subsize = size >> 1;
+    
+    int i = !!(x & subsize);
+    int j = !!(y & subsize);
+    int k = !!(z & subsize);
+    
+    int _log = log2(subsize);
+    
+    int offset_x = x - (i << _log);
+    int offset_y = y - (j << _log);
+    int offset_z = z - (k << _log);
+    
+    OctreeEntry* entry = this->addAndGet(i,j,k, size==2);
+    if(size == 1)
+        return entry;
+    else
+        return entry->getOctreeEntryAbs(offset_x,offset_y,offset_z, size>>1);
+    //if(entry->isCompressible())
+    //    compress(i,j,k, type);
 }
 
 void Node::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)

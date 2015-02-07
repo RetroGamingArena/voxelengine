@@ -16,49 +16,7 @@ int World::size=1;
 
 void World::bufferize(VBOScene* scene)
 {
-    //processor->bufferize(scene, this);
-    
-    /*float* ao = new float[4];
-    
-    glm::vec3 position = scene->getCamera()->getPosition();
-    
-    for(int i=0; i < (size*2+1)*(size*2+1) ; i++)
-        this->chunks[i]->getOctree()->invalidate();
-    
-    for(int x = 0; x < 1024; x=x+1)
-        for(int y = 0; y < 768; y=y+1)
-        {
-            glm::vec3 mouse3D = scene->getCamera()->unproject(x, y);
-            
-            float dx = (mouse3D.x - position.x) * 1000;
-            float dy = (mouse3D.y - position.y) * 1000;
-            float dz = (mouse3D.z - position.z) * 1000;
-            
-            for(int i = 0; i < 120; i=i+1)
-            {
-                float xx = dx * i + mouse3D.x;
-                float yy = dy * i + mouse3D.y;
-                float zz = dz * i + mouse3D.z;
-                
-                OctreeEntry<unsigned char>* octreeEntry = getPointedCube(xx, yy, zz);
-                if( octreeEntry == NULL)
-                    continue;
-                if( octreeEntry->isDrawn() )
-                    break;
-                unsigned char type = octreeEntry->getLeaf();
-                if(type > 0)
-                {
-                    Octree<unsigned char>::bufferizeEntry(scene, type, (int)xx, (int)yy, (int)zz, ao);
-                    octreeEntry->setDrawn(true);
-                    break;
-                }
-            }
-        }*/
-    
-    /*for(int i=0; i < chunks.size() ; i++)
-    {
-        chunks[i]->bufferize(scene);
-    }*/
+   
 }
 
 int World::cubeCount()
@@ -186,9 +144,6 @@ bool World::isCubeVisible(int x, int y, int z, int size)
             if(this->getCube(x+i, y+j,   (z+size-1)+1) == 0)
                 return true;
         }
-    
-    //if( (y+size-1) >= (absSize+Chunk::size*Chunk::subsize-1)-10 )
-    //    return true;
     
     return false;
 }

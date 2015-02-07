@@ -47,6 +47,7 @@ class Node : public OctreeEntry
         OctreeEntry* addAndGet(int x, int y, int z, bool leaf);
         //Leaf* getAbs(int x, int y, int z, int size);
         void setCube(int x, int y, int z, int size, unsigned char type);
+        void setCubes(int x, int y, int z, int size, unsigned char* types);
         void invalidate();
         bool isCompressible();
         void compress(int x, int y, int z, unsigned char type);
@@ -54,6 +55,7 @@ class Node : public OctreeEntry
         unsigned char getAbs(int x, int y, int z, int size);
         int getCode(){return NODE;};
         void generate(WorldGenerator* generator, int x, int y, int z, int size);
+        OctreeEntry* getOctreeEntryAbs(int x, int y, int z, int size);
 };
 
 #endif /* defined(__Voxelengine__Node__) */

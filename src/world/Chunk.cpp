@@ -7,6 +7,7 @@
 //
 
 #include "Chunk.h"
+#include "CubeType.h"
 
 #include <algorithm>
 
@@ -20,7 +21,6 @@ void Chunk::bufferize(GlobalBuffer* buffer)
     float rr = r * Chunk::size * Cube::size;
     
     o->bufferize(buffer, 0, 0, 0);
-    //delete o;
 }
 
 void Chunk::generate(WorldGenerator* generator)
@@ -28,33 +28,55 @@ void Chunk::generate(WorldGenerator* generator)
     float pp = p * Chunk::size * Chunk::subsize * Cube::size;
     float rr = r * Chunk::size * Chunk::subsize * Cube::size;
     
-    //o->generate(generator, pp, 0, rr, Chunk::size * Chunk::subsize);
+    unsigned char type = 0;
+    unsigned char* types = new unsigned char[8];
     
-    for(float i = 0; i < size*subsize; i+=1)
-        for(float k = 0; k < size*subsize; k+=1)
+    for(float i = 0; i < size*subsize; i+=2)
+        for(float k = 0; k < size*subsize; k+=2)
         {
-            float height = generator->getY(pp+i, rr+k)*size*subsize/2;
-            
-            for(int j = 0; j <= height; j++)
+            float height1 = generator->getY(pp+i, rr+k)*size*subsize/2;
+            float height=1;
+            float height2 = generator->getY(pp+i+1, rr+k)*size*subsize/2;
+            height = max(height,height2);
+            float height3 = generator->getY(pp+i, rr+k+1)*size*subsize/2;
+            height = max(height,height3);
+            float height4 = generator->getY(pp+i+1, rr+k+1)*size*subsize/2;
+            height = max(height,height4);
+            height++;
+
+            for(int j = 0; j <= height; j+=2)
             {
-                unsigned char type;
+                type = CubeType::getTypeFromHeight(j);
                 
-                if(j<16*size*subsize/32)
-                    type = 2; //dirt
-                else if(j<18*size*subsize/32)
-                    type = 3; //sand
-                else if(j<20*size*subsize/32)
-                    type = 1; //grass
-                else if(j<25*size*subsize/32)
-                    type = 4; //dirt
-                else if(j<28*size*subsize/32)
-                    type = 5; //rock
-                else
-                    type = 6; //snow
-                o->setCube(i,j,k, size*subsize, type);
-    
+                for(int i = 0; i< 8; i++)
+                {
+                    types[i] = 0;
+                }
+                
+                if(j<height1)
+                    types[0] = type;
+                if(j+1<height1)
+                    types[4] = type;
+                
+                if(j<height2)
+                    types[1] = type;
+                if(j+1<height2)
+                    types[5] = type;
+                
+                if(j<height3)
+                    types[2] = type;
+                if(j+1<height3)
+                    types[6] = type;
+                
+                if(j<height4)
+                    types[3] = type;
+                if(j+1<height4)
+                    types[7] = type;
+
+                o->setCubes(i,   j,   k, size*subsize, types);
             }
         }
+    delete[] types;
 }
 
 bool Chunk::contains(float x, float y, float z)
