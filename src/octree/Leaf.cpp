@@ -32,11 +32,13 @@ void Leaf::setCube(int x, int y, int z, int size, unsigned char type)
 
 void Leaf::bufferize(GlobalBuffer* buffer, float p, float q, float r, int size)
 {
+    World* world = Engine::getInstance()->getWorld();
+    
     if(getLeaf() > 0)
     {
-        if(Engine::getInstance()->getWorld()->isCubeVisible(p,q,r,size))
+        if(world->isCubeVisible(p,q,r,size))
         {        
-            World::bufferizeEntry(buffer, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, size);
+            world->bufferizeEntry(buffer, getLeaf(), p/Chunk::subsize, q/Chunk::subsize, r/Chunk::subsize, size);
         }
     }
 }

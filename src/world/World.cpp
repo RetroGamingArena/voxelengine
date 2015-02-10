@@ -73,7 +73,21 @@ bool World::hasNext()
 
 void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, float q, float r, float width)
 {
+    float offset = Chunk::size*Chunk::subsize*size;
+    
     float ao = 0;
+    
+    if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize) > offset )
+        ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize) > 0);
+    if( (offset*2 + p*Chunk::subsize) > offset   && (offset*2 + r*Chunk::subsize-1) > offset )
+        ao += (this->getCube(p*Chunk::subsize, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
+    if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize-1) > offset )
+        ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
+    
+    if(ao == 1)
+    {
+        int a = 2;
+    }
     
     buffer->getData()->push_back(p);
     buffer->getData()->push_back(q);

@@ -40,9 +40,11 @@ void VBOScene::render()
     glEnableVertexAttribArray(3);
     glEnableVertexAttribArray(4);
     glEnableVertexAttribArray(5);
+    //glEnableVertexAttribArray(6);
 
     glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 );
     glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3));
+    //glVertexAttribPointer( 2, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 8, (void*)4 );
     //glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 4));
     
     glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 ); //0, NULL);
@@ -65,6 +67,7 @@ void VBOScene::render()
     glDisableVertexAttribArray(3);
     glDisableVertexAttribArray(4);
     glDisableVertexAttribArray(5);
+    //glDisableVertexAttribArray(6);
     
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     

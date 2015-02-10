@@ -36,9 +36,5 @@ void LoadingScene::render()
 void LoadingScene::initWorld()
 {
     Engine::getInstance()->setWorld(new World());
-    while(Engine::getInstance()->getWorld()->hasNext() && Engine::getInstance()->getWorld()->isRunning())
-    {
-        
-    }
     mutex->unlock();
 }
