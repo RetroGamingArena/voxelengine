@@ -26,10 +26,10 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     
     float* ao = new float[4];
     
-    ao[0] = 0.5;
-    ao[1] = 0.5;
-    ao[2] = 0.5;
-    ao[3] = 0.5;
+    ao[0] = 0;
+    ao[1] = 0;
+    ao[2] = 0;
+    ao[3] = 0;
     
     Cube::bufferizeSquare(scene, x+p, y+q,      z+r, x+p+size, y+q,      z+r+size, type, ao); //bottom
     
@@ -38,10 +38,10 @@ void IterativeProcessor::bufferize(VBOScene* scene, World* world)
     Cube::bufferizeIndice(scene, 2);
     Cube::bufferizeIndice(scene, 3);
     
-    ao[0] = 0;
-    ao[1] = 0;
-    ao[2] = 0;
-    ao[3] = 0;
+    ao[0] = 1;
+    ao[1] = 1;
+    ao[2] = 1;
+    ao[3] = 1;
     
     Cube::bufferizeSquare(scene, x+p, y+q+size, z+r, x+p+size, y+q+size, z+r+size, type, ao); //top
     
