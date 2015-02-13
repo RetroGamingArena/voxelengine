@@ -83,7 +83,6 @@ void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, fl
         ao += (this->getCube(p*Chunk::subsize, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
     if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize-1) > offset )
         ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
-    ao = 3-ao;
     
     buffer->getData()->push_back(p);
     buffer->getData()->push_back(q);
@@ -94,6 +93,8 @@ void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, fl
     buffer->getData()->push_back(width);
     
     buffer->getData()->push_back(ao);
+    
+    sizeTemp += width*width*width;
     
     return;
 }

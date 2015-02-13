@@ -18,8 +18,8 @@
 class CubeType
 {
     public:
-        static glm::vec3 getColor(Cube* cube);
-        static glm::vec3 getColor(unsigned char type, int y);
+        //static glm::vec3 getColor(Cube* cube);
+        //static glm::vec3 getColor(unsigned char type, int y);
         static unsigned char getTypeFromHeight(int height);
 };
 

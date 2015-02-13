@@ -31,12 +31,15 @@ class World : public Pool
     float lowerRBound;
     float upperRBound;
     
+    int sizeTemp;
+    
     public:
         static int size;
         void bufferizeEntry(GlobalBuffer* buffer, unsigned char, float p, float q, float r, float width);
 
         World()
         {
+            sizeTemp = 0;
             chunkIndice = 0;
             generator = new PerlinGenerator();
             

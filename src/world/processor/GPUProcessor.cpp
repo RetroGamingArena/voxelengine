@@ -22,7 +22,7 @@ void GPUProcessor::bufferize(VBOScene* scene, World* world)
     for(int i=0; i < world->getChunks().size(); i++)
     {
         Chunk* chunk = world->getChunks()[i];
-        Cube::bufferizeCube(scene, 1, chunk->getP(), chunk->getQ(), chunk->getR(), Chunk::size);
+        //Cube::bufferizeCube(scene, 1, chunk->getP(), chunk->getQ(), chunk->getR(), Chunk::size);
     }
     /*glm::vec3 v2 = scene->getCamera()->unproject(0, 0);
     glm::vec3 v1 = scene->getCamera()->unproject(1024.0, 0);
