@@ -50,7 +50,7 @@ unsigned char Leaf::getAbs(int x, int y, int z, int size)
 
 void Leaf::generate(WorldGenerator* generator, int x, int y, int z, int size)
 {
-    float height = generator->getY(x/*pp+i*/, z/*rr+k*/)*Chunk::size*Chunk::subsize/2;
+    float height = generator->getY(x, z)*Chunk::size*Chunk::subsize/2;
     
     if( y > height )
     {
@@ -58,7 +58,7 @@ void Leaf::generate(WorldGenerator* generator, int x, int y, int z, int size)
         return;
     }
     
-    int j = height;
+    int j = y;//height+1-size;
     //for(int j = 0; j <= height; j++)
     {
         unsigned char type;

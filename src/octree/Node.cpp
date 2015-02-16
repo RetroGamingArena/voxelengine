@@ -9,6 +9,8 @@
 #include <math.h>
 
 #include "Node.h"
+#include "../world/Chunk.h"
+#include "../world/World.h"
 
 void Node::split()
 {
@@ -114,6 +116,9 @@ void Node::setCube(int x, int y, int z, int size, unsigned char type)
 void Node::compress(int x, int y, int z, unsigned char type)
 {
     OctreeEntry* entry = this->get(x,y,z);
+    
+    type = entry->getAbs(x, y, z, 4);
+    
     Leaf* leaf = new Leaf();
     leaf->setLeaf(type);
     entries[x+y*4+z*2] = leaf;
@@ -214,22 +219,59 @@ bool Node::isCompressible()
 
 void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
 {
-    if(this->entries.size() == 0)
-        this->split();
+    int absSize = 0;
+    
+    float size_2 = size >> 1;
     
     for(int i = 0; i < 8; i++)
     {
-        int x = (i%4)%2;
-        int y = i/4;
-        int z = (i%4)/2;
+        int x = (i%4)&1;
+        int y = i >> 2;
+        int z = (i%4) >> 1;
         
         if(this->entries[i] == NULL)
+        {
+            int ii;
             if(size == 2)
-                entries[i] = new Leaf();
+            {
+                float height = generator->getY(p+x*size_2, r+z*size_2)*Chunk::size*Chunk::subsize/2;
+                if( q+y*size_2 <= height )
+                {
+                    entries[i] = new Leaf();
+                    entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
+                    
+                    if(this->entries[i]->isCompressible())
+                        compress(x,y,z, 1);
+                }
+            }
             else
-                entries[i] = new Node();
-        this->entries[i]->generate(generator, p+x*size/2.0, q+y*size/2.0, r+z*size/2.0, size/2.0);
-        if(this->entries[i]->isCompressible())
-            compress(x,y,z, 1);
+            {
+                for(ii = 0; ii < (size_2)*(size_2); ii++)
+                {
+                    int j = ii / (size_2);
+                    int k = ii % (int)(size_2);
+
+                    float height = generator->getY(absSize+p+x*size_2+j, absSize+r+z*size_2+k)*Chunk::size*Chunk::subsize/2;
+                    if (height < (q+size*(y+1)/2))
+                    {
+                        entries[i] = new Node();
+                        this->entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
+                        if(this->entries[i]->isCompressible())
+                            compress(x,y,z, 1);
+                        break;
+                    }
+                    
+                }
+            
+                if(ii == size_2*size_2)
+                {
+                    entries[i] = new Leaf();
+                    entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
+                   
+                    if(this->entries[i]->isCompressible())
+                        compress(x,y,z, 1);
+                }
+            }
+        }
     }
 }

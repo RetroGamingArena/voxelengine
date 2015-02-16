@@ -77,12 +77,15 @@ void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, fl
     
     float ao = 0;
     
-    if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize) > offset )
-        ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize) > 0);
-    if( (offset*2 + p*Chunk::subsize) > offset   && (offset*2 + r*Chunk::subsize-1) > offset )
-        ao += (this->getCube(p*Chunk::subsize, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
-    if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize-1) > offset )
-        ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
+    if(width==1)
+    {
+        if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize) > offset )
+            ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize) > 0);
+        if( (offset*2 + p*Chunk::subsize) > offset   && (offset*2 + r*Chunk::subsize-1) > offset )
+            ao += (this->getCube(p*Chunk::subsize, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
+        if( (offset*2 + p*Chunk::subsize-1) > offset && (offset*2 + r*Chunk::subsize-1) > offset )
+            ao += (this->getCube(p*Chunk::subsize-1, q*Chunk::subsize+1, r*Chunk::subsize-1) > 0);
+    }
     
     buffer->getData()->push_back(p);
     buffer->getData()->push_back(q);

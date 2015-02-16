@@ -29,7 +29,10 @@ void Chunk::generate(WorldGenerator* generator)
     float rr = r * Chunk::size * Chunk::subsize * Cube::size;
     
     unsigned char type = 0;
-    unsigned char* types = new unsigned char[8];
+    
+    o->generate(generator, p*Chunk::size * Chunk::subsize, q, r*Chunk::size * Chunk::subsize, size*subsize);
+    
+    /*unsigned char* types = new unsigned char[8];
     
     for(float i = 0; i < size*subsize; i+=2)
         for(float k = 0; k < size*subsize; k+=2)
@@ -76,7 +79,7 @@ void Chunk::generate(WorldGenerator* generator)
                 o->setCubes(i,   j,   k, size*subsize, types);
             }
         }
-    delete[] types;
+    delete[] types;*/
 }
 
 bool Chunk::contains(float x, float y, float z)

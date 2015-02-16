@@ -34,7 +34,7 @@ void main()
     gl_Position = /*MVP*/ P * V * M * vec4(vertexPosition_modelspace*vertexWidth+offset,1);
     fragmentAo = 0.3 + ( ambiant ) * 0.7;// + ao*0.1;
 
-    fragmentAo *= (ao/6 + 0.5);
+    fragmentAo *= ( (3-ao)/6 + 0.5);
     
     cubeColor = vec3(1.0,1.0,1.0);//noise1(1));
     if(vertexColorIndex == 1)
