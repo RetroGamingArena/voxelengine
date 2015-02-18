@@ -21,6 +21,7 @@ Engine* Engine::instance = NULL;
 
 Engine::Engine()
 {
+    world == NULL;
     processor = new IterativeProcessor();
     
     nbFrames = 0;
@@ -41,6 +42,7 @@ Engine::Engine()
     glfwSetMouseButtonCallback(window, mouseButtonCallback);
     glfwSetCursorPosCallback(window, cursorPositionCallback);
     glfwSetScrollCallback(window, scrollCallback);
+    glfwSetKeyCallback(window, keyCallBack);
     
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
@@ -67,6 +69,8 @@ Engine::Engine()
     
     Scene::cameraPositionVecID = glGetUniformLocation(VBOScene::programID, "cameraPosition");
     
+    player = new Player();
+    
     //camera = new TrackBallCamera();
     scene = new LoadingScene(window);
     //scene = new VoxelScene(window);
@@ -78,6 +82,27 @@ Engine* Engine::getInstance()
     if(instance == NULL)
         instance = new Engine();
     return instance;
+}
+
+void Engine::keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    Engine* engine = getInstance();
+    
+    Player* player = engine->getPlayer();
+    double angleY = player->getAngleY();
+
+    if(key == GLFW_KEY_W )
+    {
+        player->setDx(cos(angleY*PI/180.0));
+        player->setDz(sin(angleY*PI/180.0));
+    }
+    else if(key == GLFW_KEY_S )
+    {
+        //player->setDx(cos(angleY));
+        //player->setDy(sin(angleY));
+    }
+    
+    engine->getScene()->onKey(key, scancode, action, mods);
 }
 
 void Engine::cursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
@@ -114,7 +139,9 @@ int Engine::run()
         //FPS
         nbFrames++;
         double currentTime = glfwGetTime();
-        if ( currentTime - lastTime >= (1.0 / 60) )
+        double dt = currentTime - lastTime;
+        live(dt);
+        if ( dt >= (1.0 / 60) )
         {
             FPS = nbFrames;
             Label* label = (Label*)scene->getUI()->getControls()[0];
@@ -138,4 +165,9 @@ int Engine::run()
     exit(EXIT_SUCCESS);
     
     return 0;
+}
+
+void Engine::live(double dt)
+{
+    player->live(dt);
 }

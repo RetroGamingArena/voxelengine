@@ -12,11 +12,14 @@
 #include <glew.h>
 #include <GLFW/glfw3.h>
 #include <stdio.h>
+#include <vector>
 
 #include "Scene.h"
 #include "../openGL/ShaderLoader.h"
 #include "../openGL/GlobalBuffer.h"
 #include "../openGL/IndiceBuffer.h"
+
+using namespace std;
 
 class VBOScene : public Scene
 {
@@ -24,9 +27,9 @@ class VBOScene : public Scene
         GLuint VertexArrayID;
     
     
-        GLuint bufferID;
+        vector<GLuint> bufferIDs;
         GLuint elementbuffer;
-        GlobalBuffer* buffer;
+        vector<GlobalBuffer*> buffers;
         IndiceBuffer* indices;
 
     public:
@@ -36,7 +39,7 @@ class VBOScene : public Scene
             //glGenVertexArrays(1, &VertexArrayID);
             //glBindVertexArray(VertexArrayID);
         }
-        GlobalBuffer* getBuffer(){return buffer;}
+        GlobalBuffer* getBuffer(){return buffers[0];}
         IndiceBuffer* getIndices(){return indices;}
         void bindBuffer();
         void render();

@@ -104,6 +104,9 @@ void World::bufferizeEntry(GlobalBuffer* buffer, unsigned char type, float p, fl
 
 unsigned char World::getCube(int x, int y, int z)
 {
+    if(y > Chunk::size*Chunk::subsize)
+        return 0;
+    
     int abs_x = x+size*Chunk::size*Chunk::subsize;
      
     int abs_y = y+size*Chunk::size*Chunk::subsize;

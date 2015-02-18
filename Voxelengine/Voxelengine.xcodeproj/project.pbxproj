@@ -34,6 +34,7 @@
 		646AE24E1A91F616004B77A9 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646AE24C1A91F616004B77A9 /* Item.cpp */; };
 		646AE2511A91F7CB004B77A9 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646AE24F1A91F7CB004B77A9 /* Player.cpp */; };
 		646AE2541A91F824004B77A9 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646AE2521A91F824004B77A9 /* GameScene.cpp */; };
+		646AE2571A925120004B77A9 /* PlayerCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646AE2551A925120004B77A9 /* PlayerCamera.cpp */; };
 		647650621A6461920005B3AA /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650601A6461920005B3AA /* LoadingScene.cpp */; };
 		647650651A64636C0005B3AA /* LoadingUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 647650631A64636C0005B3AA /* LoadingUI.cpp */; };
 		648635E81A6820EA002E09FB /* WorldProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 648635E61A6820EA002E09FB /* WorldProcessor.cpp */; };
@@ -160,6 +161,8 @@
 		646AE2501A91F7CB004B77A9 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = item/Player.h; sourceTree = "<group>"; };
 		646AE2521A91F824004B77A9 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = scene/GameScene.cpp; sourceTree = "<group>"; };
 		646AE2531A91F824004B77A9 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = scene/GameScene.h; sourceTree = "<group>"; };
+		646AE2551A925120004B77A9 /* PlayerCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerCamera.cpp; path = camera/PlayerCamera.cpp; sourceTree = "<group>"; };
+		646AE2561A925120004B77A9 /* PlayerCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerCamera.h; path = camera/PlayerCamera.h; sourceTree = "<group>"; };
 		647650601A6461920005B3AA /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingScene.cpp; path = scene/LoadingScene.cpp; sourceTree = "<group>"; };
 		647650611A6461920005B3AA /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = scene/LoadingScene.h; sourceTree = "<group>"; };
 		647650631A64636C0005B3AA /* LoadingUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingUI.cpp; path = UI/LoadingUI.cpp; sourceTree = "<group>"; };
@@ -486,6 +489,8 @@
 				6458F60B1A5566D20006BF88 /* Camera.h */,
 				6458F60D1A5567190006BF88 /* TrackBallCamera.cpp */,
 				6458F60E1A5567190006BF88 /* TrackBallCamera.h */,
+				646AE2551A925120004B77A9 /* PlayerCamera.cpp */,
+				646AE2561A925120004B77A9 /* PlayerCamera.h */,
 			);
 			name = camera;
 			sourceTree = "<group>";
@@ -1064,6 +1069,7 @@
 				642FC3C71A5C840E00DC8A94 /* IndiceBuffer.cpp in Sources */,
 				647650621A6461920005B3AA /* LoadingScene.cpp in Sources */,
 				6458F61E1A5733000006BF88 /* CubeType.cpp in Sources */,
+				646AE2571A925120004B77A9 /* PlayerCamera.cpp in Sources */,
 				64E85D631A4F79710042EE5A /* World.cpp in Sources */,
 				64E85D7B1A516C790042EE5A /* Chunk.cpp in Sources */,
 				64F9D8B41A745D0200127C54 /* Pool.cpp in Sources */,

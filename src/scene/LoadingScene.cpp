@@ -7,7 +7,7 @@
 //
 
 #include "LoadingScene.h"
-#include "VoxelScene.h"
+#include "GameScene.h"
 #include "engine.h"
 
 std::mutex* LoadingScene::mutex = new std::mutex();
@@ -22,13 +22,14 @@ void LoadingScene::render()
     }
     if(mutex->try_lock())
     {
-        VoxelScene* voxelScene = new VoxelScene(Engine::getInstance()->getWindow());
-        voxelScene->init();
+        GameScene* gameScene = new GameScene(Engine::getInstance()->getWindow(), Engine::getInstance()->getPlayer());
+        gameScene->init();
         
-        Engine::getInstance()->getProcessor()->bufferize(voxelScene, Engine::getInstance()->getWorld());
+        Engine::getInstance()->getProcessor()->bufferize(gameScene, Engine::getInstance()->getWorld());
         
-        voxelScene->bindBuffer();
-        Engine::getInstance()->setScene(voxelScene);
+        gameScene->bindBuffer();
+        Engine::getInstance()->setScene(gameScene);
+        Engine::getInstance()->getPlayer()->setFalling(true);
         mutex->unlock();
     }
 }

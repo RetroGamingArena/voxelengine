@@ -113,6 +113,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "Engine::keyCallBack(GLFWwindow*, int, int, int, int):engine.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "angleY*PI/180.0">
+            </PersistentString>
+            <PersistentString
+               value = "cos(angleY*PI/180.0)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Cube::bufferizeSquare(VBOScene*, float, float, float, float, float, float, float, float*):Cube.cpp">
          <PersistentStrings>
             <PersistentString
@@ -154,13 +165,13 @@
          contextName = "VBOScene::bindBuffer():VBOScene.cpp">
          <PersistentStrings>
             <PersistentString
+               value = "sizeof(g_vertex_buffer_data)">
+            </PersistentString>
+            <PersistentString
                value = "getVertexCount()">
             </PersistentString>
             <PersistentString
                value = "sizeof(GLfloat)*9">
-            </PersistentString>
-            <PersistentString
-               value = "sizeof(g_vertex_buffer_data)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -177,6 +188,20 @@
       </ContextState>
       <ContextState
          contextName = "ChunkTask::ChunkTask(Chunk*, WorldGenerator*):ChunkTask.h">
+      </ContextState>
+      <ContextState
+         contextName = "Player::live(double):Player.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "y">
+            </PersistentString>
+            <PersistentString
+               value = "(y-0.5*G*dt*dt)">
+            </PersistentString>
+            <PersistentString
+               value = "y/(double)Chunk::subsize">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "OctreeEntry&lt;unsigned char&gt;::setCube(int, int, int, int, unsigned char):OctreeEntry.cpp">
@@ -223,13 +248,13 @@
          contextName = "Node::generate(WorldGenerator*, int, int, int, int):Node.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "this-&gt;entries[i]">
-            </PersistentString>
-            <PersistentString
                value = "q+y*size/2.0">
             </PersistentString>
             <PersistentString
                value = "absSize+p+x*size/2+j">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;entries[i]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

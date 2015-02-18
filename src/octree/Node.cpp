@@ -219,6 +219,9 @@ bool Node::isCompressible()
 
 void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
 {
+    if(size==2)
+        return;
+    
     int absSize = 0;
     
     float size_2 = size >> 1;
@@ -232,19 +235,19 @@ void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
         if(this->entries[i] == NULL)
         {
             int ii;
-            if(size == 2)
+            //if(size == 2)
             {
-                float height = generator->getY(p+x*size_2, r+z*size_2)*Chunk::size*Chunk::subsize/2;
-                if( q+y*size_2 <= height )
+                //float height = generator->getY(p+x*size_2, r+z*size_2)*Chunk::size*Chunk::subsize/2;
+                //if( q+y*size_2 <= height )
                 {
-                    entries[i] = new Leaf();
-                    entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
+                    //entries[i] = new Leaf();
+                    //entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
                     
-                    if(this->entries[i]->isCompressible())
-                        compress(x,y,z, 1);
+                    //if(this->entries[i]->isCompressible())
+                    //    compress(x,y,z, 1);
                 }
             }
-            else
+            //else
             {
                 for(ii = 0; ii < (size_2)*(size_2); ii++)
                 {
@@ -256,8 +259,8 @@ void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
                     {
                         entries[i] = new Node();
                         this->entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
-                        if(this->entries[i]->isCompressible())
-                            compress(x,y,z, 1);
+                        //if(this->entries[i]->isCompressible())
+                        //    compress(x,y,z, 1);
                         break;
                     }
                     
@@ -268,8 +271,8 @@ void Node::generate(WorldGenerator* generator, int p, int q, int r, int size)
                     entries[i] = new Leaf();
                     entries[i]->generate(generator, p+x*size_2, q+y*size_2, r+z*size_2, size_2);
                    
-                    if(this->entries[i]->isCompressible())
-                        compress(x,y,z, 1);
+                    //if(this->entries[i]->isCompressible())
+                    //    compress(x,y,z, 1);
                 }
             }
         }

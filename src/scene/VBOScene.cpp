@@ -32,55 +32,64 @@ void VBOScene::render()
     
     glLightfv(GL_LIGHT0, GL_POSITION, lightpos);
     
-    glBindBuffer(GL_ARRAY_BUFFER, bufferID);
+    for(int i = 0; i < buffers.size(); i++)
+    {
+        glBindBuffer(GL_ARRAY_BUFFER, bufferIDs[i]);
     
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    glEnableVertexAttribArray(2);
-    glEnableVertexAttribArray(3);
-    glEnableVertexAttribArray(4);
-    glEnableVertexAttribArray(5);
-    //glEnableVertexAttribArray(6);
+        glEnableVertexAttribArray(0);
+        glEnableVertexAttribArray(1);
+        glEnableVertexAttribArray(2);
+        glEnableVertexAttribArray(3);
+        glEnableVertexAttribArray(4);
+        glEnableVertexAttribArray(5);
+        //glEnableVertexAttribArray(6);
 
-    glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 );
-    glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3));
-    //glVertexAttribPointer( 2, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 8, (void*)4 );
-    //glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 4));
-    
-    glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 ); //0, NULL);
-    glVertexAttribDivisor( 2, 1);
-    glVertexAttribPointer( 3, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3)); //0, NULL);
-    glVertexAttribDivisor( 3, 1);
-    glVertexAttribPointer( 4, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 4)); //0, NULL);
-    glVertexAttribDivisor( 4, 1);
-    glVertexAttribPointer( 5, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 5)); //0, NULL);
-    glVertexAttribDivisor( 5, 1);
+        glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0 );
+        glVertexAttribPointer( 1, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * 3));
+        
+        
+        glVertexAttribPointer( 2, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(0) ); //0, NULL);
+        glVertexAttribDivisor( 2, 1);
+        glVertexAttribPointer( 3, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * (3))); //0, NULL);
+        glVertexAttribDivisor( 3, 1);
+        glVertexAttribPointer( 4, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * (4))); //0, NULL);
+        glVertexAttribDivisor( 4, 1);
+        glVertexAttribPointer( 5, 1, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)(sizeof(GLfloat) * (5))); //0, NULL);
+        glVertexAttribDivisor( 5, 1);
 
-    //glDrawArrays(GL_POINTS, 0, buffer->getData()->size());
-    int size = indices->getData()->size();
-    //glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
-    glDrawElementsInstanced(GL_TRIANGLE_STRIP, 32, GL_UNSIGNED_INT, (void*)0, (buffer->getData()->size()-32)/6 );           // element array buffer offset
+        //glDrawArrays(GL_POINTS, 0, buffer->getData()->size());
+        //glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, (void*)0);           // element array buffer offset
     
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    glDisableVertexAttribArray(2);
-    glDisableVertexAttribArray(3);
-    glDisableVertexAttribArray(4);
-    glDisableVertexAttribArray(5);
-    //glDisableVertexAttribArray(6);
+        glBindBuffer(GL_ARRAY_BUFFER, bufferIDs[i]);
     
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+        glDrawElementsInstanced(GL_TRIANGLE_STRIP, 32, GL_UNSIGNED_INT, (void*)0, (buffers[i]->getData()->size()-32)/6 );           // element array buffer offset
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
     
+    
+        glDisableVertexAttribArray(0);
+        glDisableVertexAttribArray(1);
+        glDisableVertexAttribArray(2);
+        glDisableVertexAttribArray(3);
+        glDisableVertexAttribArray(4);
+        glDisableVertexAttribArray(5);
+        //glDisableVertexAttribArray(6);
+    
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+    }
+
     //2D
     ui->render();
 }
 
 void VBOScene::bindBuffer()
 {
-    glGenBuffers(1, &bufferID);
-    glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffer->getData()->size(), &(*buffer->getData())[0], GL_STATIC_DRAW);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    for(int i = 0; i < buffers.size(); i++)
+    {
+        glGenBuffers(1, &bufferIDs[i]);
+        glBindBuffer(GL_ARRAY_BUFFER, bufferIDs[i]);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*buffers[i]->getData()->size(), &(*buffers[i]->getData())[0], GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+    }
     
     glGenBuffers(1, &elementbuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
@@ -89,6 +98,7 @@ void VBOScene::bindBuffer()
 
 void VBOScene::init()
 {
-    this->buffer = new GlobalBuffer();
+    this->buffers.push_back(new GlobalBuffer());
+    this->bufferIDs.push_back(0);
     this->indices = new IndiceBuffer();
 }

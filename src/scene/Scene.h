@@ -22,6 +22,9 @@
 
 class Scene
 {
+    double lastX;
+    double lastY;
+    
     protected:
         Camera* camera;
         GLfloat* lightpos;//[] = {.5, 1., 1., 0.};
@@ -31,6 +34,9 @@ class Scene
     
         bool invalidated;
     
+        double dX;
+        double dY;
+
     public:
         static GLuint matrixID;
         static GLuint mMatrixID;
@@ -54,12 +60,19 @@ class Scene
             
             invalidated = true;
             //ui = new DebugUI();
+            
+            lastX = -1;
+            lastY = -1;
+            
+            dX = 0;
+            dY = 0;
         }
         UI* getUI(){return ui;}
         Camera* getCamera(){return camera;}
         //GLfloat* getLightPos(){return lightpos;}
         virtual void onMouseMotion(double xpos, double ypos);
         virtual void onMouseScroll(double xoffset, double yoffset);
+        virtual void onKey(int key, int scancode, int action, int mods);
         virtual void render() = 0;
         virtual void init() = 0;
 };

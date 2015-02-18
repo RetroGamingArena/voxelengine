@@ -17,6 +17,8 @@
 #include "Camera.h"
 #include "World.h"
 
+#include "../item/Player.h"
+
 #include "../world/processor/WorldProcessor.h"
 
 class Engine
@@ -35,11 +37,14 @@ class Engine
     double lastTime;
     double FPS;
     
+    Player* player;
+    
     Engine();
 
     static void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
     static void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
     static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
+    static void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods);
     
     public:
         WorldProcessor* getProcessor(){return processor;}
@@ -47,11 +52,13 @@ class Engine
         GLFWwindow* getWindow(){return window;}
         Scene* getScene(){return scene;}
         World* getWorld(){return world;}
+        Player* getPlayer(){return player;}
         int getWindowWidth(){return windowWidth;}
         int getWindowHeight(){return windowHeight;}
         void setWorld(World* world){this->world=world;}
         void setScene(Scene* scene){this->scene=scene;}
         int run();
+        void live(double dt);
 };
 
 #endif /* defined(__voxelengine__engine__) */
